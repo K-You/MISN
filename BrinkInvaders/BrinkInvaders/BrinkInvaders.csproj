@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="Ball.cs" />
     <Compile Include="BallView.cs" />
+    <Compile Include="BasikBrick.cs" />
+    <Compile Include="BrickView.cs" />
     <Compile Include="ShipView.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="GameMode.cs" />
