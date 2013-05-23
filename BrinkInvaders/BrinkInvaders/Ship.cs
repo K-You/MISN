@@ -7,5 +7,37 @@ namespace BrinkInvaders
 {
     class Ship
     {
+        private string label;
+        private int height;
+        private int id;
+        private ShipView view;
+
+        public ShipView View
+        {
+            get { return view; }
+            set { view = value; }
+        }
+
+
+        public int Id
+        {
+            get { return id; }
+        }
+        
+
+        public int Height
+        {
+            get { return height; }
+            set { height = value; }
+        }
+        
+
+        public string Label
+        {
+            get { return label; }
+            set { label = value; }
+        }
+        
+
     }
 }
