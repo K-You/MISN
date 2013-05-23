@@ -13,6 +13,12 @@ namespace BrinkInvaders
         private Color color;
         private Point position;
 
+        public Element(int width, Color color, Point position)
+        {
+            this.width = width;
+            this.color = color;
+            this.position = position;
+        }
         public Point Position
         {
             get { return position; }

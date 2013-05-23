@@ -12,6 +12,13 @@ namespace BrinkInvaders
         private int val;
         private GameMode gameMode;
 
+        public Score(Player player, int value, GameMode gm)
+        {
+            this.player = player;
+            this.Value = value;
+            this.GameMode = gm;
+        }
+
         public GameMode GameMode
         {
             get { return gameMode; }

@@ -10,10 +10,6 @@ namespace BrinkInvaders
         private int id;
         private string pseudo;
 
-        public Player():this(string.Empty, 0)
-        {
-        }
-
          public Player(string pseudo, int id)
         {
             this.pseudo = pseudo;
