@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace BrinkInvaders
+{
+    public class Player
+    {
+        private int id;
+        private string pseudo;
+
+        public Player():this(string.Empty, 0)
+        {
+        }
+
+         public Player(string pseudo, int id)
+        {
+            this.pseudo = pseudo;
+            this.id = id;
+        }
+        public int Id
+        {
+            get { return id; }
+        }
+
+        public string Pseudo
+        {
+            get { return pseudo; }
+            set { pseudo = value; }
+        }
+
+    }
+}
