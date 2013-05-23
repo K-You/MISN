@@ -10,13 +10,13 @@ namespace BrinkInvaders
 
         private Player player;
         private int val;
-    //    private GameMode gameMode;
+        private GameMode gameMode;
 
-    //    public GameMode GameMode
-    //    {
-    //        get { return gm; }
-    //        set { gm = value; }
-    //    } 
+        public GameMode GameMode
+        {
+            get { return gameMode; }
+            set { gameMode = value; }
+        } 
 
         public int Value
         {
