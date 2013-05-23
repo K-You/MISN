@@ -19,6 +19,7 @@ namespace BrinkInvaders
             set { position = value; }
         }
 
+
         public Color Color
         {
             get{ return color; }
