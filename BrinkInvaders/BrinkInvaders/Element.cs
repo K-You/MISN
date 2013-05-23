@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BrinkInvaders
 {
-    public class Element
+    public abstract class Element
     {
 
         private int width;

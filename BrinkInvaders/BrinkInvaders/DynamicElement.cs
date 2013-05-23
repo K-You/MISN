@@ -6,9 +6,14 @@ using System.Drawing;
 
 namespace BrinkInvaders
 {
-    public class DynamicElement : Element
+    public abstract class DynamicElement : Element
     {
         private int speed;
+
+        public DynamicElement(int speed, int width, Color color, Point position):base(width, color, position)
+        {
+            this.speed = speed;
+        }
 
         public int Speed
         {
