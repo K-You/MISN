@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ball.cs" />
+    <Compile Include="BallView.cs" />
     <Compile Include="ShipView.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="GameMode.cs" />

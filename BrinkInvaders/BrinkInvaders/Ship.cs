@@ -6,19 +6,21 @@ using System.Drawing;
 
 namespace BrinkInvaders
 {
-    class Ship:DynamicElement
+    public class Ship:DynamicElement
     {
         private string label;
         private int height;
         private int id;
+        private int health;
         private ShipView view;
 
-        public Ship(string label, int height, int id, ShipView view, int speed,int width, Color color, Point position)
+        public Ship(string label, int height, int id, int health, ShipView view, int speed,int width, Color color, Point position)
             : base(speed, width, color, position)
         {
             this.label = label;
             this.height = height;
             this.id = id;
+            this.height = health;
             this.view = view;
         }
 
@@ -27,6 +29,12 @@ namespace BrinkInvaders
             get { return view; }
             set { view = value; }
         }
+
+        public int Health
+        {
+            get { return health; }
+            set { health = value; }
+        }   
 
         public int Id
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BrinkInvaders
 {
-    public class ShipView
+    public class BallView
     {
     }
 }
