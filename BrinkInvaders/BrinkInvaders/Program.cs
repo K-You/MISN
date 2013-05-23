@@ -9,7 +9,7 @@ namespace BrinkInvaders
     {
         static void Main(string[] args)
         {
-            //test
+            Player player = new Player("Red", 1);
         }
     }
 }
