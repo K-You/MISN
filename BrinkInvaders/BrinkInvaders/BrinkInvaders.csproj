@@ -55,6 +55,7 @@
     <Compile Include="BrickInvader.cs" />
     <Compile Include="BrickView.cs" />
     <Compile Include="ComplexBrick.cs" />
+    <Compile Include="Configuration.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="HighSpeedMode.cs" />
