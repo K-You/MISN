@@ -52,8 +52,11 @@
     <Compile Include="Ball.cs" />
     <Compile Include="BallView.cs" />
     <Compile Include="BasicBrick.cs" />
+    <Compile Include="BrickInvader.cs" />
     <Compile Include="BrickView.cs" />
     <Compile Include="ComplexBrick.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="HighSpeedMode.cs" />
     <Compile Include="ShipView.cs" />
     <Compile Include="Ship.cs" />
@@ -64,6 +67,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Score.cs" />
+    <Compile Include="WorldModel.cs" />
+    <Compile Include="WorldView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
