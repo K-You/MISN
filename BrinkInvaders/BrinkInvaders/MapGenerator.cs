@@ -5,9 +5,9 @@ using System.Text;
 
 namespace BrinkInvaders
 {
-    interface MapGenerator
+    public interface MapGenerator
     {
-        public List<BasicBrick> generateMap(int level);
-        public Ship generateShip();
+        List<BasicBrick> generateMap(int level);
+        Ship generateShip();
     }
 }

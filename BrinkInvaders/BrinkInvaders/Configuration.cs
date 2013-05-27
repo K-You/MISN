@@ -22,7 +22,11 @@ namespace BrinkInvaders
             get { return keys; }
             set { keys = value; }
         }
-        
-        
+
+        public Configuration(GameMode gameMode,KeyBinding keys)
+        {
+            this.keys = keys;
+            this.gameMode = gameMode;
+        }
     }
 }

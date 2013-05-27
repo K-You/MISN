@@ -7,13 +7,7 @@ namespace BrinkInvaders
 {
     public abstract class GameMode
     {
-        private MapGenerator generator;
-
-        public MapGenerator Generator
-        {
-            get { return generator; }
-            set { generator = value; }
-        }
+        public MapGenerator Generator { get; set; }
         
         private string _label;
 
