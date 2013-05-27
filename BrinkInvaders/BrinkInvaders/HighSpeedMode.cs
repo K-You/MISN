@@ -5,7 +5,8 @@ using System.Text;
 
 namespace BrinkInvaders
 {
-    class HighSpeedMode:GameMode
+    /*class HighSpeedMode:GameMode
     {
-    }
+        
+    }*/
 }

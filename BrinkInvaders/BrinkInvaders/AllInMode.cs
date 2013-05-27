@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BrinkInvaders
 {
-    class AllInMode:GameMode
+    /*class AllInMode:GameMode
     {
-    }
+    }*/
 }
