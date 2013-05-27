@@ -5,7 +5,10 @@ using System.Text;
 
 namespace BrinkInvaders
 {
-    public class BrickView
-    {
+    public class BrickView : ElementView
+    { 
+    
     }
+
+
 }
