@@ -9,7 +9,7 @@ namespace BrinkInvaders
     {
         static void Main(string[] args)
         {
-            Player player = new Player("Red", 1);
+            Player player = new Player("Red the moine", 1);
             Console.WriteLine(player.Pseudo);
             Console.Read();
         }
