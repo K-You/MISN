@@ -11,11 +11,11 @@ namespace BrinkInvaders
         private int health;
         private BrickView view;
 
-
-         public BasicBrick(int health, BrickView view, int width, Color color, Point position):base(width, color, position)
+        public BasicBrick(int health, BrickView view, int width, Color color, Point position)
+            : base(width, color, position)
         {
             this.health = health;
-            this.view = view;
+            this.View = view;
         }
 
         public BrickView View
@@ -23,12 +23,17 @@ namespace BrinkInvaders
             get { return view; }
             set { view = value; }
         }
+
         
         public int Health
         {
             get { return health; }
             set { health = value; }
         }
+
+
+
+
         
     }
 }
