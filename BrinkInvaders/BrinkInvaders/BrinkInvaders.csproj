@@ -52,6 +52,8 @@
     <Compile Include="Ball.cs" />
     <Compile Include="BallView.cs" />
     <Compile Include="BasicBrick.cs" />
+    <Compile Include="BasicMapGenerator.cs" />
+    <Compile Include="BasicMode.cs" />
     <Compile Include="BrickInvader.cs" />
     <Compile Include="BrickView.cs" />
     <Compile Include="ComplexBrick.cs" />

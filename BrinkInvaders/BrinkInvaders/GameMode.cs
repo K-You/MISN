@@ -24,5 +24,11 @@ namespace BrinkInvaders
         {
             get { return _scores; }
         }
+
+        public GameMode(MapGenerator Generator,String label)
+        {
+            this.Generator = Generator;
+            this.Label = label;
+        }
     }
 }
