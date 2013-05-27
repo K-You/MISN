@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace BrinkInvaders
 {
-    class BasicBrick:Element
+    public class BasicBrick:Element
     {
         private int health;
         private BrickView view;
