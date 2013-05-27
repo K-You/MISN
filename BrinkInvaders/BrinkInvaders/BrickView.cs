@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BrinkInvaders
 {
-    class BrickView
+    public class BrickView
     {
     }
 }
