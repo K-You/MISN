@@ -5,8 +5,16 @@ using System.Text;
 
 namespace BrinkInvaders
 {
-    public class GameMode
+    public abstract class GameMode
     {
+        private MapGenerator generator;
+
+        public MapGenerator Generator
+        {
+            get { return generator; }
+            set { generator = value; }
+        }
+        
         private string _label;
 
         public string Label
