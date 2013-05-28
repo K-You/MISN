@@ -11,14 +11,12 @@ namespace BrinkInvaders
         private int health;
         private BrickView view;
 
-        public BasicBrick(Point position):base(1,position)
+        public BasicBrick(Point position):base(position)
         {
             this.Width = 2; // dur
             this.health = 1; // dur
             this.Color = Color.Blue;
             this.Position = position;
-
-            //surement des choses à compléter
         }
 
         public BrickView View
