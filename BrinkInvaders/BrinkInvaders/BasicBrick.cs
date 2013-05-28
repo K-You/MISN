@@ -11,11 +11,16 @@ namespace BrinkInvaders
         private int health;
         private BrickView view;
 
-        public BasicBrick(int health, BrickView view, int width, Color color, Point position)
+        public BasicBrick(int health, BrickView view, int width, Color color, Point position)//Absolutely n'importe quoi !
             : base(width, color, position)
         {
             this.health = health;
             this.View = view;
+        }
+
+        public BasicBrick(Point position):base(1,Color.Blue,position)
+        {
+            //surement des choses à compléter
         }
 
         public BrickView View

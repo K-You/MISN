@@ -11,6 +11,10 @@ namespace BrinkInvaders
         {
             Player player = new Player("Red the moine", 1);
             Console.WriteLine(player.Pseudo);
+            
+
+            BasicMapGenerator gen = new BasicMapGenerator();
+            gen.test();
             Console.Read();
         }
     }

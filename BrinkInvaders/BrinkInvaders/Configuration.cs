@@ -15,6 +15,9 @@ namespace BrinkInvaders
             set { gameMode = value; }
         }
 
+        public int Width { get; set; }
+        public int LevelHeight { get; set; }
+
         private KeyBinding keys;
 
         public KeyBinding Keys

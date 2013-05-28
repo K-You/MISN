@@ -7,7 +7,7 @@ namespace BrinkInvaders
 {
     public interface MapGenerator
     {
-        List<BasicBrick> generateMap(int level);
+        List<BasicBrick> generateMap(int level,int width,int height);
         Ship generateShip();
     }
 }

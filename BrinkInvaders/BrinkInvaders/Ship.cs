@@ -14,7 +14,7 @@ namespace BrinkInvaders
         private int health;
         private ShipView view;
 
-        public Ship(string label, int height, int id, int health, ShipView view, int speed,int width, Color color, Point position)
+        public Ship(string label, int height, int id, int health, ShipView view, int speed,int width, Color color, Point position)//absolutely n'importe quoi
             : base(speed, width, color, position)
         {
             this.label = label;
@@ -22,6 +22,10 @@ namespace BrinkInvaders
             this.id = id;
             this.height = health;
             this.view = view;
+        }
+
+        public Ship(String label):this(label,1,0,1,null,1,4,Color.Red,new Point())//A revoir !!
+        {
         }
 
         public ShipView View
