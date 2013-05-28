@@ -15,15 +15,15 @@ namespace BrinkInvaders
 
         public Element()
         {
-            this.position = new Point(10, 10);
-            this.color = Color.Blue;
-            this.width = 2;
+            this.position = new Point(10, 10);  //dur
+            this.color = Color.Blue;    // dur
+            this.width = 2;     //dur
         }
         public Element(Point position)
         {
             this.position = position;
         }
-        public Element(int width, Point position)
+        public Element(Point position, int width)
         {
             this.width = width;
             this.position = position;
