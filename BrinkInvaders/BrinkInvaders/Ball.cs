@@ -13,11 +13,17 @@ namespace BrinkInvaders
         private int id;
         private BallView view;
 
+        public Ball(int id)
+        {
+            this.id = id;
+            this.View = new BallView();
+        }
 
         public Ball(Point position, int speed, int id)
             : base(position, speed)
         {
             this.id = id;
+            this.View = new BallView();
         }
 
         public int Id
