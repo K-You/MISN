@@ -14,7 +14,11 @@ namespace BrinkInvaders
         private int health;
         private ShipView view;
 
-
+        public Ship(Position position, int speed, int id)
+            : base(position, speed)
+        {
+            this.id = id;
+        }
         public ShipView View
         {
             get { return view; }
