@@ -15,7 +15,7 @@ namespace BrinkInvaders
         {
             this.Width = 2; // dur
             this.health = 1; // dur
-            this.Color = Color.Blue;
+            this.Color = Color.Blue; // dur
             this.Position = position;
         }
 
