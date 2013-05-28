@@ -12,7 +12,7 @@ namespace BrinkInvaders
 
         public DynamicElement()
         {
-            this.speed = 5;
+            this.speed = 5; // dur
         }
         public DynamicElement(Point position, int speed): base(position)
         {
