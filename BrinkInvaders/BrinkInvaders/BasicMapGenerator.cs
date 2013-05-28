@@ -21,18 +21,28 @@ namespace BrinkInvaders
             int since = 0;
             for(int i=height-1;i>0;i--)
             {
-                if (previous && since < 2)
+                if (previous && since < 3)
                 {
                     since++;
                 }
                 else
                 {
-                    previous = rand.Next(0, 2) == 0;
+                    previous = rand.Next(0, 10) <= 4;
                     if (previous)
                     {
                         since = 0;
                         int x = rand.Next(0, width);
                         tempList.Add(new BasicBrick(new Point(x,i)));
+                        if (x <= (width / 2) - 3 && rand.Next(0, 10) <= 3)
+                        {
+                            x = rand.Next(0, (width/2)-2);
+                            tempList.Add(new BasicBrick(new Point(width-1-x, i)));
+                        }
+                        else if (x >= (width / 2) + 3 && rand.Next(0, 10) <= 3)
+                        {
+                            x = rand.Next((width / 2)+2, width);
+                            tempList.Add(new BasicBrick(new Point(width-1 - x, i)));
+                        }
                     }
                 }
             }
