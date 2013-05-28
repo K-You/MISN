@@ -13,6 +13,12 @@ namespace BrinkInvaders
         private Color color;
         private Point position;
 
+        public Element()
+        {
+            this.position = new Point(10, 10);
+            this.color = Color.Blue;
+            this.width = 2;
+        }
         public Element(Point position)
         {
             this.position = position;
@@ -31,7 +37,7 @@ namespace BrinkInvaders
 
         public Color Color
         {
-            get{ return color; }
+            get { return color; }
             set { color = value; }
         }
 
