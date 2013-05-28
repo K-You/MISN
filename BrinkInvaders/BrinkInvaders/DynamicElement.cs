@@ -10,10 +10,10 @@ namespace BrinkInvaders
     {
         private int speed;
 
-        public DynamicElement(int speed, int width, Color color, Point position):base(width, color, position)
+        public DynamicElement(int speed, Point position): base(position)
         {
             this.speed = speed;
-        }
+        }  
 
         public int Speed
         {
