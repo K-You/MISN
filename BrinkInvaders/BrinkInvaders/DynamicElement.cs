@@ -10,6 +10,10 @@ namespace BrinkInvaders
     {
         private int speed;
 
+        public DynamicElement()
+        {
+            this.speed = 5;
+        }
         public DynamicElement(Point position, int speed): base(position)
         {
             this.speed = speed;
