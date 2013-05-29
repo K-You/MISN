@@ -9,17 +9,12 @@ namespace BrinkInvaders
     public class BasicBrick:Element
     {
         private int health;
-        private BrickView view;
 
         public BasicBrick(Point position):this(position, 2, 1, Color.Blue)
         {
         }
 
-        public BrickView View
-        {
-            get { return view; }
-            set { view = value; }
-        }
+
 
         public BasicBrick(Point position, int width, int health, Color color):base(position)
         {
