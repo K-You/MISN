@@ -27,8 +27,10 @@ namespace BrinkInvaders
 
         public void Move(int x, int y)
         {
-            this.Position = this.Position + new Size(140, 150);
+            this.Position = this.Position + new Size(x, y);
         }
         
     }
 }
+
+
