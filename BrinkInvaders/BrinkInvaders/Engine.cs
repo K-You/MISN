@@ -3,22 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BrinkInvaders
+using BrickInvaders.Model;
+
+namespace BrickInvaders
 {
-    class Engine
+
+    namespace Controller
     {
-        private Game _game;
 
-        public Game Game
+        class Engine
         {
-            get { return _game; }
-            set { _game = value; }
+            private Game _game;
+
+            public Game Game
+            {
+                get { return _game; }
+                set { _game = value; }
+            }
+
+            public void start() { }
+
+            public void removeBrik() { }
+
+
         }
-
-        public void start() { }
-
-        public void removeBrik() { }
-        
-
     }
 }

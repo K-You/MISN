@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BrinkInvaders
+namespace BrickInvaders
 {
-    public class BasicMode:GameMode
-    {
-        public BasicMode():base(new BasicMapGenerator(),"Easy mode")
-        {
 
+    namespace Controller
+    {
+
+        public class BasicMode : GameMode
+        {
+            public BasicMode()
+                : base(new BasicMapGenerator(), "Easy mode")
+            {
+
+            }
         }
+
     }
 }

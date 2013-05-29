@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace BrinkInvaders
+namespace BrickInvaders
 {
-    public class ComplexBrick:BasicBrick
+
+    namespace Model
     {
-        public ComplexBrick(Point position):base(position){}
+
+        public class ComplexBrick : BasicBrick
+        {
+            public ComplexBrick(Point position) : base(position) { }
+        }
     }
 }

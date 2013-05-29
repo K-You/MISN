@@ -4,52 +4,59 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace BrinkInvaders
+using BrickInvaders.View;
+
+namespace BrickInvaders
 {
-    public class Ship:DynamicElement
+
+    namespace Model
     {
-        private string label;
-        private int height;
-        private int id;
-        private int health;
-        private ShipView view;
 
-        public Ship(string label)
+        public class Ship : DynamicElement
         {
-            this.label = label;
-        }
-        public Ship(Point position, int speed, int id)
-            : base(position, speed)
-        {
-            this.id = id;
-        }
-        public ShipView View
-        {
-            get { return view; }
-            set { view = value; }
-        }
+            private string label;
+            private int height;
+            private int id;
+            private int health;
+            private ShipView view;
 
-        public int Health
-        {
-            get { return health; }
-            set { health = value; }
-        }   
+            public Ship(string label)
+            {
+                this.label = label;
+            }
+            public Ship(Point position, int speed, int id)
+                : base(position, speed)
+            {
+                this.id = id;
+            }
+            public ShipView View
+            {
+                get { return view; }
+                set { view = value; }
+            }
 
-        public int Id
-        {
-            get { return id; }
-        }        
+            public int Health
+            {
+                get { return health; }
+                set { health = value; }
+            }
 
-        public int Height
-        {
-            get { return height; }
-            set { height = value; }
-        }        
+            public int Id
+            {
+                get { return id; }
+            }
 
-        public string Label
-        {
-            get { return label; }
-            set { label = value; }
+            public int Height
+            {
+                get { return height; }
+                set { height = value; }
+            }
+
+            public string Label
+            {
+                get { return label; }
+                set { label = value; }
+            }
         }
     }
 }

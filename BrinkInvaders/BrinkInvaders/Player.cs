@@ -3,28 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BrinkInvaders
+namespace BrickInvaders
 {
-    public class Player
+
+    namespace Model
     {
-        private int id;
-        private string pseudo;
 
-         public Player(string pseudo, int id)
+        public class Player
         {
-            this.pseudo = pseudo;
-            this.id = id;
-        }
-        public int Id
-        {
-            get { return id; }
-        }
+            private int id;
+            private string pseudo;
 
-        public string Pseudo
-        {
-            get { return pseudo; }
-            set { pseudo = value; }
-        }
+            public Player(string pseudo, int id)
+            {
+                this.pseudo = pseudo;
+                this.id = id;
+            }
+            public int Id
+            {
+                get { return id; }
+            }
 
+            public string Pseudo
+            {
+                get { return pseudo; }
+                set { pseudo = value; }
+            }
+
+        }
     }
 }

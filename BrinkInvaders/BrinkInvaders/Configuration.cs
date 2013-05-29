@@ -3,33 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BrinkInvaders
+namespace BrickInvaders
 {
-    class Configuration
+
+    namespace Controller
     {
-        private GameMode gameMode;
 
-        public GameMode GameMode
+        class Configuration
         {
-            get { return gameMode; }
-            set { gameMode = value; }
-        }
+            private GameMode gameMode;
 
-        public int Width { get; set; }
-        public int LevelHeight { get; set; }
+            public GameMode GameMode
+            {
+                get { return gameMode; }
+                set { gameMode = value; }
+            }
 
-        private KeyBinding keys;
+            public int Width { get; set; }
+            public int LevelHeight { get; set; }
 
-        public KeyBinding Keys
-        {
-            get { return keys; }
-            set { keys = value; }
-        }
+            private KeyBinding keys;
 
-        public Configuration(GameMode gameMode,KeyBinding keys)
-        {
-            this.keys = keys;
-            this.gameMode = gameMode;
+            public KeyBinding Keys
+            {
+                get { return keys; }
+                set { keys = value; }
+            }
+
+            public Configuration(GameMode gameMode, KeyBinding keys)
+            {
+                this.keys = keys;
+                this.gameMode = gameMode;
+            }
         }
     }
 }

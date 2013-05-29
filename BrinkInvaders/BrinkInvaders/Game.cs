@@ -3,78 +3,87 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BrinkInvaders
+using BrickInvaders.Controller;
+using BrickInvaders.View;
+
+namespace BrickInvaders
 {
-    class Game : Observable
+
+    namespace Model
     {
-        private int _time;
-        private int _brokenBriks;
-        private List<BasicBrick> _list;
-        private List<Ball> _balls;
-        private Ship _ship;
-        private Player _player;
-        private int _level;
-        private Configuration _configuration;
 
-        public Configuration Configuration
+        class Game : Observable
         {
-            get { return _configuration; }
-            set { _configuration = value; }
-        }
+            private int _time;
+            private int _brokenBriks;
+            private List<BasicBrick> _list;
+            private List<Ball> _balls;
+            private Ship _ship;
+            private Player _player;
+            private int _level;
+            private Configuration _configuration;
 
-        public int Level
-        {
-            get { return _level; }
-            set { _level = value; }
-        }
-        
+            public Configuration Configuration
+            {
+                get { return _configuration; }
+                set { _configuration = value; }
+            }
 
-        public Player Player
-        {
-            get { return _player; }
-            set { _player = value; }
-        }
-        
+            public int Level
+            {
+                get { return _level; }
+                set { _level = value; }
+            }
 
-        public Ship Ship
-        {
-            get { return _ship; }
-            set { _ship = value; }
-        }
-        
 
-        public List<Ball> Balls
-        {
-            get { return _balls; }
-            set { _balls = value; }
-        }
-        
+            public Player Player
+            {
+                get { return _player; }
+                set { _player = value; }
+            }
 
-        public List<BasicBrick> MyProperty
-        {
-            get { return _list; }
-            set { _list = value; }
-        }
-        
 
-        public int BrokenBriks
-        {
-            get { return _brokenBriks; }
-            set { _brokenBriks = value; }
-        }
-        
+            public Ship Ship
+            {
+                get { return _ship; }
+                set { _ship = value; }
+            }
 
-        public int Time
-        {
-            get { return _time; }
-            set { _time = value; }
-        }
-        
 
-        public override void notifyObservers()
-        {
-            foreach (Observer v in this._observers) {
-                v.refresh(this);
+            public List<Ball> Balls
+            {
+                get { return _balls; }
+                set { _balls = value; }
+            }
+
+
+            public List<BasicBrick> MyProperty
+            {
+                get { return _list; }
+                set { _list = value; }
+            }
+
+
+            public int BrokenBriks
+            {
+                get { return _brokenBriks; }
+                set { _brokenBriks = value; }
+            }
+
+
+            public int Time
+            {
+                get { return _time; }
+                set { _time = value; }
+            }
+
+
+            public override void notifyObservers()
+            {
+                foreach (Observer v in this._observers)
+                {
+                    v.refresh(this);
+                }
             }
         }
     }

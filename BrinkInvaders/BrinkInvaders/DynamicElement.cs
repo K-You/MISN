@@ -4,32 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace BrinkInvaders
+namespace BrickInvaders
 {
-    public abstract class DynamicElement : Element
-    {
-        private int speed;
 
-        public DynamicElement()
-        {
-            this.speed = 5; // dur
-        }
-        public DynamicElement(Point position, int speed): base(position)
-        {
-            this.speed = speed;
-        }  
+    namespace Model {
 
-        public int Speed
+        public abstract class DynamicElement : Element
         {
-            get { return speed; }
-            set { speed = value; }
-        }
+            private int speed;
 
-        public void Move(int x, int y)
-        {
-            this.Position = this.Position + new Size(x, y);
+            public DynamicElement()
+            {
+                this.speed = 5; // dur
+            }
+            public DynamicElement(Point position, int speed)
+                : base(position)
+            {
+                this.speed = speed;
+            }
+
+            public int Speed
+            {
+                get { return speed; }
+                set { speed = value; }
+            }
+
+            public void Move(int x, int y)
+            {
+                this.Position = this.Position + new Size(x, y);
+            }
         }
-        
     }
 }
 

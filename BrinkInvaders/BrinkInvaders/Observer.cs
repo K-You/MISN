@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BrinkInvaders
+using BrickInvaders.Model;
+
+namespace BrickInvaders
 {
-    public interface Observer
+    namespace View
     {
-        void refresh(Observable m);
+        public interface Observer
+        {
+            void refresh(Observable m);
+        }
     }
 }

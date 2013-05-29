@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BrinkInvaders
+using BrickInvaders.Model;
+
+namespace BrickInvaders
 {
-    public interface MapGenerator
+
+    namespace Controller
     {
-        List<BasicBrick> generateMap(int level,int width,int height);
-        Ship generateShip();
+
+        public interface MapGenerator
+        {
+            List<BasicBrick> generateMap(int level, int width, int height);
+            Ship generateShip();
+        }
     }
 }

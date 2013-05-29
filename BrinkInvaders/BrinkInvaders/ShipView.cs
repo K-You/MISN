@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BrinkInvaders
+namespace BrickInvaders
 {
-    public class ShipView
+
+    namespace View
     {
+
+        public class ShipView
+        {
+        }
+
     }
 }

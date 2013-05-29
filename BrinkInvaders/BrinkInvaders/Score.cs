@@ -3,44 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BrinkInvaders
+namespace BrickInvaders
 {
-    public class Score
+
+    namespace Model
     {
 
-        private Player player;
-        private int val;
-        private GameMode gameMode;
-
-        public Score(Player player, int value, GameMode gm)
+        public class Score
         {
-            this.player = player;
-            this.Value = value;
-            this.GameMode = gm;
+
+            private Player player;
+            private int val;
+
+            public Score(Player player, int value)
+            {
+                this.player = player;
+                this.Value = value;
+            }
+
+            public int Value
+            {
+                get { return val; }
+                set { val = value; }
+            }
+
+
+            public Player Player
+            {
+                get { return player; }
+                set { player = value; }
+            }
+
+
+
+
+
         }
-
-        public GameMode GameMode
-        {
-            get { return gameMode; }
-            set { gameMode = value; }
-        } 
-
-        public int Value
-        {
-            get { return val; }
-            set { val = value; }
-        }
-        
-
-        public Player Player
-        {
-            get { return player; }
-            set { player = value; }
-        }
-
-
-        
-
-
     }
+
 }
