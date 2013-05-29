@@ -11,7 +11,7 @@ namespace BrickInvaders
     {
         public interface Observer
         {
-            void refresh(Observable m);
+            void Refresh(Observable m);
         }
     }
 }

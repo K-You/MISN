@@ -60,6 +60,10 @@ namespace BrickInvaders
                 this.position.Y++;
             }
 
+            public override void NotifyObservers()
+            {
+            }
+
         }
     }
 }

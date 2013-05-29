@@ -57,11 +57,11 @@ namespace BrickInvaders
                 set { _time = value; }
             }
 
-            public override void notifyObservers()
+            public override void NotifyObservers()
             {
                 foreach (Observer v in this._observers)
                 {
-                    v.refresh(this);
+                    v.Refresh(this);
                 }
             }
         }

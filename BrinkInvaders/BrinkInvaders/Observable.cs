@@ -21,17 +21,17 @@ namespace BrickInvaders
                 this._observers = new List<Observer>();
             }
 
-            public void addObserver(Observer v)
+            public void AddObserver(Observer v)
             {
                 this._observers.Add(v);
             }
 
-            public void removeObserver(Observer v)
+            public void RemoveObserver(Observer v)
             {
                 this._observers.Remove(v);
             }
 
-            abstract public void notifyObservers();
+            abstract public void NotifyObservers();
 
         }
     }
