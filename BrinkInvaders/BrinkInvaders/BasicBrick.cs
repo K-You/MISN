@@ -14,8 +14,6 @@ namespace BrinkInvaders
         {
         }
 
-
-
         public BasicBrick(Point position, int width, int health, Color color):base(position)
         {
             this.Width = width;
