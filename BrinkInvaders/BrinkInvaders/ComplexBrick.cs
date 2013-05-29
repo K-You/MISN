@@ -6,8 +6,8 @@ using System.Drawing;
 
 namespace BrinkInvaders
 {
-  //  public class ComplexBrick:BasicBrick
-  //  {
-
- //   }
+    public class ComplexBrick:BasicBrick
+    {
+        public ComplexBrick(Point position):base(position){}
+    }
 }
