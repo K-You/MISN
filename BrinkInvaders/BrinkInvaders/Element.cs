@@ -6,28 +6,30 @@ using System.Text;
 
 namespace BrinkInvaders
 {
-    public abstract class Element
+    public abstract class Element:Observable
     {
 
         private int width;
         private Color color;
         private Point position;
 
-        public Element()
+        public Element():this(new Point(10,10))
         {
-            this.position = new Point(10, 10);  //dur
-            this.color = Color.Blue;    // dur
-            this.width = 2;     //dur
+            
         }
-        public Element(Point position)
+        public Element(Point position):this(position, 2)
         {
-            this.position = position;
         }
-        public Element(Point position, int width)
+        public Element(Point position, int width):this(position, width, Color.Blue)
         {
-            this.width = width;
-            this.position = position;
         }
+        public Element(Point position, int width, Color color)
+        {
+            this.position = position;  
+            this.color = color;    
+            this.width = width;    
+        }
+
         public Point Position
         {
             get { return position; }
