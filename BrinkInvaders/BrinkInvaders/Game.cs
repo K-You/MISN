@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BrinkInvaders
 {
-    class Game : WorldModel
+    class Game : Observable
     {
         private int _time;
         private int _brokenBriks;
@@ -73,7 +73,7 @@ namespace BrinkInvaders
 
         public override void notifyObservers()
         {
-            foreach (WorldView v in this._observers) {
+            foreach (Observer v in this._observers) {
                 v.refresh(this);
             }
         }
