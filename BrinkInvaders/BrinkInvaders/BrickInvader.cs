@@ -12,16 +12,11 @@ namespace BrickInvaders
     class BrickInvaders
     {
 
-        private Game _game;
-
-        public Game Game
-        {
-            get { return _game; }
-            set { _game = value; }
-        }
-
         static void Main(string[] args)
         {
+            GameMode g = new BasicMode();
+            KeyBinding k = new KeyBinding();
+            Configuration c = new Configuration(g, k);
             Model.Player player = new Model.Player("Red the moine", 1);
             Console.WriteLine(player.Pseudo);
 

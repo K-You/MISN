@@ -14,8 +14,6 @@ namespace BrickInvaders
 
         public class Ball : DynamicElement
         {
-
-
             private int id;
             private BallView view;
 
@@ -25,7 +23,7 @@ namespace BrickInvaders
                 this.View = new BallView();
             }
 
-            public Ball(Point position, int speed, int id)
+            public Ball(Vector2D position, int speed, int id)
                 : base(position, speed)
             {
                 this.id = id;

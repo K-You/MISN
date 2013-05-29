@@ -14,12 +14,12 @@ namespace BrickInvaders
         {
             private int health;
 
-            public BasicBrick(Point position)
+            public BasicBrick(Vector2D position)
                 : this(position, 2, 1, Color.Blue)
             {
             }
 
-            public BasicBrick(Point position, int width, int health, Color color)
+            public BasicBrick(Vector2D position, int width, int health, Color color)
                 : base(position)
             {
                 this.Width = width;

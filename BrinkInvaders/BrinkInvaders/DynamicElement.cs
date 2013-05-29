@@ -17,7 +17,7 @@ namespace BrickInvaders
             {
                 this.speed = 5; // dur
             }
-            public DynamicElement(Point position, int speed)
+            public DynamicElement(Vector2D position, int speed)
                 : base(position)
             {
                 this.speed = speed;
@@ -31,7 +31,7 @@ namespace BrickInvaders
 
             public void Move(int x, int y)
             {
-                this.Position = this.Position + new Size(x, y);
+                this.Position += new Vector2D(x, y);
             }
         }
     }

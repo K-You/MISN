@@ -16,12 +16,16 @@ namespace BrickInvaders
         {
             private int _time;
             private int _brokenBriks;
-            private List<BasicBrick> _list;
-            private List<Ball> _balls;
-            private Ship _ship;
+            private Map _map;
             private Player _player;
             private int _level;
             private Configuration _configuration;
+
+            public Map Map
+            {
+                get { return _map; }
+                set { _map = value; }
+            }
 
             public Configuration Configuration
             {
@@ -35,34 +39,11 @@ namespace BrickInvaders
                 set { _level = value; }
             }
 
-
             public Player Player
             {
                 get { return _player; }
                 set { _player = value; }
             }
-
-
-            public Ship Ship
-            {
-                get { return _ship; }
-                set { _ship = value; }
-            }
-
-
-            public List<Ball> Balls
-            {
-                get { return _balls; }
-                set { _balls = value; }
-            }
-
-
-            public List<BasicBrick> MyProperty
-            {
-                get { return _list; }
-                set { _list = value; }
-            }
-
 
             public int BrokenBriks
             {
@@ -70,13 +51,11 @@ namespace BrickInvaders
                 set { _brokenBriks = value; }
             }
 
-
             public int Time
             {
                 get { return _time; }
                 set { _time = value; }
             }
-
 
             public override void notifyObservers()
             {

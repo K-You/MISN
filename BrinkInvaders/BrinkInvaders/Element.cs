@@ -14,29 +14,29 @@ namespace BrickInvaders
 
             private int width;
             private Color color;
-            private Point position;
+            private Vector2D position;
 
             public Element()
-                : this(new Point(10, 10))
+                : this(new Vector2D(10, 10))
             {
 
             }
-            public Element(Point position)
+            public Element(Vector2D position)
                 : this(position, 2)
             {
             }
-            public Element(Point position, int width)
+            public Element(Vector2D position, int width)
                 : this(position, width, Color.Blue)
             {
             }
-            public Element(Point position, int width, Color color)
+            public Element(Vector2D position, int width, Color color)
             {
                 this.position = position;
                 this.color = color;
                 this.width = width;
             }
 
-            public Point Position
+            public Vector2D Position
             {
                 get { return position; }
                 set { position = value; }

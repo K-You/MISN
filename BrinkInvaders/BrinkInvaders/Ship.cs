@@ -24,7 +24,7 @@ namespace BrickInvaders
             {
                 this.label = label;
             }
-            public Ship(Point position, int speed, int id)
+            public Ship(Vector2D position, int speed, int id)
                 : base(position, speed)
             {
                 this.id = id;

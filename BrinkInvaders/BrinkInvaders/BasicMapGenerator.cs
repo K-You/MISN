@@ -38,16 +38,16 @@ namespace BrickInvaders
                         {
                             since = 0;
                             int x = rand.Next(0, width);
-                            tempList.Add(new BasicBrick(new Point(x, i)));
+                            tempList.Add(new BasicBrick(new Vector2D(x, i)));
                             if (x <= (width / 2) - 3 && rand.Next(0, 10) <= 3)
                             {
                                 x = rand.Next(0, (width / 2) - 2);
-                                tempList.Add(new BasicBrick(new Point(width - 1 - x, i)));
+                                tempList.Add(new BasicBrick(new Vector2D(width - 1 - x, i)));
                             }
                             else if (x >= (width / 2) + 3 && rand.Next(0, 10) <= 3)
                             {
                                 x = rand.Next((width / 2) + 2, width);
-                                tempList.Add(new BasicBrick(new Point(width - 1 - x, i)));
+                                tempList.Add(new BasicBrick(new Vector2D(width - 1 - x, i)));
                             }
                         }
                     }
@@ -56,8 +56,8 @@ namespace BrickInvaders
                 foreach (BasicBrick brick in tempList)
                 {
                     list.Add(brick);
-                    int x = brick.Position.X;
-                    int y = brick.Position.Y;
+                    int x = (int)brick.Position.X;
+                    int y = (int)brick.Position.Y;
                     int nY, nX;
                     for (nX = x - 1; nX <= x + 1; nX++)
                     {
@@ -65,19 +65,19 @@ namespace BrickInvaders
                         {
                             if (nX >= 0 && nX <= width - 1 && nY >= 0 && nY <= height - 1 && rand.Next(0, 10) <= 7)
                             {
-                                list.Add(new BasicBrick(new Point(nX, nY)));
+                                list.Add(new BasicBrick(new Vector2D(nX, nY)));
                             }
                         }
                     }
                     nX = x - 2; nY = y;
                     if (nX >= 0 && nX <= width - 1 && nY >= 0 && nY <= height - 1 && rand.Next(0, 10) <= 7)
                     {
-                        list.Add(new BasicBrick(new Point(nX, nY)));
+                        list.Add(new BasicBrick(new Vector2D(nX, nY)));
                     }
                     nX = x + 2;
                     if (nX >= 0 && nX <= width - 1 && nY >= 0 && nY <= height - 1 && rand.Next(0, 10) <= 7)
                     {
-                        list.Add(new BasicBrick(new Point(nX, nY)));
+                        list.Add(new BasicBrick(new Vector2D(nX, nY)));
                     }
 
                 }
@@ -96,7 +96,7 @@ namespace BrickInvaders
                 char[,] lines = new char[height, width];
                 foreach (BasicBrick item in list)
                 {
-                    lines[item.Position.Y, item.Position.X] = 'X';
+                    lines[(int)item.Position.Y, (int)item.Position.X] = 'X';
                 }
                 string delimiter = "";
                 for (int i = 0; i <= width; i++)
