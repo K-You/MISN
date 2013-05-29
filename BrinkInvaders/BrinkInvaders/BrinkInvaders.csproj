@@ -62,6 +62,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="HighSpeedMode.cs" />
     <Compile Include="KeyBinding.cs" />
+    <Compile Include="Map.cs" />
     <Compile Include="MapGenerator.cs" />
     <Compile Include="ShipView.cs" />
     <Compile Include="Ship.cs" />

@@ -11,6 +11,7 @@ namespace BrickInvaders
 
         public class ShipView
         {
+
         }
 
     }
