@@ -26,7 +26,7 @@ namespace BrickInvaders
 
             Player p = new Player("Red the moine");
             ModelInterface m = new GameModel();
-         //   c.InitialiseModel(m); 
+            c.InitialiseModel(m); 
             m.SetPlayer(p);
 
             Engine e = new Engine(c, m);
