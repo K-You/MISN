@@ -25,12 +25,13 @@ namespace BrickInvaders
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if((pseudoBox.Text!=string.Empty) && (modeBox.Text!=string.Empty) && (shipBox.Text!=string.Empty)){
             this.pseudo = pseudoBox.Text;
             this.modeName = modeBox.Text;
             this.shipName = shipBox.Text;
             new Configuration(new BasicMode(), new Ship(this.shipName)); // à modifier new Mode
             this.Close();
-            new GameFrame();
+            }
         }
 
         private void Launcher_Load(object sender, EventArgs e)
