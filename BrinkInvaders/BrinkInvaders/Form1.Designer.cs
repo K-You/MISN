@@ -1,6 +1,6 @@
 ﻿namespace BrickInvaders
 {
-    partial class Form1
+    partial class GameFrame
     {
         /// <summary>
         /// Required designer variable.

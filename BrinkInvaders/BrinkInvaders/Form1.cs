@@ -10,16 +10,16 @@ using BrickInvaders.Controller;
 
 namespace BrickInvaders
 {
-    public partial class Form1 : Form
+    public partial class GameFrame : Form
     {
-        public Form1()
+        public GameFrame()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            new Configuration();
+           
         }
     }
 }

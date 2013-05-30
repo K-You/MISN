@@ -28,11 +28,14 @@ namespace BrickInvaders
             this.pseudo = pseudoBox.Text;
             this.modeName = modeBox.Text;
             this.shipName = shipBox.Text;
+            new Configuration(new BasicMode(), new Ship(this.shipName)); // à modifier new Mode
+            this.Close();
+            new GameFrame();
         }
 
         private void Launcher_Load(object sender, EventArgs e)
         {
-            new Configuration(new BasicMode(), new Ship(this.shipName)); // à modifier new Mode
+            
         }
 
         
