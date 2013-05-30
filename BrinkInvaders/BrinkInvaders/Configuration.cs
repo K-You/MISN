@@ -14,10 +14,17 @@ namespace BrickInvaders
         class Configuration : ConfigurationInterface
         {
             private GameMode gameMode;
+            private Ship ship;
             private KeyBinding keys;
 
             private Vector2D _dimensions = new Vector2D(7,11);
             private int _levelheight;
+
+            public Configuration(GameMode gameMode, Ship ship)
+            {
+                this.gameMode = gameMode;
+                this.ship = ship;
+            }
 
             public int LevelHeight
             {

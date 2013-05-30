@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BrickInvaders.Model;
+using BrickInvaders.Controller;
 
 namespace BrickInvaders
 {
@@ -17,8 +19,8 @@ namespace BrickInvaders
         }
 
         private string pseudo;
-        private string modeName;
-        private string shipName;
+        private string modeName;    // faire une enum
+        private string shipName;    // faire une enum
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace BrickInvaders
 
         private void Launcher_Load(object sender, EventArgs e)
         {
-
+            new Configuration(new BasicMode(), new Ship(this.shipName)); // à modifier new Mode
         }
 
         

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BrickInvaders.Controller;
 
 namespace BrickInvaders
 {
@@ -18,7 +19,7 @@ namespace BrickInvaders
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            new Configuration();
         }
     }
 }
