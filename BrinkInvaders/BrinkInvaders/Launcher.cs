@@ -27,5 +27,12 @@ namespace BrickInvaders
             this.modeName = modeBox.Text;
             this.shipName = shipBox.Text;
         }
+
+        private void Launcher_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

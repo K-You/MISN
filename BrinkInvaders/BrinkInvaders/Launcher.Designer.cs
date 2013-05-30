@@ -67,15 +67,13 @@
             // 
             // modeBox
             // 
-            this.modeBox.AutoCompleteCustomSource.AddRange(new string[] {
-            "High Speed",
-            "All in"});
             this.modeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.modeBox.Font = new System.Drawing.Font("Xirod", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modeBox.FormattingEnabled = true;
+            this.modeBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.modeBox.Items.AddRange(new object[] {
-            "High Speed",
-            "All In"});
+            "All In",
+            "High Speed"});
             this.modeBox.Location = new System.Drawing.Point(192, 99);
             this.modeBox.Name = "modeBox";
             this.modeBox.Size = new System.Drawing.Size(121, 22);
@@ -130,6 +128,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Launcher";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Launcher_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
