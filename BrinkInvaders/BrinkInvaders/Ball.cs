@@ -17,8 +17,8 @@ namespace BrickInvaders
             private BallView view;
 
             public Ball()
+                : this(new Vector2D(), new Vector2D())
             {
-                this.View = new BallView();
             }
 
             public Ball(Vector2D position, Vector2D speed)

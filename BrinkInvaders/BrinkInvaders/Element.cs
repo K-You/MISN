@@ -14,7 +14,6 @@ namespace BrickInvaders
 
             private Rectangle _innerRectangle;
             private Color _color;
-            private bool _modified = true;
 
             public Element()
                 : this(new Vector2D())
@@ -34,9 +33,7 @@ namespace BrickInvaders
 
             public Element(Vector2D position, Vector2D dimensions, Color color)
             {
-                this._innerRectangle.Width = dimensions.X;
-                this._innerRectangle.Height = dimensions.Y;
-                this._innerRectangle.Origin = position;
+                this._innerRectangle = new Rectangle(dimensions.X, dimensions.Y, position);
                 this.Color = color;
             }
 

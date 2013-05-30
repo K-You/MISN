@@ -16,8 +16,26 @@ namespace BrickInvaders
             private GameMode gameMode;
             private KeyBinding keys;
 
-            public int Width { get; set; }
-            public int LevelHeight { get; set; }
+            private Vector2D _dimensions = new Vector2D(7,11);
+            private int _levelheight;
+
+            public int LevelHeight
+            {
+                get { return _levelheight; }
+                set { _levelheight = value; }
+            }            
+
+            public int Width
+            {
+                get { return (int)_dimensions.X; }
+                set { _dimensions.X = value; }
+            }
+
+            public int Height
+            {
+                get { return (int)_dimensions.Y; }
+                set { _dimensions.Y = value; }
+            }
 
             public Configuration(GameMode gameMode, KeyBinding keys)
             {
