@@ -9,11 +9,14 @@ using System.Windows.Forms;
 
 namespace BrickInvaders
 {
-    public partial class MainFrame : Form
+    namespace View
     {
-        public MainFrame()
+        public partial class MainFrame : Form
         {
-            InitializeComponent();
+            public MainFrame()
+            {
+                InitializeComponent();
+            }
         }
     }
 }
