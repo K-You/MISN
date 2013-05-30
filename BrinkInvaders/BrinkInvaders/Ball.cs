@@ -17,16 +17,14 @@ namespace BrickInvaders
             private int id;
             private BallView view;
 
-            public Ball(int id)
+            public Ball()
             {
-                this.id = id;
                 this.View = new BallView();
             }
 
-            public Ball(Vector2D position, int speed, int id)
+            public Ball(Vector2D position, int speed)
                 : base(position, speed)
             {
-                this.id = id;
                 this.View = new BallView();
             }
 
