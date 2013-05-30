@@ -11,7 +11,7 @@ namespace BrickInvaders
     namespace Controller
     {
 
-        class KeyBinding
+        public class KeyBinding
         {
             private Hashtable keys;
 

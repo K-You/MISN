@@ -11,7 +11,7 @@ namespace BrickInvaders
     namespace Controller
     {
 
-        class Configuration : ConfigurationInterface
+        public class Configuration : ConfigurationInterface
         {
             private GameMode gameMode;
             private Ship ship;
@@ -48,7 +48,7 @@ namespace BrickInvaders
             {
                 this.keys = keys;
                 this.gameMode = gameMode;
-            }
+            } 
 
             public GameMode GameMode
             {

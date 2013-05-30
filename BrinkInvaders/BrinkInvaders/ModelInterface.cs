@@ -11,7 +11,7 @@ namespace BrickInvaders
     namespace Model
     {
 
-        interface ModelInterface
+        public interface ModelInterface
         {
             void SetPlayer(Player p);
             void SetBricks(List<BasicBrick> l);

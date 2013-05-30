@@ -21,7 +21,7 @@ namespace BrickInvaders
         private string pseudo;
         private string modeName;    // faire une enum
         private string shipName;    // faire une enum
-
+        private Configuration configuration;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -29,9 +29,14 @@ namespace BrickInvaders
             this.pseudo = pseudoBox.Text;
             this.modeName = modeBox.Text;
             this.shipName = shipBox.Text;
-            new Configuration(new BasicMode(), new Ship(this.shipName)); // à modifier new Mode
+            this.configuration = new Configuration(new BasicMode(), new Ship(this.shipName)); // à modifier new Mode
             this.Close();
             }
+        }
+
+        public Configuration Configuration
+        {
+            get { return configuration; }
         }
 
         private void Launcher_Load(object sender, EventArgs e)
