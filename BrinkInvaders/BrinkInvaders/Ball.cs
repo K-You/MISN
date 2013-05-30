@@ -14,7 +14,6 @@ namespace BrickInvaders
 
         public class Ball : DynamicElement
         {
-            private int id;
             private BallView view;
 
             public Ball()
@@ -22,22 +21,21 @@ namespace BrickInvaders
                 this.View = new BallView();
             }
 
-            public Ball(Vector2D position, int speed)
+            public Ball(Vector2D position, Vector2D speed)
                 : base(position, speed)
             {
                 this.View = new BallView();
-            }
-
-            public int Id
-            {
-                get { return id; }
-                set { id = value; }
             }
 
             public BallView View
             {
                 get { return view; }
                 set { view = value; }
+            }
+
+            public override void NotifyObservers()
+            {
+                throw new NotImplementedException();
             }
 
         }

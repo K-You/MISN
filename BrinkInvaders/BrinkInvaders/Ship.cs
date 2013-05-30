@@ -15,20 +15,24 @@ namespace BrickInvaders
         public class Ship : DynamicElement
         {
             private string label;
-            private int height;
-            private int id;
             private int health;
-            private ShipView view;
 
             public Ship(string label)
+                : this(label, new Vector2D(), new Vector2D())
+            {
+            }
+
+            public Ship(string label, Vector2D position)
+                : this(label, position, new Vector2D())
             {
                 this.label = label;
             }
-  
-            public ShipView View
+
+            public Ship(string label, Vector2D position, Vector2D speed)
+                : base(position, speed)
             {
-                get { return view; }
-                set { view = value; }
+                this.label = label;
+                this.AddObserver(new ShipView());
             }
 
             public int Health
@@ -37,22 +41,17 @@ namespace BrickInvaders
                 set { health = value; }
             }
 
-            public int Id
-            {
-                get { return id; }
-            }
-
-            public int Height
-            {
-                get { return height; }
-                set { height = value; }
-            }
-
             public string Label
             {
                 get { return label; }
                 set { label = value; }
             }
+
+            public override void NotifyObservers()
+            {
+ 	            throw new NotImplementedException();
+            }
+
         }
     }
 }

@@ -9,9 +9,13 @@ namespace BrickInvaders
     namespace View
     {
 
-        public class BrickView
+        public class BrickView : Observer
         {
 
+            public void Refresh(Model.Observable m)
+            {
+                throw new NotImplementedException();
+            }
         }
 
     }

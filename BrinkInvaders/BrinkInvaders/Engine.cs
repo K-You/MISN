@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using BrickInvaders.Model;
+using System.Timers;
 
 namespace BrickInvaders
 {
@@ -13,19 +14,46 @@ namespace BrickInvaders
 
         class Engine
         {
-            private Game _game;
+            private static int DEFAULT_INTERVAL = 1000 / 60; //Framerate de 60FPS
+            private static Configuration _configuration;
+            private static ModelInterface _model;
+            private Timer _timer;
 
-            public Game Game
+            public Engine(Configuration c, ModelInterface m)
             {
-                get { return _game; }
-                set { _game = value; }
+                Engine._configuration = c;
+                Engine._model = m;
+                this._timer = new Timer(DEFAULT_INTERVAL);
             }
 
-            public void start() { }
+            public void run()
+            {
+                this._timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+                this._timer.Enabled = true;
+            }
 
-            public void removeBrik() { }
+            private static void OnTimedEvent(object source, ElapsedEventArgs e)
+            {
+                ModelInterface m = Engine._model;
+                int length = m.GetBallCount();
+                int length2 = m.GetBrickCount();
 
+                Rectangle br, b;
 
+                for (int i = 0; i < length; i++)
+                {
+                    b = m.GetBallBoundingBox(i);
+                    for (int j = 0; j < length2; j++)
+                    {
+                        br = m.GetBrickBoundingBox(j);
+                        if (Tools.Utils.intersects(br, b))
+                        {
+                            //TODO Change b speed and e life
+                        }
+                    }
+                    m.moveBall(i);
+                }
+            }
         }
     }
 }

@@ -11,27 +11,24 @@ namespace BrickInvaders
 
         public abstract class DynamicElement : Element
         {
-            private int speed;
+            private Vector2D _speed;
 
-            public DynamicElement()
-            {
-                this.speed = 5; // dur
-            }
-            public DynamicElement(Vector2D position, int speed)
+            public DynamicElement(Vector2D position, Vector2D speed)
                 : base(position)
             {
-                this.speed = speed;
+                this._speed = speed;
             }
 
-            public int Speed
+            public Vector2D Speed
             {
-                get { return speed; }
-                set { speed = value; }
+                get { return _speed; }
+                set { _speed = value; }
             }
 
-            public void Move(int x, int y)
+            //TODO MAY BE CONTROLLER PART
+            public void Move()
             {
-                this.Position += new Vector2D(x, y);
+                this.Position += this._speed;
             }
         }
     }

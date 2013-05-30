@@ -34,6 +34,10 @@ namespace BrickInvaders
                 set { health = value; }
             }
 
+            public override void NotifyObservers()
+            {
+                throw new NotImplementedException();
+            }
            
         }
 

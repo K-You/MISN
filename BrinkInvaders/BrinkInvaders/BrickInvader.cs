@@ -17,13 +17,14 @@ namespace BrickInvaders
             GameMode g = new BasicMode();
             KeyBinding k = new KeyBinding();
             Configuration c = new Configuration(g, k);
-            Model.Player player = new Model.Player("Red the moine");
-            Console.WriteLine(player.Pseudo);
 
+            Player p = new Player("Red the moine");
+            ModelInterface m = new GameModel();
+            c.InitialiseModel(m);
+            m.SetPlayer(p);
 
-            BasicMapGenerator gen = new BasicMapGenerator();
-            gen.test();
-            Console.Read();
+            Engine e = new Engine(c, m);
+            e.run();
         }
 
     }

@@ -3,15 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using BrickInvaders.Model;
+
 namespace BrickInvaders
 {
 
     namespace Controller
     {
 
-        class Configuration
+        class Configuration : ConfigurationInterface
         {
             private GameMode gameMode;
+            private KeyBinding keys;
+
+            public int Width { get; set; }
+            public int LevelHeight { get; set; }
+
+            public Configuration(GameMode gameMode, KeyBinding keys)
+            {
+                this.keys = keys;
+                this.gameMode = gameMode;
+            }
 
             public GameMode GameMode
             {
@@ -19,21 +31,17 @@ namespace BrickInvaders
                 set { gameMode = value; }
             }
 
-            public int Width { get; set; }
-            public int LevelHeight { get; set; }
-
-            private KeyBinding keys;
-
             public KeyBinding Keys
             {
                 get { return keys; }
                 set { keys = value; }
             }
 
-            public Configuration(GameMode gameMode, KeyBinding keys)
+            public void InitialiseModel(ModelInterface m)
             {
-                this.keys = keys;
-                this.gameMode = gameMode;
+                MapGenerator g = this.GameMode.Generator;
+                m.SetBricks(g.generateMap(m.GetLevel(), this.Width, this.LevelHeight));
+                m.SetShip(g.generateShip());
             }
         }
     }

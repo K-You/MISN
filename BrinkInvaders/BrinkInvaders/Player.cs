@@ -11,16 +11,11 @@ namespace BrickInvaders
 
         public class Player
         {
-            private int id;
             private string pseudo;
 
             public Player(string pseudo)
             {
                 this.pseudo = pseudo;
-            }
-            public int Id
-            {
-                get { return id; }
             }
 
             public string Pseudo

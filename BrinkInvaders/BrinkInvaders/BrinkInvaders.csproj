@@ -56,6 +56,11 @@
     <Compile Include="BasicMode.cs" />
     <Compile Include="BrickInvader.cs" />
     <Compile Include="BrickView.cs" />
+    <Compile Include="ConfigurationInterface.cs" />
+    <Compile Include="GameModel.cs" />
+    <Compile Include="ModelInterface.cs" />
+    <Compile Include="Rectangle.cs" />
+    <Compile Include="Tools.cs" />
     <Compile Include="Vector2D.cs" />
     <Compile Include="ComplexBrick.cs" />
     <Compile Include="Configuration.cs" />

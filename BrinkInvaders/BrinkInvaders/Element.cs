@@ -12,58 +12,62 @@ namespace BrickInvaders
         public abstract class Element : Observable
         {
 
-            private int width;
-            private Color color;
-            private Vector2D position;
+            private Rectangle _innerRectangle;
+            private Color _color;
+            private bool _modified = true;
 
             public Element()
-                : this(new Vector2D(10, 10))
+                : this(new Vector2D())
             {
 
             }
+
             public Element(Vector2D position)
-                : this(position, 2)
+                : this(position, new Vector2D(1,1))
             {
             }
-            public Element(Vector2D position, int width)
-                : this(position, width, Color.Blue)
+
+            public Element(Vector2D position, Vector2D dimensions)
+                : this(position, dimensions, Color.Blue)
             {
             }
-            public Element(Vector2D position, int width, Color color)
+
+            public Element(Vector2D position, Vector2D dimensions, Color color)
             {
-                this.position = position;
-                this.color = color;
-                this.width = width;
+                this._innerRectangle.Width = dimensions.X;
+                this._innerRectangle.Height = dimensions.Y;
+                this._innerRectangle.Origin = position;
+                this.Color = color;
             }
 
             public Vector2D Position
             {
-                get { return position; }
-                set { position = value; }
+                get { return _innerRectangle.Origin; }
+                set { _innerRectangle.Origin = value; }
             }
-
 
             public Color Color
             {
-                get { return color; }
-                set { color = value; }
+                get { return _color; }
+                set { _color = value; }
             }
 
-            public int Width
+            public double Width
             {
-                get { return width; }
-                set { width = value; }
+                get { return _innerRectangle.Width; }
+                set { _innerRectangle.Width = value; }
             }
 
-            public void NextStep()
+            public double Height
             {
-                this.position.Y++;
+                get { return _innerRectangle.Height; }
+                set { _innerRectangle.Height = value; }
             }
 
-            public override void NotifyObservers()
+            public Rectangle BoundingBox
             {
+                get { return _innerRectangle; }
             }
-
         }
     }
 }
