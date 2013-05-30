@@ -30,11 +30,11 @@ namespace BrickInvaders
                 c.InitialiseModel(m);
                 m.SetPlayer(p);
 
-                MainFrame frame = new MainFrame();
-                Application.Run(frame);
-
                 Engine e = new Engine(c, m);
                 e.run();
+
+                MainFrame frame = new MainFrame();
+                Application.Run(frame);
             }
             catch (NullReferenceException)
             {

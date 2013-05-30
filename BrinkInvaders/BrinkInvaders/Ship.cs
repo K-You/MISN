@@ -17,19 +17,23 @@ namespace BrickInvaders
             private string label;
             private int health;
 
+            private static Vector2D DEFAULT_POSITION = new Vector2D();
+            private static Vector2D DEFAULT_SPEED = new Vector2D();
+            private static Vector2D DEFAULT_DIMENSIONS = new Vector2D();
+
             public Ship(string label)
-                : this(label, new Vector2D(), new Vector2D())
+                : this(label, DEFAULT_POSITION, DEFAULT_SPEED, DEFAULT_DIMENSIONS)
             {
             }
 
             public Ship(string label, Vector2D position)
-                : this(label, position, new Vector2D())
+                : this(label, position, DEFAULT_SPEED, DEFAULT_DIMENSIONS)
             {
                 this.label = label;
             }
 
-            public Ship(string label, Vector2D position, Vector2D speed)
-                : base(position, speed)
+            public Ship(string label, Vector2D position, Vector2D speed, Vector2D dimensions)
+                : base(position, speed, dimensions)
             {
                 this.label = label;
                 this.AddObserver(new ShipView());

@@ -13,8 +13,8 @@ namespace BrickInvaders
         {
             private Vector2D _speed;
 
-            public DynamicElement(Vector2D position, Vector2D speed)
-                : base(position)
+            public DynamicElement(Vector2D position, Vector2D speed, Vector2D dimensions)
+                : base(position, dimensions)
             {
                 this._speed = speed;
             }

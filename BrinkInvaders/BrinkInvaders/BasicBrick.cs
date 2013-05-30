@@ -10,22 +10,24 @@ namespace BrickInvaders
     namespace Model
     {
 
-        public class BasicBrick : Element
+        public class BasicBrick : DynamicElement
         {
             private int health;
+            private static Vector2D DEFAULT_SPEED = new Vector2D(0, -1); 
 
             public BasicBrick(Vector2D position)
-                : this(position, 2, 1, Color.Blue)
-            {
-            }
+                : this(position, DEFAULT_SPEED)
+            { }
 
-            public BasicBrick(Vector2D position, int width, int health, Color color)
-                : base(position)
+            public BasicBrick(Vector2D position, Vector2D speed)
+                : this(position, speed, new Vector2D(1,1), 1, Color.Blue)
+            { }
+
+            public BasicBrick(Vector2D position, Vector2D speed, Vector2D dimensions, int health, Color color)
+                : base(position, speed, dimensions)
             {
-                this.Width = width;
                 this.health = health;
                 this.Color = color;
-                this.Position = position;
             }
 
             public int Health

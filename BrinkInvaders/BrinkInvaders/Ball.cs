@@ -14,30 +14,33 @@ namespace BrickInvaders
 
         public class Ball : DynamicElement
         {
-            private BallView view;
+            private static double DEFAULT_RADIUS = 1;
+            private static int DEFAULT_DAMAGE = 1;
+
+            private int _damage;
 
             public Ball()
-                : this(new Vector2D(), new Vector2D())
+                : this(new Vector2D(), new Vector2D(), new Vector2D(DEFAULT_RADIUS, DEFAULT_RADIUS), DEFAULT_DAMAGE)
             {
             }
 
-            public Ball(Vector2D position, Vector2D speed)
-                : base(position, speed)
+            public Ball(Vector2D position, Vector2D speed, Vector2D dimensions, int damage)
+                : base(position, speed, dimensions)
             {
-                this.View = new BallView();
+                this.Damage = damage;
+                this.AddObserver(new BallView());
             }
 
-            public BallView View
+            public int Damage
             {
-                get { return view; }
-                set { view = value; }
+                get { return _damage; }
+                set { _damage = value; }
             }
 
             public override void NotifyObservers()
             {
                 throw new NotImplementedException();
             }
-
         }
     }
 }

@@ -12,7 +12,7 @@ namespace BrickInvaders
 
         public class ComplexBrick : BasicBrick
         {
-            public ComplexBrick(Vector2D position) : base(position) { }
+            public ComplexBrick(Vector2D position, Vector2D speed) : base(position, speed) { }
         }
     }
 }

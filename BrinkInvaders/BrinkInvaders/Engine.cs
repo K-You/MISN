@@ -34,6 +34,7 @@ namespace BrickInvaders
 
             private static void OnTimedEvent(object source, ElapsedEventArgs e)
             {
+
                 ModelInterface m = Engine._model;
                 int length = m.GetBallCount();
                 int length2 = m.GetBrickCount();
@@ -48,11 +49,16 @@ namespace BrickInvaders
                         br = m.GetBrickBoundingBox(j);
                         if (Tools.Utils.intersects(br, b))
                         {
-                            //TODO Change b speed and e life
+                            m.DamageBrick(j, m.GetBallDamage(i));
+
+                            //TODO use elastic choc > check the way the objects move
+                            m.SetBallSpeed(i, m.GetBallSpeed(i) + m.GetBrickSpeed(j));
                         }
                     }
                     m.moveBall(i);
                 }
+
+                //TODO what about ball between-ball collisions?
             }
         }
     }

@@ -14,7 +14,6 @@ namespace BrickInvaders
         public class Configuration : ConfigurationInterface
         {
             private GameMode gameMode;
-            private Ship ship;
             private KeyBinding keys;
 
             private Vector2D _dimensions = new Vector2D(7,11);
