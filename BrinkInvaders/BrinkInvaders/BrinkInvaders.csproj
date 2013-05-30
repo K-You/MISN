@@ -67,6 +67,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Launcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Launcher.Designer.cs">
+      <DependentUpon>Launcher.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameModel.cs" />
     <Compile Include="ModelInterface.cs" />
     <Compile Include="Rectangle.cs" />
@@ -94,6 +100,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Launcher.resx">
+      <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -70,8 +70,12 @@
             this.modeBox.AutoCompleteCustomSource.AddRange(new string[] {
             "High Speed",
             "All in"});
+            this.modeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.modeBox.Font = new System.Drawing.Font("Xirod", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modeBox.FormattingEnabled = true;
+            this.modeBox.Items.AddRange(new object[] {
+            "High Speed",
+            "All In"});
             this.modeBox.Location = new System.Drawing.Point(192, 99);
             this.modeBox.Name = "modeBox";
             this.modeBox.Size = new System.Drawing.Size(121, 22);
@@ -89,10 +93,16 @@
             // 
             // shipBox
             // 
+            this.shipBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.shipBox.Font = new System.Drawing.Font("Xirod", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shipBox.FormattingEnabled = true;
+            this.shipBox.Items.AddRange(new object[] {
+            "Vaisseau1",
+            "Vaisseau2",
+            "Vaisseau3"});
             this.shipBox.Location = new System.Drawing.Point(192, 159);
             this.shipBox.Name = "shipBox";
-            this.shipBox.Size = new System.Drawing.Size(121, 21);
+            this.shipBox.Size = new System.Drawing.Size(121, 22);
             this.shipBox.TabIndex = 5;
             // 
             // button1

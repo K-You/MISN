@@ -16,8 +16,8 @@ namespace BrickInvaders
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+      //      Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Launcher());
 
             GameMode g = new BasicMode();
             KeyBinding k = new KeyBinding();
