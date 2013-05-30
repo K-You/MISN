@@ -16,9 +16,16 @@ namespace BrickInvaders
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+        private string pseudo;
+        private string modeName;
+        private string shipName;
 
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.pseudo = pseudoBox.Text;
+            this.modeName = modeBox.Text;
+            this.shipName = shipBox.Text;
         }
     }
 }
