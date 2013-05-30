@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 using BrickInvaders.Model;
 using BrickInvaders.Controller;
-using System.Windows.Forms;
+using BrickInvaders.View;
 
 namespace BrickInvaders
 {
@@ -28,6 +29,9 @@ namespace BrickInvaders
                 ModelInterface m = new GameModel();
                 c.InitialiseModel(m);
                 m.SetPlayer(p);
+
+                MainFrame frame = new MainFrame();
+                Application.Run(frame);
 
                 Engine e = new Engine(c, m);
                 e.run();
