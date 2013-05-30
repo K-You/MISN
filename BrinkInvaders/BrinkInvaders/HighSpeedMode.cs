@@ -5,8 +5,16 @@ using System.Text;
 
 namespace BrickInvaders
 {
-    /*class HighSpeedMode:GameMode
+    namespace Controller
     {
-        
-    }*/
+
+        class HighSpeedMode : GameMode
+        {
+            public HighSpeedMode()
+                : base(new BasicMapGenerator(), "HighSpeed mode")
+            {
+
+            }
+        }
+    }
 }

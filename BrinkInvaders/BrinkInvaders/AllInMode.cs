@@ -9,9 +9,14 @@ namespace BrickInvaders
     namespace Controller
     {
 
-        /*class AllInMode:GameMode
+        class AllInMode:GameMode
         {
-        }*/
+            public AllInMode()
+                : base(new BasicMapGenerator(), "AllIn mode")
+            {
+
+            }
+        }
 
     }
 }
