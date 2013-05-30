@@ -29,7 +29,7 @@ namespace BrickInvaders
             this.pseudo = pseudoBox.Text;
             this.modeName = modeBox.Text;
             this.shipName = shipBox.Text;
-            this.configuration = new Configuration(new BasicMode(), new Ship(this.shipName)); // à modifier new Mode
+            this.configuration = new Configuration(new BasicMode(), new KeyBinding()); // à modifier new Mode
             this.Close();
             }
         }

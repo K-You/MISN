@@ -20,12 +20,6 @@ namespace BrickInvaders
             private Vector2D _dimensions = new Vector2D(7,11);
             private int _levelheight;
 
-            public Configuration(GameMode gameMode, Ship ship)
-            {
-                this.gameMode = gameMode;
-                this.ship = ship;
-            }
-
             public int LevelHeight
             {
                 get { return _levelheight; }
