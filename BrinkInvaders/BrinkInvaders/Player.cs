@@ -14,10 +14,9 @@ namespace BrickInvaders
             private int id;
             private string pseudo;
 
-            public Player(string pseudo, int id)
+            public Player(string pseudo)
             {
                 this.pseudo = pseudo;
-                this.id = id;
             }
             public int Id
             {

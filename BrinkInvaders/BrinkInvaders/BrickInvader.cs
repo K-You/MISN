@@ -17,7 +17,7 @@ namespace BrickInvaders
             GameMode g = new BasicMode();
             KeyBinding k = new KeyBinding();
             Configuration c = new Configuration(g, k);
-            Model.Player player = new Model.Player("Red the moine", 1);
+            Model.Player player = new Model.Player("Red the moine");
             Console.WriteLine(player.Pseudo);
 
 
