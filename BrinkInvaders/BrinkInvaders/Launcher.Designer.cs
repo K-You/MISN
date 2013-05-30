@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
             this.label1 = new System.Windows.Forms.Label();
             this.pseudoBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,7 +53,7 @@
             this.pseudoBox.Font = new System.Drawing.Font("Xirod", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pseudoBox.Location = new System.Drawing.Point(192, 39);
             this.pseudoBox.Name = "pseudoBox";
-            this.pseudoBox.Size = new System.Drawing.Size(121, 21);
+            this.pseudoBox.Size = new System.Drawing.Size(139, 21);
             this.pseudoBox.TabIndex = 1;
             // 
             // label2
@@ -76,7 +77,7 @@
             "High Speed"});
             this.modeBox.Location = new System.Drawing.Point(192, 99);
             this.modeBox.Name = "modeBox";
-            this.modeBox.Size = new System.Drawing.Size(121, 22);
+            this.modeBox.Size = new System.Drawing.Size(139, 22);
             this.modeBox.TabIndex = 3;
             // 
             // label3
@@ -100,7 +101,7 @@
             "Vaisseau3"});
             this.shipBox.Location = new System.Drawing.Point(192, 159);
             this.shipBox.Name = "shipBox";
-            this.shipBox.Size = new System.Drawing.Size(121, 22);
+            this.shipBox.Size = new System.Drawing.Size(139, 22);
             this.shipBox.TabIndex = 5;
             // 
             // button1
@@ -118,7 +119,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 306);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(372, 306);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.shipBox);
             this.Controls.Add(this.label3);
