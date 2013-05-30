@@ -5,15 +5,20 @@ using System.Text;
 
 using BrickInvaders.Model;
 using BrickInvaders.Controller;
+using System.Windows.Forms;
 
 namespace BrickInvaders
 {
 
     class BrickInvaders
     {
-
+        [STAThread]
         static void Main(string[] args)
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
+
             GameMode g = new BasicMode();
             KeyBinding k = new KeyBinding();
             Configuration c = new Configuration(g, k);
