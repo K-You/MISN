@@ -115,7 +115,7 @@
                 this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
                 this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-                this.ClientSize = new System.Drawing.Size(372, 306);
+                this.ClientSize = new System.Drawing.Size(372, 311);
                 this.Controls.Add(this.button1);
                 this.Controls.Add(this.shipBox);
                 this.Controls.Add(this.label3);
@@ -123,6 +123,7 @@
                 this.Controls.Add(this.label2);
                 this.Controls.Add(this.pseudoBox);
                 this.Controls.Add(this.label1);
+                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
                 this.Name = "Launcher";
                 this.Text = "Launcher";
                 this.Load += new System.EventHandler(this.Launcher_Load);
