@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BrickInvaders.Model;
 
 namespace BrickInvaders
 {
@@ -11,9 +12,13 @@ namespace BrickInvaders
 
         public class BallView : Observer
         {
-            public void Refresh(Model.Observable m)
+            public void refresh(Observable o)
             {
-                throw new NotImplementedException();
+                if (o is Ball)
+                { 
+                
+                
+                }
             }
         }
 

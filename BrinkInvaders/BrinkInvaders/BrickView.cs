@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using BrickInvaders.View;
 namespace BrickInvaders
 {
 
     namespace View
     {
 
-        public class BrickView : Observer
+        public class BrickView : ElementView
         {
 
-            public void Refresh(Model.Observable m)
+            public void refresh(Model.Observable m)
             {
                 throw new NotImplementedException();
             }

@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Drawing;
+using BrickInvaders.Model;
+using BrickInvaders.View;
 
-namespace BrinkInvaders
+namespace View
 {
-    public abstract class ElementView:Image
-    {
-        public Color MyProperty { get; set; };
-        public Point Center {get;set};
+    
 
+    public abstract class ElementView : Observer
+            {
+    public WorldView worldWiew { get; set; }
+    
+
+
+        public  ElementView(WorldView W)
+    {
 
     }
+       public  abstract void refresh(Observable o);
+
+    }
+
 }
