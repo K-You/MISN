@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
+using BrickInvaders.View;
+
 namespace BrickInvaders
 {
 
@@ -33,12 +35,15 @@ namespace BrickInvaders
             public int Health
             {
                 get { return health; }
-                set { health = value; }
+                set { health = value; this.NotifyObservers(); }
             }
 
             public override void NotifyObservers()
             {
-                throw new NotImplementedException();
+                foreach (Observer obs in this._observers)
+                {
+                    obs.Refresh(this);
+                }
             }
            
         }

@@ -27,11 +27,13 @@ namespace BrickInvaders
             public void SetBricks(List<BasicBrick> l)
             {
                 this._map.Bricks = l;
+                this.NotifyObservers();
             }
 
             public void SetShip(Ship s)
             {
                 this._map.Ship = s;
+                this.NotifyObservers();
             }
 
             public int GetBallCount()
@@ -39,9 +41,9 @@ namespace BrickInvaders
                 return this._map.Balls.Count;
             }
 
-            public Rectangle GetBallBoundingBox(int index)
+            public Ball GetBall(int index)
             {
-                return this._map.Balls[index].BoundingBox;
+                return this._map.Balls[index];
             }
 
             public int GetBrickCount()
@@ -49,47 +51,9 @@ namespace BrickInvaders
                 return this._map.Bricks.Count;
             }
 
-            public Rectangle GetBrickBoundingBox(int index)
+            public BasicBrick GetBrick(int index)
             {
-                return this._map.Bricks[index].BoundingBox;
-            }
-
-            public void moveBall(int index)
-            {
-                this._map.Balls[index].Move();
-            }
-
-            public Vector2D GetBallSpeed(int index)
-            {
-                return this._map.Balls[index].Speed;
-            }
-
-            public void SetBallSpeed(int index, Vector2D speed)
-            {
-                this._map.Balls[index].Speed = speed;
-            }
-
-            public Vector2D GetBrickSpeed(int index)
-            {
-                return this._map.Bricks[index].Speed;
-            }
-
-            public void DamageBrick(int index, int damage)
-            {
-                BasicBrick b = this._map.Bricks[index];
-
-                b.Health -= damage;
-                if (b.Health <= 0)
-                {
-                    this._map.Bricks.Remove(b);
-                    this._brokenBriks++;
-                }
-                
-            }
-
-            public int GetBallDamage(int index)
-            {
-                return this._map.Balls[index].Damage;
+                return this._map.Bricks[index];
             }
 
             public int GetDestroyedBricks()
@@ -105,13 +69,14 @@ namespace BrickInvaders
             public void SetPlayer(Player p)
             {
                 this._player = p;
+                this.NotifyObservers();
             }
 
             public Player GetPlayer()
             {
                 return this._player;
             }
-        
+
             public int GetLevel()
             {
                 return this._level;
@@ -119,7 +84,10 @@ namespace BrickInvaders
 
             public override void NotifyObservers()
             {
-                throw new NotImplementedException();
+                foreach (Observer obs in this._observers)
+                {
+                    obs.Refresh(this);
+                }
             }
         }
     }

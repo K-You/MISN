@@ -24,37 +24,37 @@ namespace BrickInvaders
             public Map Map
             {
                 get { return _map; }
-                set { _map = value; }
+                set { _map = value; this.NotifyObservers(); }
             }
 
             public Configuration Configuration
             {
                 get { return _configuration; }
-                set { _configuration = value; }
+                set { _configuration = value; this.NotifyObservers(); }
             }
 
             public int Level
             {
                 get { return _level; }
-                set { _level = value; }
+                set { _level = value; this.NotifyObservers(); }
             }
 
             public Player Player
             {
                 get { return _player; }
-                set { _player = value; }
+                set { _player = value; this.NotifyObservers(); }
             }
 
             public int BrokenBriks
             {
                 get { return _brokenBriks; }
-                set { _brokenBriks = value; }
+                set { _brokenBriks = value; this.NotifyObservers(); }
             }
 
             public int Time
             {
                 get { return _time; }
-                set { _time = value; }
+                set { _time = value; this.NotifyObservers(); }
             }
 
             public override void NotifyObservers()

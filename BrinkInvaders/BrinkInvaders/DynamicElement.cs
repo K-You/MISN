@@ -19,16 +19,16 @@ namespace BrickInvaders
                 this._speed = speed;
             }
 
+            public DynamicElement(Vector2D position, Vector2D speed, Vector2D dimensions, int mass)
+                : base(position, dimensions, mass)
+            {
+                this._speed = speed;
+            }
+
             public Vector2D Speed
             {
                 get { return _speed; }
-                set { _speed = value; }
-            }
-
-            //TODO MAY BE CONTROLLER PART
-            public void Move()
-            {
-                this.Position += this._speed;
+                set { _speed = value; this.NotifyObservers(); }
             }
         }
     }

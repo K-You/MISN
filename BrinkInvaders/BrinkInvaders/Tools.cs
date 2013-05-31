@@ -14,7 +14,7 @@ namespace BrickInvaders
         class Utils
         {
 
-            public static bool intersects(Rectangle r1, Rectangle r2)
+            public static bool Intersects(Rectangle r1, Rectangle r2)
             {
                 double minX1 = r1.Origin.X;
                 double minY1 = r1.Origin.Y;
@@ -34,7 +34,7 @@ namespace BrickInvaders
                 return maxgauche < mindroit && maxbas < minhaut;
             }
 
-            public static bool contains(Rectangle e, double x, double y)
+            public static bool Contains(Rectangle e, double x, double y)
             {
                 double minX = e.Origin.X;
                 double minY = e.Origin.Y;
@@ -44,9 +44,14 @@ namespace BrickInvaders
                 return ((x >= minX && x <= maxX) && (y >= minY && y <= maxY));
             }
 
-            public static bool contains(Rectangle e, Vector2D position)
+            public static bool Contains(Rectangle e, Vector2D position)
             {
-                return Utils.contains(e, position.X, position.Y);
+                return Utils.Contains(e, position.X, position.Y);
+            }
+
+            public static Vector2D ChocResult(DynamicElement e1, DynamicElement e2)
+            {
+                return (e1.Speed * e1.Mass + e2.Speed * e2.Mass) / (e1.Mass + e2.Mass);
             }
 
         }

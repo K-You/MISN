@@ -76,6 +76,11 @@ namespace BrickInvaders
                 return new Vector2D(v1.X * coeff, v1.Y * coeff);
             }
 
+            public static Vector2D operator /(Vector2D v1, double coeff)
+            {
+                return new Vector2D(v1.X / coeff, v1.Y / coeff);
+            }
+
             public object Clone()
             {
                 return new Vector2D(this.X, this.Y);

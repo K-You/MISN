@@ -42,18 +42,21 @@ namespace BrickInvaders
             public int Health
             {
                 get { return health; }
-                set { health = value; }
+                set { health = value; this.NotifyObservers(); }
             }
 
             public string Label
             {
                 get { return label; }
-                set { label = value; }
+                set { label = value; this.NotifyObservers(); }
             }
 
             public override void NotifyObservers()
             {
- 	            throw new NotImplementedException();
+                foreach (Observer obs in this._observers)
+                {
+                    obs.Refresh(this);
+                }
             }
 
         }

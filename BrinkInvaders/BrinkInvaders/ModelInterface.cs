@@ -17,17 +17,10 @@ namespace BrickInvaders
             void SetShip(Ship s);
 
             int GetBallCount();
-            Rectangle GetBallBoundingBox(int index);
-            Vector2D GetBallSpeed(int index);
-            void SetBallSpeed(int index, Vector2D speed);
-            int GetBallDamage(int index);
+            Ball GetBall(int index);
 
             int GetBrickCount();
-            Rectangle GetBrickBoundingBox(int index);
-            Vector2D GetBrickSpeed(int index);
-
-            void DamageBrick(int index, int damage);
-            void moveBall(int index);
+            BasicBrick GetBrick(int index);
 
             //SCORE PART
             int GetDestroyedBricks();

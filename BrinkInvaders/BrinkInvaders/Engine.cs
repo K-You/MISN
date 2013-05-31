@@ -39,23 +39,25 @@ namespace BrickInvaders
                 int length = m.GetBallCount();
                 int length2 = m.GetBrickCount();
 
-                Rectangle br, b;
+                Ball b;
+                BasicBrick bb;
 
                 for (int i = 0; i < length; i++)
                 {
-                    b = m.GetBallBoundingBox(i);
+
+                    b = m.GetBall(i);
                     for (int j = 0; j < length2; j++)
                     {
-                        br = m.GetBrickBoundingBox(j);
-                        if (Tools.Utils.intersects(br, b))
+                        bb = m.GetBrick(j);
+                        if (Tools.Utils.Intersects(bb.BoundingBox, b.BoundingBox))
                         {
-                            m.DamageBrick(j, m.GetBallDamage(i));
-
+                            bb.Health -= b.Damage;
                             //TODO use elastic choc > check the way the objects move
-                            m.SetBallSpeed(i, m.GetBallSpeed(i) + m.GetBrickSpeed(j));
+                            Tools.Utils.ChocResult(b, bb);
+                            b.Speed += bb.Speed;
                         }
                     }
-                    m.moveBall(i);
+                    b.Position += b.Speed;
                 }
 
                 //TODO what about ball between-ball collisions?
