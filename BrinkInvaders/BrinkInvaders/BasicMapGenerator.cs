@@ -15,7 +15,7 @@ namespace BrickInvaders
         public class BasicMapGenerator : MapGenerator
         {
             public const int MINWIDTH = 6;
-            public const int MINHEIGHT = 6;
+            public const int MINHEIGHT = 10;
             public BasicMapGenerator()
             {
                 this.rand = new Random();
