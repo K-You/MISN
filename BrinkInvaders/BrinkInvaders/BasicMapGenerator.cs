@@ -23,7 +23,7 @@ namespace BrickInvaders
             private Random rand;
             public List<BasicBrick> generateMap(int level, int width, int height)
             {
-                if (MINWIDTH <= 6 && MINHEIGHT <= 10)
+                if (width <= MINWIDTH && height <= MINHEIGHT)
                 {
                     throw new ArgumentOutOfRangeException();
                 }
@@ -101,6 +101,9 @@ namespace BrickInvaders
             {
                 int width = 40, height = 60;
                 List<BasicBrick> list = this.generateMap(p, width, height);
+
+                Console.WriteLine(list.Count);
+
                 char[,] lines = new char[height, width];
                 foreach (BasicBrick item in list)
                 {
