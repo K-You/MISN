@@ -17,9 +17,20 @@ namespace BrickInvaders
             public GameMapView(ContainerControl frame)
             {
                 this.frame = frame;
-
+                Button b = new Button();
+                b.Click += new System.EventHandler(test);
+                frame.Controls.Add(b);
+               
             }
 
+
+
+            public void test(object sender, EventArgs e)
+            {
+                TextBox t = new TextBox();
+                t.Width = 500;
+                this.frame.Controls.Add(t);
+            }
             public override void Refresh(Observable o)
             {
                 GameModel m = (GameModel)o;
