@@ -11,7 +11,7 @@ namespace BrickInvaders
     {
 
 
-        public abstract class ElementView : Control, Observer
+        public abstract class ElementView : PictureBox, Observer
         {
             public WorldView worldWiew { get; set; }
 
@@ -28,6 +28,9 @@ namespace BrickInvaders
             public virtual void Refresh(Observable o)
             {
                 Element e = (Element)o;
+                this.Width = (int)e.Width;
+                this.Height = (int)e.Height;
+                this.Location = new System.Drawing.Point((int)e.Position.X, (int)e.Position.Y);
             }
 
         }
