@@ -39,10 +39,11 @@
                 this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
                 this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-                this.ClientSize = new System.Drawing.Size(466, 370);
+                this.ClientSize = new System.Drawing.Size(379, 322);
                 this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
                 this.Name = "MainFrame";
                 this.Text = "MainFrame";
+                this.Load += new System.EventHandler(this.MainFrame_Load);
                 this.ResumeLayout(false);
 
             }

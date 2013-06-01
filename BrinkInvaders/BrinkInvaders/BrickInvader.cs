@@ -34,6 +34,8 @@ namespace BrickInvaders
                 e.run();
 
                 MainFrame frame = new MainFrame();
+                WorldView view = new GameMapView(frame);
+                Console.WriteLine("launch");
                 Application.Run(frame);
             }
             catch (NullReferenceException)

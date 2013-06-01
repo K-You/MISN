@@ -63,6 +63,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="ConfigurationInterface.cs" />
     <Compile Include="ElementView.cs" />
+    <Compile Include="GameMapView.cs" />
     <Compile Include="Launcher.cs">
       <SubType>Form</SubType>
     </Compile>

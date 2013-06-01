@@ -12,7 +12,7 @@ namespace BrickInvaders
 
         public class BallView : Observer
         {
-            public void refresh(Observable o)
+            public void Refresh(Observable o)
             {
                 if (o is Ball)
                 { 

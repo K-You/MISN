@@ -11,10 +11,8 @@ namespace BrickInvaders
 
         {
 
-           public void refresh(Observable m)
-            {
+           public abstract void Refresh(Observable o);
             
-            }
         }
     }
 }

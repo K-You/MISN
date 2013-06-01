@@ -4,23 +4,25 @@ using System.Linq;
 using System.Text;
 using BrickInvaders.Model;
 using BrickInvaders.View;
-
-namespace View
+namespace BrickInvaders
 {
-    
-
-    public abstract class ElementView : Observer
-            {
-    public WorldView worldWiew { get; set; }
-    
-
-
-        public  ElementView(WorldView W)
+    namespace View
     {
 
-    }
-       public  abstract void refresh(Observable o);
 
+        public abstract class ElementView : Observer
+        {
+            public WorldView worldWiew { get; set; }
+
+
+
+            public ElementView(WorldView W)
+            {
+
+            }
+            public abstract void Refresh(Observable o);
+
+        }
     }
 
 }
