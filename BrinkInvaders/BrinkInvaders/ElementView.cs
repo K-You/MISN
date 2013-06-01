@@ -11,7 +11,7 @@ namespace BrickInvaders
     {
 
 
-        public abstract class ElementView : PictureBox, Observer
+        public  class ElementView : PictureBox, Observer
         {
             public WorldView worldWiew { get; set; }
 
