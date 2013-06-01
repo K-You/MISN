@@ -60,7 +60,9 @@
     <Compile Include="BasicMode.cs" />
     <Compile Include="BrickInvader.cs" />
     <Compile Include="BrickView.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="ConfigurationInterface.cs" />
+    <Compile Include="ElementView.cs" />
     <Compile Include="Launcher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +103,7 @@
     <Compile Include="Score.cs" />
     <Compile Include="Observable.cs" />
     <Compile Include="Observer.cs" />
+    <Compile Include="WorldView.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Launcher.resx">

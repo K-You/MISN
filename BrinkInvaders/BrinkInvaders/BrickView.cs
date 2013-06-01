@@ -9,7 +9,7 @@ namespace BrickInvaders
     namespace View
     {
 
-        public class BrickView : ElementView
+        public class BrickView //: ElementView
         {
 
             public void refresh(Model.Observable m)
