@@ -12,9 +12,9 @@ namespace BrickInvaders
     {
         public class GameMapView : WorldView
         {
-            public Form frame { get; set; }
+            public ContainerControl frame { get; set; }
             List<Element> elements;
-            public GameMapView(Form frame)
+            public GameMapView(ContainerControl frame)
             {
                 this.frame = frame;
 
@@ -23,6 +23,8 @@ namespace BrickInvaders
             public override void Refresh(Observable o)
             {
                 GameModel m = (GameModel)o;
+
+            
                 int max = m.GetBallCount();
                 for (int i = 0; i < max; i++)
                 {

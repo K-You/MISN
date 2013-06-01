@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BrickInvaders.View;
-namespace BrickInvaders
-{
+using BrickInvaders.Model;
 
-    namespace View
+    namespace BrickInvaders
     {
-
-        public class BrickView //: ElementView
+        namespace View
         {
 
-            public void refresh(Model.Observable m)
+            public class BrickView : ElementView
             {
-                throw new NotImplementedException();
+
+                public override void Refresh(Observable m)
+            {
+                BasicBrick brick = (BasicBrick)m;
+
             }
+            }
+
         }
 
     }
-
-}

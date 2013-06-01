@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using System.Linq;
 using System.Text;
 using BrickInvaders.Model;
@@ -10,17 +11,26 @@ namespace BrickInvaders
     {
 
 
-        public abstract class ElementView : Observer
+        public abstract class ElementView : Control,Observer
         {
             public WorldView worldWiew { get; set; }
 
-
-
-            public ElementView(WorldView W)
+            public ElementView()
             {
 
             }
-            public abstract void Refresh(Observable o);
+
+            public ElementView(WorldView W):base()
+            {
+               
+                this.worldWiew = W;
+            }
+            public virtual void Refresh(Observable o)
+            {
+                Element e = (Element)o;
+                
+            
+            }
 
         }
     }
