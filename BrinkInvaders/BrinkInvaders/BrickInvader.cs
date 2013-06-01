@@ -30,12 +30,13 @@ namespace BrickInvaders
                 c.InitialiseModel(m);
                 m.SetPlayer(p);
 
+                MainFrame frame = new MainFrame();
+                WorldView view = new GameMapView(frame);
+                m.AddObserver(view);
+
                 Engine e = new Engine(c, m);
                 e.run();
 
-                MainFrame frame = new MainFrame();
-                WorldView view = new GameMapView(frame);
-                Console.WriteLine("launch");
                 Application.Run(frame);
             }
             catch (NullReferenceException)

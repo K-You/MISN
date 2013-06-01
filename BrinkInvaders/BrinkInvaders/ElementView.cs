@@ -11,7 +11,7 @@ namespace BrickInvaders
     {
 
 
-        public abstract class ElementView : Control,Observer
+        public abstract class ElementView : Control, Observer
         {
             public WorldView worldWiew { get; set; }
 
@@ -28,8 +28,6 @@ namespace BrickInvaders
             public virtual void Refresh(Observable o)
             {
                 Element e = (Element)o;
-                
-            
             }
 
         }

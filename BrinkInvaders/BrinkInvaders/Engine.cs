@@ -39,25 +39,28 @@ namespace BrickInvaders
                 int length = m.GetBallCount();
                 int length2 = m.GetBrickCount();
 
-                Ball b;
-                BasicBrick bb;
+                Vector2D bspeed, bbspeed;
+                bool chocked;
+                int j;
 
                 for (int i = 0; i < length; i++)
                 {
-
-                    b = m.GetBall(i);
-                    for (int j = 0; j < length2; j++)
+                    bspeed = m.GetBallSpeed(i);
+                    j = 0;
+                    chocked = false;
+                    while (j < length2 && !chocked)
                     {
-                        bb = m.GetBrick(j);
-                        if (Tools.Utils.Intersects(bb.BoundingBox, b.BoundingBox))
+                        if (Tools.Utils.Intersects(m.GetBallBoundingBox(i), m.GetBrickBoundingBox(j)))
                         {
-                            bb.Health -= b.Damage;
+                            chocked = true;
+                            bbspeed = m.GetBrickSpeed(j);
+                            m.SetBrickHealth(j, m.GetBrickHealth(j) - m.GetBallDamage(i));
                             //TODO use elastic choc > check the way the objects move
-                            Tools.Utils.ChocResult(b, bb);
-                            b.Speed += bb.Speed;
+                            m.SetBallSpeed(i, Tools.Utils.ChocResult(bspeed, m.GetBallMass(i), bbspeed, m.GetBrickMass(j)));
                         }
+                        j++;
                     }
-                    b.Position += b.Speed;
+                    m.SetBallPosition(i, m.GetBallPosition(i) + bspeed);
                 }
 
                 //TODO what about ball between-ball collisions?

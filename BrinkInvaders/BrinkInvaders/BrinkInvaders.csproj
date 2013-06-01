@@ -62,7 +62,6 @@
     <Compile Include="BrickView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="ConfigurationInterface.cs" />
     <Compile Include="ElementView.cs">
       <SubType>Component</SubType>

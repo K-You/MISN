@@ -49,9 +49,9 @@ namespace BrickInvaders
                 return Utils.Contains(e, position.X, position.Y);
             }
 
-            public static Vector2D ChocResult(DynamicElement e1, DynamicElement e2)
+            public static Vector2D ChocResult(Vector2D v1, int mass1, Vector2D v2, int mass2)
             {
-                return (e1.Speed * e1.Mass + e2.Speed * e2.Mass) / (e1.Mass + e2.Mass);
+                return (v1 * mass1 + v2 * mass2) / (mass1 + mass2);
             }
 
         }

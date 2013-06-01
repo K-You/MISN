@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using BrickInvaders.View;
 using BrickInvaders.Model;
+using System.Drawing;
 namespace BrickInvaders
 {
     namespace View
@@ -33,16 +34,18 @@ namespace BrickInvaders
             }
             public override void Refresh(Observable o)
             {
+                Console.Write("Refreshing GameMapView");
+
                 GameModel m = (GameModel)o;
 
             
                 int max = m.GetBallCount();
                 for (int i = 0; i < max; i++)
                 {
-                    Ball b = m.GetBall(i);
+                    Vector2D position = m.GetBallPosition(i);
                     frame.Controls.Add(new CheckBox()
                     {
-                        Location = new System.Drawing.Point((int)b.Position.X, (int)b.Position.Y),
+                        Location = new System.Drawing.Point((int)position.X, (int)position.Y),
                         Text = string.Empty
                     });
                 }
@@ -50,25 +53,19 @@ namespace BrickInvaders
                 max = m.GetBrickCount();
                 for (int i = 0; i < max; i++)
                 {
-                    BasicBrick b = m.GetBrick(i);
+                    Color c = m.GetBrickColor(i);
+                    Vector2D dimension = m.GetBrickDimensions(i);
+                    Vector2D position = m.GetBrickPosition(i);
                     frame.Controls.Add(new TextBox()
                     {
-                        Width = (int)b.Width,
-                        Height = (int)b.Height,
-                        BackColor = b.Color,
+                        Width = (int)dimension.X,
+                        Height = (int)dimension.Y,
+                        BackColor = c,
 
-                        Location = new System.Drawing.Point((int)b.Position.X, (int)b.Position.Y),
+                        Location = new System.Drawing.Point((int)position.X, (int)position.Y),
                         Text = string.Empty
                     });
-
-                   
-
-
-
-
                 }
-
-
             }
         }
     }

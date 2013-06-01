@@ -4,21 +4,20 @@ using System.Linq;
 using System.Text;
 using BrickInvaders.Model;
 
-    namespace BrickInvaders
+namespace BrickInvaders
+{
+    namespace View
     {
-        namespace View
+
+        public class BrickView : ElementView
         {
 
-            public class BrickView : ElementView
-            {
-
-                public override void Refresh(Observable m)
+            public override void Refresh(Observable m)
             {
                 BasicBrick brick = (BasicBrick)m;
-
             }
-            }
-
         }
 
     }
+
+}

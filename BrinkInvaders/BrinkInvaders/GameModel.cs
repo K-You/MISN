@@ -5,13 +5,14 @@ using System.Text;
 
 using BrickInvaders.Controller;
 using BrickInvaders.View;
+using System.Drawing;
 
 namespace BrickInvaders
 {
     namespace Model
     {
 
-        class GameModel : Observable, ModelInterface
+        class GameModel : ModelInterface
         {
             private long _time;
             private int _brokenBriks;
@@ -24,60 +25,50 @@ namespace BrickInvaders
                 this._map = new Map();
             }
 
-            public void SetBricks(List<BasicBrick> l)
+            public override void SetBricks(List<BasicBrick> l)
             {
                 this._map.Bricks = l;
                 this.NotifyObservers();
             }
 
-            public void SetShip(Ship s)
+            public override void SetShip(Ship s)
             {
                 this._map.Ship = s;
                 this.NotifyObservers();
             }
 
-            public int GetBallCount()
+            public override int GetBallCount()
             {
                 return this._map.Balls.Count;
             }
 
-            public Ball GetBall(int index)
-            {
-                return this._map.Balls[index];
-            }
-
-            public int GetBrickCount()
+            public override int GetBrickCount()
             {
                 return this._map.Bricks.Count;
             }
 
-            public BasicBrick GetBrick(int index)
-            {
-                return this._map.Bricks[index];
-            }
-
-            public int GetDestroyedBricks()
+            public override int GetDestroyedBricks()
             {
                 return this._brokenBriks;
             }
 
-            public long GetPassedSeconds()
+            public override long GetPassedSeconds()
             {
                 return this._time;
             }
 
-            public void SetPlayer(Player p)
+            public override void SetPlayer(Player p)
             {
                 this._player = p;
                 this.NotifyObservers();
             }
 
-            public Player GetPlayer()
+            public override Player GetPlayer()
             {
                 return this._player;
             }
 
-            public int GetLevel()
+            public override int GetLevel()
             {
                 return this._level;
             }
@@ -88,6 +79,85 @@ namespace BrickInvaders
                 {
                     obs.Refresh(this);
                 }
+            }
+
+            public override Vector2D GetBallSpeed(int index)
+            {
+                return this._map.Balls[index].Speed;
+            }
+
+            public override int GetBallDamage(int index)
+            {
+                return this._map.Balls[index].Damage;
+            }
+
+            public override int GetBallMass(int index)
+            {
+                return this._map.Balls[index].Mass;
+            }
+
+            public override Vector2D GetBallPosition(int index)
+            {
+                return this._map.Balls[index].Position;
+            }
+
+            public override Rectangle GetBallBoundingBox(int index)
+            {
+                return this._map.Balls[index].BoundingBox;
+            }
+
+            public override void SetBallPosition(int index, Vector2D position)
+            {
+                this._map.Balls[index].Position = position;
+                this.NotifyObservers();
+            }
+
+            public override void SetBallSpeed(int index, Vector2D speed)
+            {
+                this._map.Balls[index].Speed = speed;
+                this.NotifyObservers();
+            }
+
+            public override Vector2D GetBrickSpeed(int index)
+            {
+                return this._map.Bricks[index].Speed;
+            }
+
+            public override int GetBrickHealth(int index)
+            {
+                return this._map.Bricks[index].Health;
+            }
+
+            public override int GetBrickMass(int index)
+            {
+                return this._map.Bricks[index].Mass;
+            }
+
+            public override Rectangle GetBrickBoundingBox(int index)
+            {
+                return this._map.Bricks[index].BoundingBox;
+            }
+
+            public override void SetBrickHealth(int index, int health)
+            {
+                this._map.Bricks[index].Health = health;
+                this.NotifyObservers();
+            }
+
+            public override Vector2D GetBrickPosition(int index)
+            {
+                return this._map.Bricks[index].Position;
+            }
+
+            public override Vector2D GetBrickDimensions(int index)
+            {
+                Element e = this._map.Bricks[index];
+                return new Vector2D(e.Width, e.Height);
+            }
+
+            public override Color GetBrickColor(int index)
+            {
+                return this._map.Bricks[index].Color;
             }
         }
     }
