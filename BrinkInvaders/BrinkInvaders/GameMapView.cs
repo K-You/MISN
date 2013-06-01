@@ -31,6 +31,7 @@ namespace BrickInvaders
                 TextBox t = new TextBox();
                 t.Width = 500;
                 this.frame.Controls.Add(t);
+                t.Width = 200;
             }
             public override void Refresh(Observable o)
             {
