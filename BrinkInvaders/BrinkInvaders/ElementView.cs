@@ -22,9 +22,9 @@ namespace BrickInvaders
 
             public ElementView(WorldView W):base()
             {
-               
                 this.worldWiew = W;
             }
+
             public virtual void Refresh(Observable o)
             {
                 Element e = (Element)o;

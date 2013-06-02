@@ -14,6 +14,10 @@ namespace BrickInvaders
 
         public abstract class ModelInterface : Observable
         {
+
+            public abstract Vector2D GetMapDimensions();
+            public abstract void SetMapDimensions(Vector2D dimensions);
+
             public abstract void SetBricks(List<BasicBrick> l);
             public abstract void SetShip(Ship s);
 

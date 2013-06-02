@@ -45,6 +45,11 @@ namespace BrickInvaders
                 get { return configuration; }
             }
 
+            public string Pseudo
+            {
+                get { return pseudo; }
+            }
+
             private void Launcher_Load(object sender, EventArgs e)
             {
                 foreach (string mode in Enum.GetNames(typeof(modeEnum)))

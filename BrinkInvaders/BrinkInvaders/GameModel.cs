@@ -159,6 +159,17 @@ namespace BrickInvaders
             {
                 return this._map.Bricks[index].Color;
             }
+
+            public override Vector2D GetMapDimensions()
+            {
+                return new Vector2D(this._map.Width, this._map.Height) ;
+            }
+
+            public override void SetMapDimensions(Vector2D dimensions)
+            {
+                this._map.Width = (int)dimensions.X;
+                this._map.Height = (int)dimensions.Y;
+            }
         }
     }
 }

@@ -12,18 +12,27 @@ namespace BrickInvaders
     namespace Controller
     {
 
-        class Engine
+        public class Engine
         {
             private static int DEFAULT_INTERVAL = 1000 / 60; //Framerate de 60FPS
             private static Configuration _configuration;
             private static ModelInterface _model;
+            private static Player _player;
             private Timer _timer;
 
-            public Engine(Configuration c, ModelInterface m)
+            public Engine(Player p, Configuration c, ModelInterface m)
             {
+                Engine._player = p;
                 Engine._configuration = c;
                 Engine._model = m;
                 this._timer = new Timer(DEFAULT_INTERVAL);
+            }
+
+            public void start()
+            {
+                Engine._configuration.InitialiseModel(Engine._model);
+                Engine._model.SetPlayer(Engine._player);
+                this.run();
             }
 
             public void run()
@@ -34,7 +43,6 @@ namespace BrickInvaders
 
             private static void OnTimedEvent(object source, ElapsedEventArgs e)
             {
-
                 ModelInterface m = Engine._model;
                 int length = m.GetBallCount();
                 int length2 = m.GetBrickCount();

@@ -25,17 +25,13 @@ namespace BrickInvaders
             {
                 Configuration c = launcher.Configuration;
 
-                Player p = new Player("Red the moine");
+                Player p = new Player(launcher.Pseudo);
                 ModelInterface m = new GameModel();
-                c.InitialiseModel(m);
-                m.SetPlayer(p);
+                Engine e = new Engine(p, c, m);
 
-                MainFrame frame = new MainFrame();
+                MainFrame frame = new MainFrame(e);
                 WorldView view = new GameMapView(frame);
                 m.AddObserver(view);
-
-                Engine e = new Engine(c, m);
-                e.run();
 
                 Application.Run(frame);
             }

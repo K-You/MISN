@@ -17,7 +17,7 @@ namespace BrickInvaders
             private KeyBinding keys;
 
             private Vector2D _dimensions = new Vector2D(7,11);
-            private int _levelheight;
+            private int _levelheight = 100;
 
             public int LevelHeight
             {
@@ -58,6 +58,7 @@ namespace BrickInvaders
             public void InitialiseModel(ModelInterface m)
             {
                 MapGenerator g = this.GameMode.Generator;
+                m.SetMapDimensions(new Vector2D(this.Width, this.Height));
                 m.SetBricks(g.generateMap(m.GetLevel(), this.Width, this.LevelHeight));
                 m.SetShip(g.generateShip());
             }

@@ -20,13 +20,20 @@ namespace BrickInvaders
             {
                 this.rand = new Random();
             }
+
             private Random rand;
+
             public List<BasicBrick> generateMap(int level, int width, int height)
             {
-                if (width <= MINWIDTH && height <= MINHEIGHT)
+                Console.Write("generating");
+
+                if (width <= MINWIDTH || height <= MINHEIGHT)
                 {
                     throw new ArgumentOutOfRangeException();
                 }
+
+                Console.Write(height);
+                Console.Write("Size ok");
                 List<BasicBrick> tempList = new List<BasicBrick>();
                 
                 double levelOffset = Math.Sqrt(2 * Math.Sqrt(level));//Calcule l'offset de probabilité en fonction du niveau, selon une évolution type racine un peu ralentie
@@ -60,6 +67,7 @@ namespace BrickInvaders
                         }
                     }
                 }
+
                 List<BasicBrick> list = new List<BasicBrick>();
                 foreach (BasicBrick brick in tempList)
                 {
@@ -89,6 +97,10 @@ namespace BrickInvaders
                     }
 
                 }
+
+                Console.Write("List size");
+                Console.Write(list.Count);
+
                 return list;
             }
 

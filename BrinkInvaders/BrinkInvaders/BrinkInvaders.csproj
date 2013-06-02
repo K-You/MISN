@@ -54,7 +54,9 @@
   <ItemGroup>
     <Compile Include="AllInMode.cs" />
     <Compile Include="Ball.cs" />
-    <Compile Include="BallView.cs" />
+    <Compile Include="BallView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="BasicBrick.cs" />
     <Compile Include="BasicMapGenerator.cs" />
     <Compile Include="BasicMode.cs" />

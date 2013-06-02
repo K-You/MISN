@@ -22,6 +22,7 @@ namespace BrickInvaders
 
             public BallView():base()
             { }
+
             public void Refresh(Observable o)
             {
                 
