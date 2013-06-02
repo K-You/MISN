@@ -10,10 +10,16 @@ namespace BrickInvaders
     namespace View
     {
 
-        public class ShipView : Observer
+        public class ShipView : ElementView
         {
+            public ShipView():base()
+            { }
+            public ShipView(WorldView v)
+                : base(v)
+            { 
+            }
 
-            public void Refresh(Model.Observable m)
+            public override void Refresh(Model.Observable m)
             {
                 Ship ship = (Ship)m;
 
