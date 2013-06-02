@@ -12,9 +12,12 @@ namespace BrickInvaders
         public class BrickView : ElementView
         {
 
+            public BrickView()
+            { }
             public override void Refresh(Observable m)
             {
                 BasicBrick brick = (BasicBrick)m;
+                this.BackColor = brick.Color;
             }
         }
 
