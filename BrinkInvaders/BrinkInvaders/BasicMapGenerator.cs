@@ -76,7 +76,7 @@ namespace BrickInvaders
                     {
                         for (nY = y - 1; nY <= y + 1; nY++)
                         {
-                            if (nX >= 0 && nX <= width - 1 && nY >= 0 && nY <= height - 1 && rand.Next(0, 10) <= (6+levelOffset))//Si rand veut bien je rajoute les briques autour des briques du dessus pour dessiner des "vaisseaux"
+                            if ((nX!=x || nY !=y) && nX >= 0 && nX <= width - 1 && nY >= 0 && nY <= height - 1 && rand.Next(0, 10) <= (6+levelOffset))//Si rand veut bien je rajoute les briques autour des briques du dessus pour dessiner des "vaisseaux"
                             {
                                 list.Add(new BasicBrick(new Vector2D(nX, nY), speed));
                             }
