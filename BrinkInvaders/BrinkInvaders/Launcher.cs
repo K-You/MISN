@@ -55,6 +55,9 @@ namespace BrickInvaders
                 foreach (string mode in Enum.GetNames(typeof(modeEnum)))
                 {
                     this.modeBox.Items.Add(mode);
+                    this.pseudoBox.Text = "Pseudo";
+                  //  this.modeBox.Text = modeArray[0].ToString();
+                  //  this.shipBox.Text = shipArray[0].ToString();
                 }
 
                 foreach (string ship in Enum.GetNames(typeof(shipEnum)))
