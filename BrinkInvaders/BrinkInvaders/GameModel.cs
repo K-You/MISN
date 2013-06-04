@@ -140,6 +140,11 @@ namespace BrickInvaders
 
             public override void SetBrickHealth(int index, int health)
             {
+                if (health < 0)
+                {
+                    this._map.Bricks.RemoveAt(index);
+                }
+
                 this._map.Bricks[index].Health = health;
                 this.NotifyObservers();
             }
@@ -162,7 +167,7 @@ namespace BrickInvaders
 
             public override Vector2D GetMapDimensions()
             {
-                return new Vector2D(this._map.Width, this._map.Height) ;
+                return new Vector2D(this._map.Width, this._map.Height);
             }
 
             public override void SetMapDimensions(Vector2D dimensions)
@@ -243,6 +248,17 @@ namespace BrickInvaders
             {
                 this._map.Bricks[index].Position = position;
                 this.NotifyObservers();
+            }
+
+            public override Rectangle GetShipBoundingBox()
+            {
+                return this._map.Ship.BoundingBox;
+            }
+
+            public override void AddBall()
+            {
+                if (this._map.Ship != null)
+                    this._map.Balls.Add(new Ball(this._map.Ship.Position + new Vector2D(0, 1), Vector2D.Random(), new Vector2D(1, 1), 1, 1));
             }
         }
     }

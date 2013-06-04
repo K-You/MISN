@@ -18,25 +18,32 @@ namespace BrickInvaders
             private int health;
 
             private static Vector2D DEFAULT_POSITION = new Vector2D();
-            private static Vector2D DEFAULT_SPEED = new Vector2D();
+            private static Vector2D DEFAULT_SPEED = new Vector2D(0.25,0);
             private static Vector2D DEFAULT_DIMENSIONS = new Vector2D(1,1);
             private static int DEFAULT_MASS = int.MaxValue;
             private static Color DEFAULT_COLOR = Color.Black;
+            private static int DEFAULT_HEALTH = 1;
 
             public Ship(string label)
-                : this(label, DEFAULT_POSITION, DEFAULT_SPEED, DEFAULT_DIMENSIONS, DEFAULT_MASS, DEFAULT_COLOR)
+                : this(label, DEFAULT_POSITION)
             {
             }
 
             public Ship(string label, Vector2D position)
-                : this(label, position, DEFAULT_SPEED, DEFAULT_DIMENSIONS, DEFAULT_MASS, DEFAULT_COLOR)
+                : this(label, position, DEFAULT_SPEED, DEFAULT_DIMENSIONS, DEFAULT_MASS, DEFAULT_HEALTH)
             {
             }
 
-            public Ship(string label, Vector2D position, Vector2D speed, Vector2D dimensions,  int mass, Color color)
+            public Ship(string label, Vector2D position, Vector2D speed, Vector2D dimensions, int mass, int health)
+                : this(label, position, speed, dimensions, mass, health, DEFAULT_COLOR)
+            {
+            }
+
+            public Ship(string label, Vector2D position, Vector2D speed, Vector2D dimensions,  int mass, int health, Color color)
                 : base(position, speed, dimensions, mass, color)
             {
                 this.label = label;
+                this.health = health;
                 this.AddObserver(new ShipView(BrickInvaders.frame));
             }
 

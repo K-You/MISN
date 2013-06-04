@@ -23,7 +23,11 @@ namespace BrickInvaders
 
             public override void Refresh(Observable m)
             {
+                base.Refresh(m);
                 Ship ship = (Ship)m;
+
+                this.BackColor = ship.Color;
+                this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             }
         }
 

@@ -17,11 +17,12 @@ namespace BrickInvaders
         public partial class MainFrame : Form, Observer
         {
             private Engine _e;
-            private Vector2D _grid = new Vector2D(1,1);
+            private Vector2D _grid = new Vector2D();
 
             public MainFrame()
             {
                 InitializeComponent();
+                this.KeyPreview = true;
             }
 
             public Engine Engine
@@ -33,7 +34,10 @@ namespace BrickInvaders
             {
                 this.button1.Dispose();
                 if (this._e != null)
+                {
                     this._e.start();
+                }
+                this.Focus();
             }
 
             public void Refresh(Observable m)
@@ -44,6 +48,11 @@ namespace BrickInvaders
             public Vector2D GridDimensions
             {
                 get { return _grid; }
+            }
+
+            private void MainFrame_KeyDown(object sender, KeyEventArgs e)
+            {
+                _e.CaptureKey(sender, e);
             }
         }
     }

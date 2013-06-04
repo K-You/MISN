@@ -23,8 +23,11 @@ namespace BrickInvaders
             public ElementView(Form f)
                 : base()
             {
-                this.form = f;
-                f.Controls.Add(this);
+                if (f != null)
+                {
+                    this.form = f;
+                    f.Controls.Add(this);
+                }
             }
 
             public virtual void Refresh(Observable o)

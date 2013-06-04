@@ -49,9 +49,16 @@ namespace BrickInvaders
                 return Utils.Contains(e, position.X, position.Y);
             }
 
-            public static Vector2D ChocResult(Vector2D v1, int mass1, Vector2D v2, int mass2)
+            public static Vector2D ElasticChocResult(Vector2D v1, int mass1, Vector2D v2, int mass2)
             {
                 return (v1 * mass1 + v2 * mass2) / (mass1 + mass2);
+            }
+
+            public static Vector2D ChocResult(Vector2D v1)
+            {
+                Vector2D v2 = v1;
+                v2.invert();
+                return v2;
             }
 
         }

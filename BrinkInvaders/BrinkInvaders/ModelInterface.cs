@@ -19,6 +19,7 @@ namespace BrickInvaders
 
             public abstract void SetBricks(List<BasicBrick> l);
             public abstract void SetShip(Ship s);
+            public abstract void AddBall();
 
             public abstract int GetBallCount();
 
@@ -45,11 +46,13 @@ namespace BrickInvaders
             public abstract void SetBrickHealth(int index, int health);
             public abstract void SetBrickPosition(int index, Vector2D position);
 
+            public abstract Rectangle GetShipBoundingBox();
             public abstract Vector2D GetShipPosition();
             public abstract Vector2D GetShipSpeed();
             public abstract Vector2D GetShipDimensions();
             public abstract void SetShipSpeed(Vector2D speed);
             public abstract void SetShipPosition(Vector2D position);
+
             public abstract Color GetShipColor();
 
             public abstract int GetShipHealth();

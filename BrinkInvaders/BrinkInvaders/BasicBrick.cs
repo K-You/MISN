@@ -15,14 +15,15 @@ namespace BrickInvaders
         public class BasicBrick : DynamicElement
         {
             private int health;
-            private static Vector2D DEFAULT_SPEED = new Vector2D(0, -1); 
+            private static Vector2D DEFAULT_SPEED = new Vector2D(0, -1);
+            private static int DEFAULT_HEALTH = 1;
 
             public BasicBrick(Vector2D position)
                 : this(position, DEFAULT_SPEED)
             { }
 
             public BasicBrick(Vector2D position, Vector2D speed)
-                : this(position, speed, new Vector2D(1,1), 1, Color.Blue)
+                : this(position, speed, new Vector2D(1, 1), DEFAULT_HEALTH, Color.Blue)
             { }
 
             public BasicBrick(Vector2D position, Vector2D speed, Vector2D dimensions, int health, Color color)

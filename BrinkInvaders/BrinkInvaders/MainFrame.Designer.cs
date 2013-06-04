@@ -38,7 +38,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(112, 113);
-            this.button1.Name = "Play";
+            this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Play";
@@ -54,6 +54,7 @@
             this.Controls.Add(this.button1);
             this.Name = "MainFrame";
             this.Text = "MainFrame";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainFrame_KeyDown);
             this.ResumeLayout(false);
 
             }
