@@ -16,25 +16,38 @@ namespace BrickInvaders
             public MapGenerator Generator { get; set; }
 
             private string _label;
+            private Vector2D _speed;
+            private List<Score> _scores;
+            private static Vector2D DEFAULT_SPEED = new Vector2D();
 
-            public string Label
+            public GameMode(MapGenerator Generator, String label)
+                : this(Generator, label, DEFAULT_SPEED)
             {
-                get { return _label; }
-                set { _label = value; }
             }
 
-
-            private List<Score> _scores;
+            public GameMode(MapGenerator Generator, String label, Vector2D speed)
+            {
+                this.Generator = Generator;
+                this.Label = label;
+                this.Speed = speed;
+            }
 
             public List<Score> getBestScores
             {
                 get { return _scores; }
             }
 
-            public GameMode(MapGenerator Generator, String label)
+            public Vector2D Speed
             {
-                this.Generator = Generator;
-                this.Label = label;
+                get { return _speed; }
+                set { _speed = value; }
+            }
+
+
+            public string Label
+            {
+                get { return _label; }
+                set { _label = value; }
             }
         }
     }

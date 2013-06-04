@@ -8,11 +8,8 @@ namespace BrickInvaders
     namespace View
     {
        public abstract class WorldView : Observer
-
         {
-
            public abstract void Refresh(Observable o);
-            
         }
     }
 }

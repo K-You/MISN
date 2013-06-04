@@ -169,6 +169,80 @@ namespace BrickInvaders
             {
                 this._map.Width = (int)dimensions.X;
                 this._map.Height = (int)dimensions.Y;
+                this.NotifyObservers();
+            }
+
+            public override Vector2D GetShipPosition()
+            {
+                if (this._map.Ship != null)
+                {
+                    return this._map.Ship.Position;
+                }
+                else
+                {
+                    return new Vector2D();
+                }
+            }
+
+            public override Vector2D GetShipSpeed()
+            {
+                return this._map.Ship.Speed;
+            }
+
+            public override Vector2D GetShipDimensions()
+            {
+                if (this._map.Ship != null)
+                {
+                    return new Vector2D(this._map.Ship.Width, this._map.Ship.Height);
+                }
+                else
+                {
+                    return new Vector2D();
+                }
+            }
+
+            public override void SetShipSpeed(Vector2D speed)
+            {
+                this._map.Ship.Speed = speed;
+            }
+
+            public override void SetShipPosition(Vector2D position)
+            {
+                this._map.Ship.Position = position;
+                this.NotifyObservers();
+            }
+
+            public override int GetShipHealth()
+            {
+                return this._map.Ship.Health;
+            }
+
+            public override void SetShipHealth(int health)
+            {
+                this._map.Ship.Health = health;
+            }
+
+            public override Color GetBallColor(int index)
+            {
+                return this._map.Balls[index].Color;
+            }
+
+            public override Color GetShipColor()
+            {
+                if (this._map.Ship != null)
+                {
+                    return this._map.Ship.Color;
+                }
+                else
+                {
+                    return Color.White;
+                }
+            }
+
+            public override void SetBrickPosition(int index, Vector2D position)
+            {
+                this._map.Bricks[index].Position = position;
+                this.NotifyObservers();
             }
         }
     }

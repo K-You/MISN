@@ -94,12 +94,13 @@
     <Compile Include="ComplexBrick.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Engine.cs" />
-    <Compile Include="Game.cs" />
     <Compile Include="HighSpeedMode.cs" />
     <Compile Include="KeyBinding.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MapGenerator.cs" />
-    <Compile Include="ShipView.cs" />
+    <Compile Include="ShipView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ship.cs" />
     <Compile Include="GameMode.cs" />
     <Compile Include="DynamicElement.cs" />

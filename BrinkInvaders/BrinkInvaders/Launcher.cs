@@ -25,7 +25,7 @@ namespace BrickInvaders
             private GameMode[] modeArray = new GameMode[] { new AllInMode(), new HighSpeedMode() };
             private enum shipEnum { Ship1, Ship2, Ship3 };
             private Ship[] shipArray = new Ship[] { new Ship(""), new Ship(""), new Ship("") };
-            private Configuration configuration;
+            private Configuration configuration = null;
 
             private void button1_Click(object sender, EventArgs e)
             {

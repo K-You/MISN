@@ -14,7 +14,6 @@ namespace BrickInvaders
 
         public abstract class ModelInterface : Observable
         {
-
             public abstract Vector2D GetMapDimensions();
             public abstract void SetMapDimensions(Vector2D dimensions);
 
@@ -28,6 +27,7 @@ namespace BrickInvaders
             public abstract int GetBallMass(int index);
             public abstract Vector2D GetBallPosition(int index);
             public abstract Rectangle GetBallBoundingBox(int index);
+            public abstract Color GetBallColor(int index);
 
             public abstract void SetBallPosition(int index, Vector2D position);
             public abstract void SetBallSpeed(int index, Vector2D speed);
@@ -43,6 +43,17 @@ namespace BrickInvaders
             public abstract Color GetBrickColor(int index);
 
             public abstract void SetBrickHealth(int index, int health);
+            public abstract void SetBrickPosition(int index, Vector2D position);
+
+            public abstract Vector2D GetShipPosition();
+            public abstract Vector2D GetShipSpeed();
+            public abstract Vector2D GetShipDimensions();
+            public abstract void SetShipSpeed(Vector2D speed);
+            public abstract void SetShipPosition(Vector2D position);
+            public abstract Color GetShipColor();
+
+            public abstract int GetShipHealth();
+            public abstract void SetShipHealth(int health);
 
             //SCORE PART
             public abstract int GetDestroyedBricks();

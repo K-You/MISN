@@ -13,8 +13,8 @@ namespace BrickInvaders
 
         public interface MapGenerator
         {
-            List<BasicBrick> generateMap(int level, int width, int height);
-            Ship generateShip();
+            List<BasicBrick> generateMap(int level, int width, int height, Vector2D speed);
+            Ship generateShip(int width, int height);
         }
     }
 }

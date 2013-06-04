@@ -25,6 +25,12 @@ namespace BrickInvaders
                 this._speed = speed;
             }
 
+            public DynamicElement(Vector2D position, Vector2D speed, Vector2D dimensions, int mass, Color color)
+                : base(position, dimensions, mass, color)
+            {
+                this._speed = speed;
+            }
+
             public Vector2D Speed
             {
                 get { return _speed; }

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 using BrickInvaders.Model;
+using System.Windows.Forms;
 
 namespace BrickInvaders
 {
@@ -14,15 +16,14 @@ namespace BrickInvaders
         {
             public ShipView():base()
             { }
-            public ShipView(WorldView v)
-                : base(v)
+            public ShipView(Form f)
+                : base(f)
             { 
             }
 
-            public override void Refresh(Model.Observable m)
+            public override void Refresh(Observable m)
             {
                 Ship ship = (Ship)m;
-
             }
         }
 

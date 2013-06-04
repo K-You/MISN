@@ -28,7 +28,7 @@ namespace BrickInvaders
                 : base(position, speed, dimensions, mass)
             {
                 this.Damage = damage;
-                this.AddObserver(new BallView());
+                this.AddObserver(new BallView(BrickInvaders.frame));
             }
 
             public int Damage

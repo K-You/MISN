@@ -59,8 +59,8 @@ namespace BrickInvaders
             {
                 MapGenerator g = this.GameMode.Generator;
                 m.SetMapDimensions(new Vector2D(this.Width, this.Height));
-                m.SetBricks(g.generateMap(m.GetLevel(), this.Width, this.LevelHeight));
-                m.SetShip(g.generateShip());
+                m.SetShip(g.generateShip(this.Width, this.Height));
+                m.SetBricks(g.generateMap(m.GetLevel(), this.Width, this.LevelHeight, this.GameMode.Speed));
             }
         }
     }

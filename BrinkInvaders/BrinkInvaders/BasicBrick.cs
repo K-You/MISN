@@ -30,6 +30,7 @@ namespace BrickInvaders
             {
                 this.health = health;
                 this.Color = color;
+                this.AddObserver(new BrickView(BrickInvaders.frame));
             }
 
             public int Health
@@ -45,8 +46,6 @@ namespace BrickInvaders
                     obs.Refresh(this);
                 }
             }
-           
         }
-
     }
 }

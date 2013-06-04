@@ -5,35 +5,38 @@ using System.Linq;
 using System.Text;
 using BrickInvaders.Model;
 using BrickInvaders.View;
+
 namespace BrickInvaders
 {
     namespace View
     {
 
 
-        public  class ElementView : PictureBox, Observer
+        public class ElementView : PictureBox, Observer
         {
-            public WorldView worldWiew { get; set; }
+            public Form form { get; set; }
 
             public ElementView()
             {
-
             }
 
-            public ElementView(WorldView W):base()
+            public ElementView(Form f)
+                : base()
             {
-                this.worldWiew = W;
+                this.form = f;
+                f.Controls.Add(this);
             }
 
             public virtual void Refresh(Observable o)
             {
-                Element e = (Element)o;
-                this.Width = (int)e.Width;
-                this.Height = (int)e.Height;
-                this.Location = new System.Drawing.Point((int)e.Position.X, (int)e.Position.Y);
-            }
+                Vector2D dim = ((MainFrame)form).GridDimensions;
+                Vector2D padding = new Vector2D(form.ClientSize.Width / dim.X, form.ClientSize.Height / dim.Y);
 
+                Element e = (Element)o;
+                this.Width = (int)(e.Width * padding.X);
+                this.Height = (int)(e.Height * padding.Y);
+                this.Location = new System.Drawing.Point((int)(e.Position.X * padding.X), (int)((dim.Y - e.Position.Y - 1) * padding.Y));
+            }
         }
     }
-
 }

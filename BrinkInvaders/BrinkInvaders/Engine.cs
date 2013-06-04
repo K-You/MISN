@@ -5,6 +5,7 @@ using System.Text;
 
 using BrickInvaders.Model;
 using System.Timers;
+using BrickInvaders.View;
 
 namespace BrickInvaders
 {
@@ -14,18 +15,22 @@ namespace BrickInvaders
 
         public class Engine
         {
-            private static int DEFAULT_INTERVAL = 1000 / 60; //Framerate de 60FPS
+            private static int DEFAULT_INTERVAL = 1000/24; //Framerate de 24FPS
             private static Configuration _configuration;
             private static ModelInterface _model;
             private static Player _player;
             private Timer _timer;
 
-            public Engine(Player p, Configuration c, ModelInterface m)
+            public Engine(Player p, Configuration c, ModelInterface m, MainFrame form)
             {
                 Engine._player = p;
                 Engine._configuration = c;
                 Engine._model = m;
+
+                form.Engine = this;
+
                 this._timer = new Timer(DEFAULT_INTERVAL);
+                this._timer.SynchronizingObject = form;
             }
 
             public void start()
@@ -43,13 +48,15 @@ namespace BrickInvaders
 
             private static void OnTimedEvent(object source, ElapsedEventArgs e)
             {
+                Console.WriteLine("tick");
+
                 ModelInterface m = Engine._model;
                 int length = m.GetBallCount();
                 int length2 = m.GetBrickCount();
 
                 Vector2D bspeed, bbspeed;
-                bool chocked;
                 int j;
+                bool chocked;
 
                 for (int i = 0; i < length; i++)
                 {
@@ -60,17 +67,21 @@ namespace BrickInvaders
                     {
                         if (Tools.Utils.Intersects(m.GetBallBoundingBox(i), m.GetBrickBoundingBox(j)))
                         {
-                            chocked = true;
                             bbspeed = m.GetBrickSpeed(j);
                             m.SetBrickHealth(j, m.GetBrickHealth(j) - m.GetBallDamage(i));
                             //TODO use elastic choc > check the way the objects move
                             m.SetBallSpeed(i, Tools.Utils.ChocResult(bspeed, m.GetBallMass(i), bbspeed, m.GetBrickMass(j)));
+                            chocked = true;
                         }
                         j++;
                     }
                     m.SetBallPosition(i, m.GetBallPosition(i) + bspeed);
                 }
 
+                for (j = 0; j < length2; j++)
+                {
+                    m.SetBrickPosition(j, m.GetBrickPosition(j) + m.GetBrickSpeed(j));
+                }
                 //TODO what about ball between-ball collisions?
             }
         }

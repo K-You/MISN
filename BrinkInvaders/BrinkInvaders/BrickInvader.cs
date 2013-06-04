@@ -10,33 +10,32 @@ using BrickInvaders.View;
 
 namespace BrickInvaders
 {
-
     class BrickInvaders
     {
-        [STAThread]
+        public static MainFrame frame;
+
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            BrickInvaders.frame = new MainFrame();
+
             Launcher launcher = new Launcher();
             Application.Run(launcher); 
 
-            try
-            {
-                Configuration c = launcher.Configuration;
+            Configuration c = launcher.Configuration;
 
+            if (c != null) {
                 Player p = new Player(launcher.Pseudo);
                 ModelInterface m = new GameModel();
-                Engine e = new Engine(p, c, m);
+                m.AddObserver(BrickInvaders.frame);
 
-                MainFrame frame = new MainFrame(e);
-                WorldView view = new GameMapView(frame);
-                m.AddObserver(view);
+                Engine e = new Engine(p, c, m, BrickInvaders.frame);
 
-                Application.Run(frame);
-            }
-            catch (NullReferenceException)
-            {
+                WorldView view = new GameMapView(BrickInvaders.frame);
+
+                Application.Run(BrickInvaders.frame);
             }            
         }
     }

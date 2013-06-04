@@ -33,12 +33,6 @@ namespace BrickInvaders
                 get { return player; }
                 set { player = value; }
             }
-
-
-
-
-
         }
     }
-
 }
