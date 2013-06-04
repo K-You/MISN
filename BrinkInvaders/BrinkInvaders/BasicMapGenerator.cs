@@ -50,16 +50,23 @@ namespace BrickInvaders
                         {
                             since = 0;
                             int x = rand.Next(0, width);
-                            tempList.Add(new BasicBrick(new Vector2D(x, i), speed));//J'ajoute une brique
+                            BasicBrick bck = new BasicBrick(new Vector2D(x, i), speed);
+                            bck.Color = Color.Red;
+                            tempList.Add(bck);//J'ajoute une brique
+
                             if (x <= (width / 2) - 3 && rand.Next(0, 10) <= (3 + levelOffset))//Si elle est pas centrée et si le rand dit oui, je mets une brique de l'autre côté, horizontalement
                             {
                                 x = rand.Next(0, (width / 2) - 2);
-                                tempList.Add(new BasicBrick(new Vector2D(width - 1 - x, i), speed));
+                                bck = new BasicBrick(new Vector2D(width - 1 - x, i), speed);
+                                bck.Color = Color.Red;
+                                tempList.Add(bck);
                             }
                             else if (x >= (width / 2) + 3 && rand.Next(0, 10) <= (3 + levelOffset))//Ou de l'autre côté
                             {
                                 x = rand.Next((width / 2) + 2, width);
-                                tempList.Add(new BasicBrick(new Vector2D(width - 1 - x, i), speed));
+                                bck = new BasicBrick(new Vector2D(width - 1 - x, i), speed);
+                                bck.Color = Color.Red;
+                                tempList.Add(bck);
                             }
                         }
                     }
@@ -78,19 +85,25 @@ namespace BrickInvaders
                         {
                             if ((nX!=x || nY !=y) && nX >= 0 && nX <= width - 1 && nY >= 0 && nY <= height - 1 && rand.Next(0, 10) <= (6+levelOffset))//Si rand veut bien je rajoute les briques autour des briques du dessus pour dessiner des "vaisseaux"
                             {
-                                list.Add(new BasicBrick(new Vector2D(nX, nY), speed));
+                                BasicBrick bck = new BasicBrick(new Vector2D(nX, nY), speed);
+                                bck.Color = System.Drawing.ColorTranslator.FromWin32(rand.Next(0,0xFFFFFF));
+                                list.Add(bck);
                             }
                         }
                     }
                     nX = x - 2; nY = y;
                     if (nX >= 0 && nX <= width - 1 && nY >= 0 && nY <= height - 1 && rand.Next(0, 10) <= (6 + levelOffset))//idem
                     {
-                        list.Add(new BasicBrick(new Vector2D(nX, nY), speed));
+                        BasicBrick bck = new BasicBrick(new Vector2D(nX, nY), speed);
+                        bck.Color = System.Drawing.ColorTranslator.FromWin32(rand.Next(0, 0xFFFFFF));
+                        list.Add(bck);
                     }
                     nX = x + 2;
                     if (nX >= 0 && nX <= width - 1 && nY >= 0 && nY <= height - 1 && rand.Next(0, 10) <= (6 + levelOffset))//idem
                     {
-                        list.Add(new BasicBrick(new Vector2D(nX, nY), speed));
+                        BasicBrick bck = new BasicBrick(new Vector2D(nX, nY), speed);
+                        bck.Color = System.Drawing.ColorTranslator.FromWin32(rand.Next(0, 0xFFFFFF));
+                        list.Add(bck);
                     }
 
                 }
