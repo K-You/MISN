@@ -16,7 +16,7 @@ namespace BrickInvaders
 
         public class Engine
         {
-            private static int DEFAULT_INTERVAL = 1000 / 24; //Framerate de 24FPS
+            private static int DEFAULT_INTERVAL = 1000 / 24;
             private static Configuration _configuration;
             private static ModelInterface _model;
             private static Player _player;
@@ -69,6 +69,7 @@ namespace BrickInvaders
                     {
                         if (Tools.Utils.Intersects(m.GetBallBoundingBox(i), m.GetBrickBoundingBox(j)))
                         {
+                            Console.Write("contact");
                             bbspeed = m.GetBrickSpeed(j);
 
                             health = m.GetBrickHealth(j) - m.GetBallDamage(i);
@@ -84,7 +85,7 @@ namespace BrickInvaders
                         }
                         j++;
                     }
-                    
+
                     bposition = m.GetBallPosition(i);
                     newPosition = bposition + bspeed;
                     newSpeed = bspeed;
@@ -102,7 +103,8 @@ namespace BrickInvaders
                     {
                         newPosition.Y = 2 * msize.Y - newPosition.Y - 1;
                         newSpeed.invertY();
-                    } else if (Tools.Utils.Intersects(m.GetBallBoundingBox(i), m.GetShipBoundingBox()))
+                    }
+                    else if (Tools.Utils.Intersects(m.GetBallBoundingBox(i), m.GetShipBoundingBox()))
                     {
                         //PRENDRE EN COMPTE LES ANGLES POUR LE REBOND
 
@@ -112,12 +114,15 @@ namespace BrickInvaders
 
                     m.SetBallPosition(i, newPosition);
                     m.SetBallSpeed(i, newSpeed);
+
+                    //SI LA BALLE SORT PAR LE BAS C'EST PERDU!
                 }
 
                 for (j = 0; j < length2; j++)
                 {
                     m.SetBrickPosition(j, m.GetBrickPosition(j) + m.GetBrickSpeed(j));
-                    if (Tools.Utils.Intersects(m.GetShipBoundingBox(), m.GetBrickBoundingBox(j))) {
+                    if (Tools.Utils.Intersects(m.GetShipBoundingBox(), m.GetBrickBoundingBox(j)))
+                    {
                         m.SetShipHealth(m.GetShipHealth() - m.GetBrickHealth(j));
 
                         if (m.GetShipHealth() <= 0)
@@ -131,22 +136,30 @@ namespace BrickInvaders
             }
 
             internal void CaptureKey(object sender, KeyEventArgs e)
-              {
+            {
                 ModelInterface m = Engine._model;
                 string key = e.KeyCode.ToString();
-                if (key == Keys.Left.ToString()) {
+                if (key == Keys.Left.ToString())
+                {
                     Vector2D newPos = m.GetShipPosition() - m.GetShipSpeed();
-                    m.SetShipPosition((newPos.X > 0) ? newPos : new Vector2D(0,newPos.Y));
+                    m.SetShipPosition((newPos.X > 0) ? newPos : new Vector2D(0, newPos.Y));
                 }
                 else if (key == Keys.Right.ToString())
                 {
                     Vector2D newPos = m.GetShipPosition() + m.GetShipSpeed();
-                    int maxX = (int) m.GetMapDimensions().X;
-                    m.SetShipPosition((newPos.X < maxX-1) ? newPos : new Vector2D(maxX-1, newPos.Y));
+                    int maxX = (int)m.GetMapDimensions().X;
+                    m.SetShipPosition((newPos.X < maxX - 1) ? newPos : new Vector2D(maxX - 1, newPos.Y));
                 }
                 else if (key == Keys.Space.ToString())
                 {
-                    m.AddBall();
+                    if (m.GetBallCount() < 1)
+                    {
+                        m.AddBall();
+                    }
+                }
+                else if (key == Keys.Escape.ToString())
+                {
+                    //PAUSE/CONTROLS
                 }
             }
         }

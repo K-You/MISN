@@ -12,7 +12,8 @@ using BrickInvaders.Controller;
 
 namespace BrickInvaders
 {
-    namespace View {
+    namespace View
+    {
         public partial class Launcher : Form
         {
             public Launcher()
@@ -35,7 +36,6 @@ namespace BrickInvaders
                     GameMode mode = modeArray[(int)Enum.Parse(typeof(modeEnum), this.modeBox.Text)];
                     Ship ship = shipArray[(int)Enum.Parse(typeof(shipEnum), this.shipBox.Text)]; //TODO use ship
                     this.configuration = new Configuration(mode, new KeyBinding()); //TODO apply keybinding
-                    //TODO AT THIS MOMENT THE GAME HAVE TO START
                     this.Close();
                 }
             }

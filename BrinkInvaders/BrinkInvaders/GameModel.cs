@@ -140,12 +140,13 @@ namespace BrickInvaders
 
             public override void SetBrickHealth(int index, int health)
             {
-                if (health < 0)
+                this._map.Bricks[index].Health = health;
+
+                if (health <= 0)
                 {
                     this._map.Bricks.RemoveAt(index);
                 }
 
-                this._map.Bricks[index].Health = health;
                 this.NotifyObservers();
             }
 
