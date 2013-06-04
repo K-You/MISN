@@ -86,7 +86,6 @@ namespace BrickInvaders
                             if ((nX!=x || nY !=y) && nX >= 0 && nX <= width - 1 && nY >= 0 && nY <= height - 1 && rand.Next(0, 10) <= (6+levelOffset))//Si rand veut bien je rajoute les briques autour des briques du dessus pour dessiner des "vaisseaux"
                             {
                                 BasicBrick bck = new BasicBrick(new Vector2D(nX, nY), speed);
-                                bck.Color = System.Drawing.ColorTranslator.FromWin32(rand.Next(0,0xFFFFFF));
                                 list.Add(bck);
                             }
                         }
@@ -95,14 +94,12 @@ namespace BrickInvaders
                     if (nX >= 0 && nX <= width - 1 && nY >= 0 && nY <= height - 1 && rand.Next(0, 10) <= (6 + levelOffset))//idem
                     {
                         BasicBrick bck = new BasicBrick(new Vector2D(nX, nY), speed);
-                        bck.Color = System.Drawing.ColorTranslator.FromWin32(rand.Next(0, 0xFFFFFF));
                         list.Add(bck);
                     }
                     nX = x + 2;
                     if (nX >= 0 && nX <= width - 1 && nY >= 0 && nY <= height - 1 && rand.Next(0, 10) <= (6 + levelOffset))//idem
                     {
                         BasicBrick bck = new BasicBrick(new Vector2D(nX, nY), speed);
-                        bck.Color = System.Drawing.ColorTranslator.FromWin32(rand.Next(0, 0xFFFFFF));
                         list.Add(bck);
                     }
 
