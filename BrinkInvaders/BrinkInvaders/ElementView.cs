@@ -39,6 +39,7 @@ namespace BrickInvaders
                 this.Width = (int)(e.Width * padding.X);
                 this.Height = (int)(e.Height * padding.Y);
                 this.Location = new System.Drawing.Point((int)(e.Position.X * padding.X), (int)((dim.Y - e.Position.Y - 1) * padding.Y));
+                this.BackColor = e.Color;
             }
         }
     }
