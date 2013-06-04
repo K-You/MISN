@@ -17,7 +17,7 @@ namespace BrickInvaders
 
             public BallView(Form f):base(f)
             {
-                this.Image = global::BrickInvaders.Properties.Resources.ball;
+                this.Image = global::BrickInvaders.Properties.Resources.windows_logo;
                 
                 this.SizeMode = PictureBoxSizeMode.Zoom;
             }
