@@ -56,6 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::BrickInvaders.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
