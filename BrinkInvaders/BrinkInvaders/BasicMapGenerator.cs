@@ -66,6 +66,7 @@ namespace BrickInvaders
                                 x = rand.Next((width / 2) + 2, width);
                                 bck = new BasicBrick(new Vector2D(width - 1 - x, i), speed);
                                 bck.Color = Color.Red;
+                                bck.Health++;
                                 tempList.Add(bck);
                             }
                         }
