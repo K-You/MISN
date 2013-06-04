@@ -52,19 +52,21 @@ namespace BrickInvaders
 
             private void Launcher_Load(object sender, EventArgs e)
             {
+               
                 foreach (string mode in Enum.GetNames(typeof(modeEnum)))
                 {
                     this.modeBox.Items.Add(mode);
-                    this.pseudoBox.Text = "Pseudo";
-                  //  this.modeBox.SelectedItem = "test";
-                  //  this.shipBox.SelectedItem = "test";
-                    
                 }
 
                 foreach (string ship in Enum.GetNames(typeof(shipEnum)))
                 {
                     this.shipBox.Items.Add(ship);
                 }
+
+                // default values
+                this.pseudoBox.Text = "Pseudo";
+                this.modeBox.SelectedIndex = 0;
+                this.shipBox.SelectedIndex = 0;
             }
         }
     }
