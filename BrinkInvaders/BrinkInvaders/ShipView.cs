@@ -19,24 +19,22 @@ namespace BrickInvaders
             public ShipView(Form f)
                 : base(f)
             {
-                this.BackColor = Color.YellowGreen;
-                this.Width = 0;
-                this.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.Width = 0; 
+                this.Image = global::BrickInvaders.Properties.Resources.spaceship;
+                this.BackColor = Color.Black;
+                this.SizeMode = PictureBoxSizeMode.StretchImage; // élargissement en fonction de la largeur du vaisseau
                 
             }
 
             public override void Refresh(Observable m)
             {
-                base.Refresh(m);
+                base.Refresh(m); //rafraichissement de position
                 Ship ship = (Ship)m;
 
-                this.BackColor = ship.Color;
-                this.Image = global::BrickInvaders.Properties.Resources.spaceship;
-                this.BackColor = Color.Black;
-                this.SizeMode = PictureBoxSizeMode.StretchImage;
+                
 
                     
-              //  this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+              
             }
         }
 
