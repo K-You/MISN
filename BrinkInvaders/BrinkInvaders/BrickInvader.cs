@@ -10,16 +10,16 @@ using BrickInvaders.View;
 
 namespace BrickInvaders
 {
-    class BrickInvaders
+    public class BrickInvaders
     {
-        public static MainFrame frame;
+        public static MainFrame _frame;
 
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            BrickInvaders.frame = new MainFrame();
+            BrickInvaders._frame = new MainFrame();
 
             Launcher launcher = new Launcher();
             Application.Run(launcher);
@@ -31,11 +31,11 @@ namespace BrickInvaders
                 Player p = new Player(launcher.Pseudo);
                 ModelInterface m = new GameModel();
                 m.SetScoresModel(new ScoresModel(c.GameMode));
-                m.AddObserver(BrickInvaders.frame);
+                m.AddObserver(BrickInvaders._frame);
 
-                Engine.Initialise(p, c, m, BrickInvaders.frame);
+                Engine.Initialise(p, c, m, BrickInvaders._frame);
 
-                Application.Run(BrickInvaders.frame);
+                Application.Run(BrickInvaders._frame);
             }
         }
     }

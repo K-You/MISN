@@ -11,7 +11,7 @@ namespace BrickInvaders
     namespace Controller
     {
 
-        class AllInMode : GameMode
+        public class AllInMode : GameMode
         {
             public AllInMode()
                 : base(new BasicMapGenerator(), "AllIn mode", new Vector2D(0, -0.005), new Vector2D(0, 0))

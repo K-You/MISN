@@ -44,7 +44,7 @@ namespace BrickInvaders
             {
                 this._label = label;
                 this._health = health;
-                this.AddObserver(new ShipView(BrickInvaders.frame));
+                this.AddObserver(new ShipView(BrickInvaders._frame));
                 this.NotifyObservers();
             }
 

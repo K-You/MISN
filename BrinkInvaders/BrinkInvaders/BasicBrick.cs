@@ -31,7 +31,7 @@ namespace BrickInvaders
             {
                 this._health = health;
                 this.Color = color;
-                this.AddObserver(new BrickView(BrickInvaders.frame));
+                this.AddObserver(new BrickView(BrickInvaders._frame));
             }
 
             public int Health
