@@ -68,7 +68,7 @@ namespace BrickInvaders
                 this._model.SetStopped(true);
                 if (this._model.IsLost())
                 {
-                    this._model.AddScore(this._model.GetPlayer(), this._model.GetDestroyedBricks(), this._configuration.GameMode);
+                    this._model.AddScore(this._model.GetPlayer(), (int)Math.Exp((double)this._model.GetDestroyedBricks()), this._configuration.GameMode);
                 }
                 this._timer.Stop();
             }
