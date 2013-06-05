@@ -157,7 +157,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background.jpg" />
-    <None Include="Properties\Soundtrack.wav" />
+    <None Include="Resources\Soundtrack.mp3" />
+    <None Include="Resources\Soundtrack.wav" />
     <Content Include="Resources\windows_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
