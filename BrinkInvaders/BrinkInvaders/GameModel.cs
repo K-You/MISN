@@ -259,7 +259,7 @@ namespace BrickInvaders
             public override void AddBall()
             {
                 if (this._map.Ship != null)
-                    this._map.Balls.Add(new Ball(this._map.Ship.Position + new Vector2D(0, 1), Vector2D.Random(), new Vector2D(1, 1), 1, 1));
+                    this._map.Balls.Add(new Ball(this._map.Ship.Position + new Vector2D(0, 1), Vector2D.Random()/2, new Vector2D(1, 1), 1, 1));
             }
         }
     }
