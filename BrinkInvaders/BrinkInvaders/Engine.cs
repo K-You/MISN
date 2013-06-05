@@ -66,7 +66,10 @@ namespace BrickInvaders
             public void Stop()
             {
                 this._model.SetStopped(true);
-                this._model.AddScore(this._model.GetPlayer(), this._model.GetDestroyedBricks(), this._configuration.GameMode);
+                if (this._model.IsLost())
+                {
+                    this._model.AddScore(this._model.GetPlayer(), this._model.GetDestroyedBricks(), this._configuration.GameMode);
+                }
                 this._timer.Stop();
             }
 

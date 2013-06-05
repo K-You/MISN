@@ -18,7 +18,7 @@ namespace BrickInvaders
             private ShipArguments _ship;
 
             private Vector2D _dimensions = new Vector2D(7, 11);
-            private int _levelheight = 11;
+            private int _levelheight = 20;
 
             public int LevelHeight
             {
