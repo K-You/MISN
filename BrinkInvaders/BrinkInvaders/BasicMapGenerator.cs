@@ -16,16 +16,24 @@ namespace BrickInvaders
         {
             public const int MINWIDTH = 6;
             public const int MINHEIGHT = 10;
+            private Boolean evolutive = true;
             public BasicMapGenerator()
             {
                 this.rand = new Random();
+            }
+            public BasicMapGenerator(Boolean evolutive):this()
+            {
+                this.evolutive = evolutive;
             }
 
             private Random rand;
 
             public List<BasicBrick> generateMap(int level, int width, int height, Vector2D speed)
             {
-
+                if (!evolutive)
+                {
+                    level = 0;
+                }
                 if (width <= MINWIDTH || height <= MINHEIGHT)
                 {
                     throw new ArgumentOutOfRangeException();
