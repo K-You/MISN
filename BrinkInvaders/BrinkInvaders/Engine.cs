@@ -130,12 +130,12 @@ namespace BrickInvaders
                     }
                     else if (newPosition.X >= msize.X - 1)
                     {
-                        newPosition.X = 2 * msize.X - newPosition.X - 1;
+                        newPosition.X = 2 * (msize.X - 1) - newPosition.X;
                         newSpeed.invertX();
                     }
                     else if (newPosition.Y >= msize.Y - 1)
                     {
-                        newPosition.Y = 2 * msize.Y - newPosition.Y - 1;
+                        newPosition.Y = 2 * (msize.Y - 1) - newPosition.Y;
                         newSpeed.invertY();
                     }
                     else if (Tools.Utils.Intersects(m.GetBallBoundingBox(i), m.GetShipBoundingBox()))
