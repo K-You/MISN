@@ -54,6 +54,11 @@ namespace BrickInvaders
             {
                 _e.CaptureKey(sender, e);
             }
+
+            private void MainFrame_Load(object sender, EventArgs e)
+            {
+
+            }
         }
     }
 }
