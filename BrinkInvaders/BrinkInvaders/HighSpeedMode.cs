@@ -12,7 +12,7 @@ namespace BrickInvaders
         public class HighSpeedMode : GameMode
         {
             public HighSpeedMode()
-                : base(new BasicMapGenerator(false), "HighSpeed mode", new Vector2D(0, -0.005), new Vector2D(0, -0.001))
+                : base(new BasicMapGenerator(false), "HighSpeed mode", new Vector2D(0, -0.005), new Vector2D(0, -0.0005))
             {
             }
         }
