@@ -13,34 +13,34 @@ namespace BrickInvaders
         public class Score
         {
 
-            private Player player;
-            private int val;
-            private GameMode mode;
+            private Player _player;
+            private int _val;
+            private GameMode _mode;
 
             public Score(Player player, int value,GameMode mode)
             {
-                this.player = player;
+                this._player = player;
                 this.Value = value;
-                this.mode = mode;
+                this._mode = mode;
             }
 
             public int Value
             {
-                get { return val; }
-                set { val = value; }
+                get { return _val; }
+                set { _val = value; }
             }
 
 
             public Player Player
             {
-                get { return player; }
-                set { player = value; }
+                get { return _player; }
+                set { _player = value; }
             }
 
             public GameMode Mode
             {
-                get { return mode; }
-                set { mode = value; }
+                get { return _mode; }
+                set { _mode = value; }
             }
 
             public int CompareTo(Score sc)
