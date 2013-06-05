@@ -35,10 +35,10 @@ namespace BrickInvaders
                 this._timer.SynchronizingObject = form;
 
              //    gestion de la soundtrack
-               SoundPlayer song = new SoundPlayer(Properties.Resources.Soundtrack);
+          //     SoundPlayer song = new SoundPlayer(Properties.Resources.Soundtrack);
                
 
-                song.PlayLooping();
+           //     song.PlayLooping();
             }
 
             public void start()

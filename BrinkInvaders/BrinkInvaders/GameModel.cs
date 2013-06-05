@@ -147,7 +147,7 @@ namespace BrickInvaders
                     this._map.Bricks.RemoveAt(index);
                 }
 
-                this.NotifyObservers();
+                this.NotifyObservers(); 
             }
 
             public override Vector2D GetBrickPosition(int index)
