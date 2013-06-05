@@ -1,9 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E8F635B1-CB29-43E4-9A87-78CF329C4590}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrinkInvaders", "BrinkInvaders\BrinkInvaders.csproj", "{5EEDC004-AF4B-44D4-8C73-7B604F7A20A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{BD7A14A6-14BA-4F71-8171-32AE3F6B8F33}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
@@ -29,6 +31,16 @@ Global
 		{5EEDC004-AF4B-44D4-8C73-7B604F7A20A1}.Release|Mixed Platforms.Build.0 = Release|x86
 		{5EEDC004-AF4B-44D4-8C73-7B604F7A20A1}.Release|x86.ActiveCfg = Release|x86
 		{5EEDC004-AF4B-44D4-8C73-7B604F7A20A1}.Release|x86.Build.0 = Release|x86
+		{BD7A14A6-14BA-4F71-8171-32AE3F6B8F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD7A14A6-14BA-4F71-8171-32AE3F6B8F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD7A14A6-14BA-4F71-8171-32AE3F6B8F33}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BD7A14A6-14BA-4F71-8171-32AE3F6B8F33}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BD7A14A6-14BA-4F71-8171-32AE3F6B8F33}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BD7A14A6-14BA-4F71-8171-32AE3F6B8F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD7A14A6-14BA-4F71-8171-32AE3F6B8F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD7A14A6-14BA-4F71-8171-32AE3F6B8F33}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BD7A14A6-14BA-4F71-8171-32AE3F6B8F33}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BD7A14A6-14BA-4F71-8171-32AE3F6B8F33}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

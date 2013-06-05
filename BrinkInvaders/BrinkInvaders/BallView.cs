@@ -26,7 +26,7 @@ namespace BrickInvaders
             public override void Refresh(Observable o)
             {
                 base.Refresh(o);
-                this.BackColor = Color.Transparent;
+                //this.BackColor = Color.Transparent;
 
             }
         }

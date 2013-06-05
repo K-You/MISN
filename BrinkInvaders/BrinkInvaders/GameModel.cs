@@ -249,6 +249,13 @@ namespace BrickInvaders
             public override void SetBrickPosition(int index, Vector2D position)
             {
                 this._map.Bricks[index].Position = position;
+
+                if (position.Y < -1)
+                {
+                    this._brokenBriks++;
+                    this._map.Bricks.RemoveAt(index);
+                }
+
                 this.NotifyObservers();
             }
 

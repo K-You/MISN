@@ -17,7 +17,7 @@ namespace BrickInvaders
 
         public class Engine
         {
-            private static int DEFAULT_INTERVAL = 1000 / 24;
+            private static int DEFAULT_INTERVAL = 100;
             private static Configuration _configuration;
             private static ModelInterface _model;
             private static Player _player;
@@ -33,12 +33,6 @@ namespace BrickInvaders
 
                 this._timer = new System.Timers.Timer(DEFAULT_INTERVAL);
                 this._timer.SynchronizingObject = form;
-
-             //    gestion de la soundtrack
-          //     SoundPlayer song = new SoundPlayer(Properties.Resources.Soundtrack);
-               
-
-           //     song.PlayLooping();
             }
 
             public void start()
@@ -127,7 +121,15 @@ namespace BrickInvaders
 
                 for (j = 0; j < length2; j++)
                 {
-                    m.SetBrickPosition(j, m.GetBrickPosition(j) + m.GetBrickSpeed(j));
+                    newPosition = m.GetBrickPosition(j) + m.GetBrickSpeed(j);
+                    m.SetBrickPosition(j, newPosition);
+
+                    if (newPosition.Y < -1)
+                    {
+                        j--;
+                        length2--;
+                    }
+
                     if (Tools.Utils.Intersects(m.GetShipBoundingBox(), m.GetBrickBoundingBox(j)))
                     {
                         m.SetShipHealth(m.GetShipHealth() - m.GetBrickHealth(j));
@@ -138,6 +140,8 @@ namespace BrickInvaders
                         }
 
                         m.SetBrickHealth(j, 0);
+                        j--;
+                        length2--;
                     }
                 }
             }
