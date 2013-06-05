@@ -17,7 +17,7 @@ namespace BrickInvaders
 
         public class Engine
         {
-            private static int DEFAULT_INTERVAL = 100;
+            private static int DEFAULT_INTERVAL = 1000 / 24;
             private static Configuration _configuration;
             private static ModelInterface _model;
             private static Player _player;
