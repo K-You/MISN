@@ -32,12 +32,6 @@ namespace BrickInvaders
 
             private void button1_Click(object sender, EventArgs e)
             {
-                this.button1.Dispose();
-                if (this._e != null)
-                {
-                    this._e.start();
-                }
-                this.Focus();
             }
 
             public void Refresh(Observable m)
@@ -64,6 +58,12 @@ namespace BrickInvaders
 
             private void MainFrame_Load(object sender, EventArgs e)
             {
+                this.button1.Dispose();
+                if (this._e != null)
+                {
+                    this._e.start();
+                }
+                this.Focus();
             }
         }
     }
