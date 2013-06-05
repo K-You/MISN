@@ -17,7 +17,7 @@ namespace BrickInvaders
             private KeyBinding keys;
 
             private Vector2D _dimensions = new Vector2D(7, 11);
-            private int _levelheight = 100;
+            private int _levelheight = 20;
 
             public int LevelHeight
             {

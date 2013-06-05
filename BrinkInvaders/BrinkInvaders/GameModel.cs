@@ -18,7 +18,7 @@ namespace BrickInvaders
             private int _brokenBriks;
             private Map _map;
             private Player _player;
-            private int _level;
+            private int _level = 1;
 
             public GameModel()
             {

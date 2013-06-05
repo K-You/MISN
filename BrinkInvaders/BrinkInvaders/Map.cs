@@ -31,7 +31,6 @@ namespace BrickInvaders
                 set { _width = value; }
             }
 
-
             public int Height
             {
                 get { return _height; }

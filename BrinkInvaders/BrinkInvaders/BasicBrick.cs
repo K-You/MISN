@@ -14,7 +14,7 @@ namespace BrickInvaders
 
         public class BasicBrick : DynamicElement
         {
-            private int health;
+            private int _health;
             private static Vector2D DEFAULT_SPEED = new Vector2D(0, -1);
             private static int DEFAULT_HEALTH = 1;
 
@@ -29,15 +29,15 @@ namespace BrickInvaders
             public BasicBrick(Vector2D position, Vector2D speed, Vector2D dimensions, int health, Color color)
                 : base(position, speed, dimensions)
             {
-                this.health = health;
+                this._health = health;
                 this.Color = color;
                 this.AddObserver(new BrickView(BrickInvaders.frame));
             }
 
             public int Health
             {
-                get { return health; }
-                set { health = value; this.NotifyObservers(); }
+                get { return _health; }
+                set { _health = value; this.NotifyObservers(); }
             }
 
             public override void NotifyObservers()
