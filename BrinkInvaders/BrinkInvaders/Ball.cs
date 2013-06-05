@@ -13,6 +13,7 @@ namespace BrickInvaders
     {
 
         public class Ball : DynamicElement
+        // Cette classe est celle de la balle, elle inflige des dégâts aux briques, d'où son membre _damage
         {
             private static double DEFAULT_RADIUS = 1;
             private static int DEFAULT_DAMAGE = 1;

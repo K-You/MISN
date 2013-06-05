@@ -13,6 +13,7 @@ namespace BrickInvaders
     {
 
         public class BasicBrick : DynamicElement
+        // Cette classe est celle de la brique, elle a une certaine vie d'où son membre _health
         {
             private int _health;
             private static Vector2D DEFAULT_SPEED = new Vector2D(0, -1);

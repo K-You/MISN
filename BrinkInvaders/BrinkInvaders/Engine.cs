@@ -18,7 +18,7 @@ namespace BrickInvaders
         {
             private static Engine INSTANCE = null;
 
-            private int DEFAULT_INTERVAL = 1000 / 24;
+            private int DEFAULT_INTERVAL = 1000 / 24; // Framerate de 24 IPS
             private Configuration _configuration;
             private ModelInterface _model;
             private Player _player;
@@ -32,6 +32,7 @@ namespace BrickInvaders
                 }
             }
 
+            // On applique un pattern singleton, il n'y a qu'un seul Engine qui modifiera le modèle
             public static Engine GetInstance()
             {
                 return INSTANCE;
@@ -80,8 +81,6 @@ namespace BrickInvaders
 
             private static void OnTimedEvent(object source, ElapsedEventArgs e)
             {
-                Console.WriteLine("tick");
-
                 ModelInterface m = Engine.GetInstance()._model;
                 int length = m.GetBallCount();
                 int length2 = m.GetBrickCount();
@@ -90,16 +89,21 @@ namespace BrickInvaders
                 Vector2D shipPosition = m.GetShipPosition();
                 Vector2D fallSpeed = (length2 > 0) ? m.GetBrickSpeed(0) : null;
 
+                Random r = new Random();
+                double diff;
+
                 Vector2D bposition, newPosition, newSpeed, bspeed;
                 int j, health;
                 bool chocked;
-
+                
+                // S'il n'y a plus de briques, on passe au niveau suivant
                 if (length2 <= 0)
                 {
                     m.SetLevel(m.GetLevel() + 1);
                     Engine.GetInstance().Restart();
                 }
 
+                // Pour chaque balle (car le moteur gère plusieurs balles même si on l'a limité pour la démonstration)
                 for (int i = 0; i < length; i++)
                 {
                     bspeed = m.GetBallSpeed(i);
@@ -113,10 +117,12 @@ namespace BrickInvaders
                             m.SetBrickHealth(j, health);
                             if (health <= 0)
                             {
+                                // Il faut corriger l'index car la brique va être supprimée dans le setbrickhealth
                                 j--;
                                 length2--;
                             }
 
+                            // Le rebond est géré dans une classe utilitaire, ici on inverse X et Y
                             m.SetBallSpeed(i, Tools.Utils.ChocResult(bspeed));
                             chocked = true;
                         }
@@ -126,6 +132,8 @@ namespace BrickInvaders
                     bposition = m.GetBallPosition(i);
                     newPosition = bposition + bspeed;
                     newSpeed = bspeed;
+
+                    // On surveille que la balle ne soit pas sur le point de sortir de l'écran et on corrige par des rebonds sinon
                     if (newPosition.X < 0)
                     {
                         newPosition.invertX();
@@ -141,15 +149,21 @@ namespace BrickInvaders
                         newPosition.Y = 2 * (msize.Y - 1) - newPosition.Y;
                         newSpeed.invertY();
                     }
+                    // La balle peut aussi rebondir sur le ship, nous le testons, si c'est le cas elle rebondit avec un petit aléa (diff)
                     else if (Tools.Utils.Intersects(m.GetBallBoundingBox(i), m.GetShipBoundingBox()))
                     {
                         newPosition.Y = 2 * (shipPosition.Y + m.GetShipDimensions().Y) - newPosition.Y;
                         newSpeed.invertY();
+
+                        diff = r.NextDouble() / 2 * newSpeed.X * ((r.Next(2) < 1) ? -1 : 1);
+
+                        newSpeed.X += diff;
                     }
 
                     m.SetBallPosition(i, newPosition);
                     m.SetBallSpeed(i, newSpeed);
 
+                    // Si on a perdu la balle, on perd la partie
                     if (newPosition.Y < 0)
                     {
                         m.SetLost(true);
@@ -157,6 +171,7 @@ namespace BrickInvaders
                     }
                 }
 
+                // On va accélérer les briques en mode HighSpeedMode et aussi les déplacer
                 for (j = 0; j < length2; j++)
                 {
                     newSpeed = fallSpeed + Engine.GetInstance()._configuration.GameMode.StepSpeed;
@@ -171,6 +186,7 @@ namespace BrickInvaders
                     }
                 }
 
+                // Enfin si le ship touche une brique, il la détruit mais est endommagé, s'il est détruit, on perd
                 for (j = 0; j < length2; j++)
                 {
                     if (Tools.Utils.Intersects(m.GetShipBoundingBox(), m.GetBrickBoundingBox(j)))

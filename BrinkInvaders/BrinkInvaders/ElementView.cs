@@ -15,7 +15,7 @@ namespace BrickInvaders
         public class ElementView : PictureBox, Observer
         {
             private static Vector2D _dim, _padding;
-            private bool _dimensioned = false; // were dimension set?
+            private bool _dimensioned = false;
             public Form form { get; set; }
 
             public ElementView()
