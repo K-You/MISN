@@ -81,6 +81,13 @@ namespace BrickInvaders.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap spaceship {
+            get {
+                object obj = ResourceManager.GetObject("spaceship", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap windows_logo {
             get {
                 object obj = ResourceManager.GetObject("windows_logo", resourceCulture);

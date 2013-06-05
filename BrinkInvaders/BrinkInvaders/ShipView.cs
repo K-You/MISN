@@ -21,6 +21,7 @@ namespace BrickInvaders
             {
                 this.BackColor = Color.YellowGreen;
                 this.Width = 0;
+                this.SizeMode = PictureBoxSizeMode.StretchImage;
                 
             }
 
@@ -29,11 +30,13 @@ namespace BrickInvaders
                 base.Refresh(m);
                 Ship ship = (Ship)m;
 
-                this.BackColor = ship.Color; 
-                this.form.Controls.Add(new Label(){Text=ship.Color.ToString(),BackColor = Color.Yellow,Location = new Point(100,100)});
+                this.BackColor = ship.Color;
+                this.Image = global::BrickInvaders.Properties.Resources.spaceship;
+                this.BackColor = Color.Black;
+                this.SizeMode = PictureBoxSizeMode.StretchImage;
 
                     
-                this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+              //  this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             }
         }
 

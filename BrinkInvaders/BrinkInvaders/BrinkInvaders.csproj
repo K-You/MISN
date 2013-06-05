@@ -154,6 +154,7 @@
   <ItemGroup>
     <None Include="Resources\background.jpg" />
     <None Include="Resources\spaceinvader.png" />
+    <None Include="Resources\spaceship.png" />
     <Content Include="Resources\windows_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
