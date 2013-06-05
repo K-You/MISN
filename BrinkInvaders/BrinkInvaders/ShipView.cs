@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Drawing;
 using BrickInvaders.Model;
 using System.Windows.Forms;
 
@@ -27,7 +27,7 @@ namespace BrickInvaders
                 base.Refresh(m);
                 Ship ship = (Ship)m;
 
-                this.BackColor = ship.Color;
+                this.BackColor = Color.White; ;
                 this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             }
         }

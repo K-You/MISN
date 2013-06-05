@@ -18,8 +18,9 @@ namespace BrickInvaders
                 : base(f)
             {
                 this.Image = global::BrickInvaders.Properties.Resources.spaceinvader;
-                this.BackColor = Color.Transparent;
+                this.BackColor = Color.Black;
                 this.SizeMode = PictureBoxSizeMode.Zoom;
+                f.Controls.Add(this);
             }
 
             public override void Refresh(Observable m)

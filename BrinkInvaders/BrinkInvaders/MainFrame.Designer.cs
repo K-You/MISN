@@ -31,17 +31,15 @@
             /// </summary>
             private void InitializeComponent()
             {
-                System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
                 this.button1 = new System.Windows.Forms.Button();
                 this.SuspendLayout();
                 // 
                 // button1
                 // 
-
-                this.button1.Location = new System.Drawing.Point(215, 124);
-
+                this.button1.Location = new System.Drawing.Point(287, 153);
+                this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
                 this.button1.Name = "button1";
-                this.button1.Size = new System.Drawing.Size(75, 23);
+                this.button1.Size = new System.Drawing.Size(100, 28);
                 this.button1.TabIndex = 0;
                 this.button1.Text = "Play";
                 this.button1.UseVisualStyleBackColor = true;
@@ -49,16 +47,15 @@
                 // 
                 // MainFrame
                 // 
-                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+                this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-                this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-
-                this.ClientSize = new System.Drawing.Size(512, 372);
-
+                this.BackColor = System.Drawing.SystemColors.InfoText;
+                this.ClientSize = new System.Drawing.Size(509, 560);
                 this.Controls.Add(this.button1);
+                this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
                 this.MaximizeBox = false;
-                this.MaximumSize = new System.Drawing.Size(400, 500);
-                this.MinimumSize = new System.Drawing.Size(400, 500);
+                this.MaximumSize = new System.Drawing.Size(527, 605);
+                this.MinimumSize = new System.Drawing.Size(527, 605);
                 this.Name = "MainFrame";
                 this.Text = "MainFrame";
                 this.Load += new System.EventHandler(this.MainFrame_Load);

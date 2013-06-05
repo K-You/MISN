@@ -19,14 +19,15 @@ namespace BrickInvaders
                 : base(f)
             {
                 this.Image = global::BrickInvaders.Properties.Resources.windows_logo;
-                this.BackColor = Color.Transparent;
+                this.BackColor = Color.Black;
                 this.SizeMode = PictureBoxSizeMode.Zoom;
+                form.Controls.Add(this);
             }
 
             public override void Refresh(Observable o)
             {
                 base.Refresh(o);
-                //
+                
 
             }
         }
