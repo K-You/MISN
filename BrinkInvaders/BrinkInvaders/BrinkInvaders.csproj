@@ -109,6 +109,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Rectangle.cs" />
+    <Compile Include="ScoresModel.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="Vector2D.cs" />
     <Compile Include="ComplexBrick.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="Observable.cs" />
     <Compile Include="Observer.cs" />
     <Compile Include="WorldView.cs" />
+    <Compile Include="XMLScoreParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pause.resx">
