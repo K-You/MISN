@@ -67,6 +67,8 @@ namespace BrickInvaders
                 m.AddShip(this.ship);
 
                 m.SetBricks(g.generateMap(m.GetLevel(), this.Width, this.LevelHeight, this.GameMode.MinSpeed));
+
+                m.AddBall();
             }
         }
     }

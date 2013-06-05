@@ -18,7 +18,6 @@ namespace BrickInvaders
             private string _label;
             private Vector2D _minspeed;
             private Vector2D _maxspeed;
-            private List<Score> _scores;
             private static Vector2D DEFAULT_SPEED = new Vector2D();
 
             public GameMode(MapGenerator Generator, String label)
@@ -34,11 +33,6 @@ namespace BrickInvaders
                 this.MaxSpeed = maxspeed;
             }
 
-            public List<Score> getBestScores
-            {
-                get { return _scores; }
-            }
-
             public Vector2D MinSpeed
             {
                 get { return _minspeed; }
@@ -49,7 +43,6 @@ namespace BrickInvaders
                 get { return _maxspeed; }
                 set { _maxspeed = value; }
             }
-
 
             public string Label
             {

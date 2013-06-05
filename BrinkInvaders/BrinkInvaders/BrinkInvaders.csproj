@@ -61,7 +61,6 @@
     </Compile>
     <Compile Include="BasicBrick.cs" />
     <Compile Include="BasicMapGenerator.cs" />
-    <Compile Include="BasicMode.cs" />
     <Compile Include="BrickInvader.cs" />
     <Compile Include="BrickView.cs">
       <SubType>Component</SubType>
@@ -69,19 +68,6 @@
     <Compile Include="ConfigurationInterface.cs" />
     <Compile Include="ElementView.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="GameMapView.cs" />
-    <Compile Include="GameOver.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GameOver.Designer.cs">
-      <DependentUpon>GameOver.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HigherScores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HigherScores.Designer.cs">
-      <DependentUpon>HigherScores.cs</DependentUpon>
     </Compile>
     <Compile Include="Launcher.cs">
       <SubType>Form</SubType>
@@ -107,7 +93,6 @@
     <Compile Include="ShipArguments.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="Vector2D.cs" />
-    <Compile Include="ComplexBrick.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="HighSpeedMode.cs" />
@@ -130,12 +115,6 @@
     <Compile Include="XMLScoreParser.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GameOver.resx">
-      <DependentUpon>GameOver.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HigherScores.resx">
-      <DependentUpon>HigherScores.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>

@@ -74,6 +74,10 @@ namespace BrickInvaders
 
 
                 }
+                else if (model.IsEnded())
+                {
+                    this.Close();
+                }
 
                 this._grid = model.GetMapDimensions();
             }

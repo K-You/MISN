@@ -61,7 +61,6 @@ namespace BrickInvaders
 
             //SCORE PART
             public abstract int GetDestroyedBricks();
-            public abstract long GetPassedSeconds();
 
             public abstract void SetPlayer(Player p);
             public abstract Player GetPlayer();
@@ -69,7 +68,9 @@ namespace BrickInvaders
             public abstract int GetLevel();
 
             public abstract bool IsStopped();
-            public abstract void stop();
+            public abstract bool IsEnded();
+            public abstract void Stop();
+            public abstract void Exit();
             public abstract void SetScoresModel(ScoresModel scm);
 
             public abstract void AddScore(Player player, int value, GameMode mode);

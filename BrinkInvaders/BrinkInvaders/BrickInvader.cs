@@ -35,8 +35,6 @@ namespace BrickInvaders
 
                 Engine e = new Engine(p, c, m, BrickInvaders.frame);
 
-                WorldView view = new GameMapView(BrickInvaders.frame);
-
                 Application.Run(BrickInvaders.frame);
             }
         }

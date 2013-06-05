@@ -21,7 +21,6 @@ namespace BrickInvaders
                 //A ajouter ici la liste des touches dont on aura besoin, stockées en dur dans un premier temps, xml ensuite?
                 keys["left"] = 37;
                 keys["right"] = 39;
-                keys["space"] = 32;
                 keys["esc"] = 27;
             }
 

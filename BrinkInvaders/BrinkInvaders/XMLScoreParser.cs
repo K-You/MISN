@@ -23,7 +23,7 @@ namespace BrickInvaders
                     this.xdoc = XDocument.Load(FILENAME);
                     Scores = this.ParseScores();
                 }
-                catch (FileNotFoundException e)
+                catch (FileNotFoundException ex)
                 {
                     this.xdoc = new XDocument(new XElement("Scores"));
                     Scores = new List<Score>();

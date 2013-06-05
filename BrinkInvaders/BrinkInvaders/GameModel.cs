@@ -15,12 +15,12 @@ namespace BrickInvaders
         class GameModel : ModelInterface 
         {
             private ScoresModel _scores;
-            private long _time;
             private int _brokenBriks;
             private Map _map;
             private Player _player;
             private int _level = 1;
             private bool _stopped = false;
+            private bool _ended = false;
 
             public GameModel()
             {
@@ -61,11 +61,6 @@ namespace BrickInvaders
             public override int GetDestroyedBricks()
             {
                 return this._brokenBriks;
-            }
-
-            public override long GetPassedSeconds()
-            {
-                return this._time;
             }
 
             public override void SetPlayer(Player p)
@@ -281,7 +276,7 @@ namespace BrickInvaders
                     this._map.Balls.Add(new Ball(this._map.Ship.Position + new Vector2D(0, 1), Vector2D.Random() / 4, new Vector2D(1, 1), 1, 1));
             }
 
-            public override void stop()
+            public override void Stop()
             {
                 this._stopped = true;
                 this.NotifyObservers();
@@ -295,6 +290,18 @@ namespace BrickInvaders
             {
                 return this._scores.GetScores(mode);
             }
+
+            public override bool IsEnded()
+            {
+                return this._ended;
+            }
+
+            public override void Exit()
+            {
+                this._ended = true;
+                this.NotifyObservers();
+            }
+
             public override List<Score> GetScores()
             {
                 return this._scores.GetScores();

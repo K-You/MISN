@@ -118,9 +118,8 @@ namespace BrickInvaders
 
                     if (newPosition.Y < 0)
                     {
-                       Engine.stop();
+                       Engine.Stop();
                     }
-                    //SI LA BALLE SORT PAR LE BAS C'EST PERDU!
                 }
 
                 for (j = 0; j < length2; j++)
@@ -140,7 +139,7 @@ namespace BrickInvaders
 
                         if (m.GetShipHealth() <= 0)
                         {
-                            Engine.stop();
+                            Engine.Stop();
                         }
 
                         m.SetBrickHealth(j, 0);
@@ -166,22 +165,15 @@ namespace BrickInvaders
                     int width = (int)m.GetShipDimensions().X;
                     m.SetShipPosition((newPos.X < maxX - width) ? newPos : new Vector2D(maxX - width, newPos.Y));
                 }
-                else if (key == Engine._configuration.Keys.GetKey("space"))
-                {
-                    if (m.GetBallCount() < 1)
-                    {
-                        m.AddBall();
-                    }
-                }
                 else if (key == Engine._configuration.Keys.GetKey("esc"))
                 {
-                    //PAUSE/CONTROLS
+                    m.Exit();
                 }
             }
 
-            internal static void stop()
+            internal static void Stop()
             {
-                Engine._model.stop();
+                Engine._model.Stop();
                 Engine._model.AddScore(Engine._model.GetPlayer(), Engine._model.GetDestroyedBricks(), Engine._configuration.GameMode);
                 Engine._timer.Stop();
             }
