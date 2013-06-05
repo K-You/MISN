@@ -20,11 +20,12 @@ namespace BrickInvaders
             Application.SetCompatibleTextRenderingDefault(false);
 
             Launcher launcher = new Launcher();
-            Application.Run(launcher); 
+            Application.Run(launcher);
 
             Configuration c = launcher.Configuration;
 
-            if (c != null) {
+            if (c != null)
+            {
                 Player p = new Player(launcher.Pseudo);
                 ModelInterface m = new GameModel();
 
@@ -36,7 +37,7 @@ namespace BrickInvaders
                 WorldView view = new GameMapView(BrickInvaders.frame);
 
                 Application.Run(BrickInvaders.frame);
-            }            
+            }
         }
     }
 }

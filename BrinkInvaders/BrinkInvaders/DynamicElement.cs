@@ -7,7 +7,8 @@ using System.Drawing;
 namespace BrickInvaders
 {
 
-    namespace Model {
+    namespace Model
+    {
 
         public abstract class DynamicElement : Element
         {

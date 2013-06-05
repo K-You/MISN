@@ -32,7 +32,7 @@ namespace BrickInvaders
                 }
 
                 List<BasicBrick> tempList = new List<BasicBrick>();
-                
+
                 double levelOffset = Math.Sqrt(2 * Math.Sqrt(level));//Calcule l'offset de probabilité en fonction du niveau, selon une évolution type racine un peu ralentie
 
                 bool previous = true;
@@ -45,7 +45,7 @@ namespace BrickInvaders
                     }
                     else
                     {
-                        previous = rand.Next(0, 10) <= (4 + (levelOffset-2));//=Est-ce que je mets des briques sur cette ligne ou j'attends la prochaine
+                        previous = rand.Next(0, 10) <= (4 + (levelOffset - 2));//=Est-ce que je mets des briques sur cette ligne ou j'attends la prochaine
                         if (previous)
                         {
                             since = 0;
@@ -84,7 +84,7 @@ namespace BrickInvaders
                     {
                         for (nY = y - 1; nY <= y + 1; nY++)
                         {
-                            if ((nX!=x || nY !=y) && nX >= 0 && nX <= width - 1 && nY >= 0 && nY <= height - 1 && rand.Next(0, 10) <= (6+levelOffset))//Si rand veut bien je rajoute les briques autour des briques du dessus pour dessiner des "vaisseaux"
+                            if ((nX != x || nY != y) && nX >= 0 && nX <= width - 1 && nY >= 0 && nY <= height - 1 && rand.Next(0, 10) <= (6 + levelOffset))//Si rand veut bien je rajoute les briques autour des briques du dessus pour dessiner des "vaisseaux"
                             {
                                 BasicBrick bck = new BasicBrick(new Vector2D(nX, nY), speed);
                                 list.Add(bck);
@@ -112,7 +112,7 @@ namespace BrickInvaders
             public Ship generateShip(int width, int height)
             {
                 Ship s = new Ship("");
-                s.Position = new Vector2D((width-s.Width) / 2, 0);
+                s.Position = new Vector2D((width - s.Width) / 2, 0);
                 return s;
             }
         }

@@ -54,7 +54,7 @@ namespace BrickInvaders
 
             private void Launcher_Load(object sender, EventArgs e)
             {
-               
+
                 foreach (string mode in Enum.GetNames(typeof(modeEnum)))
                 {
                     this.modeBox.Items.Add(mode);

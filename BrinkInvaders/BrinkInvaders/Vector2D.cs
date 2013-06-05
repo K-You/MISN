@@ -91,7 +91,7 @@ namespace BrickInvaders
                 Random r = new Random();
                 double x = r.NextDouble();
                 double y = r.NextDouble();
-                double normalise = Math.Sqrt(x+y);
+                double normalise = Math.Sqrt(x + y);
 
                 return new Vector2D(x, y) / normalise;
             }

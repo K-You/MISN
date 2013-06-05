@@ -13,7 +13,7 @@ namespace BrickInvaders
         {
 
             private static Vector2D DEFAULT_POSITION = new Vector2D();
-            private static Vector2D DEFAULT_DIMENSIONS = new Vector2D(1,1);
+            private static Vector2D DEFAULT_DIMENSIONS = new Vector2D(1, 1);
             private static Color DEFAULT_COLOR = Color.Blue;
             private static int DEFAULT_MASS = int.MaxValue;
 

@@ -145,26 +145,26 @@ namespace BrickInvaders
             internal void CaptureKey(object sender, KeyEventArgs e)
             {
                 ModelInterface m = Engine._model;
-                string key = e.KeyCode.ToString();
-                if (key == Keys.Left.ToString())
+                int key = e.KeyValue;
+                if (key == Engine._configuration.Keys.GetKey("left"))
                 {
                     Vector2D newPos = m.GetShipPosition() - m.GetShipSpeed();
                     m.SetShipPosition((newPos.X > 0) ? newPos : new Vector2D(0, newPos.Y));
                 }
-                else if (key == Keys.Right.ToString())
+                else if (key == Engine._configuration.Keys.GetKey("right"))
                 {
                     Vector2D newPos = m.GetShipPosition() + m.GetShipSpeed();
                     int maxX = (int)m.GetMapDimensions().X;
                     m.SetShipPosition((newPos.X < maxX - 1) ? newPos : new Vector2D(maxX - 1, newPos.Y));
                 }
-                else if (key == Keys.Space.ToString())
+                else if (key == Engine._configuration.Keys.GetKey("space"))
                 {
                     if (m.GetBallCount() < 1)
                     {
                         m.AddBall();
                     }
                 }
-                else if (key == Keys.Escape.ToString())
+                else if (key == Engine._configuration.Keys.GetKey("esc"))
                 {
                     //PAUSE/CONTROLS
                 }

@@ -26,7 +26,7 @@ namespace BrickInvaders
                 double maxX2 = minX2 + r2.Width;
                 double maxY2 = minY2 + r2.Height;
 
-                double maxgauche = Math.Max(minX1,minX2);
+                double maxgauche = Math.Max(minX1, minX2);
                 double mindroit = Math.Min(maxX1, maxX2);
                 double maxbas = Math.Max(minY1, minY2);
                 double minhaut = Math.Min(maxY1, maxY2);

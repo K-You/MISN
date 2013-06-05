@@ -15,16 +15,16 @@ namespace BrickInvaders
         {
             private Hashtable keys;
 
-
             public KeyBinding()
             {
                 keys = new Hashtable();
                 //A ajouter ici la liste des touches dont on aura besoin, stockées en dur dans un premier temps, xml ensuite?
-                keys["up"] = 38;
-                keys["down"] = 40;
                 keys["left"] = 37;
                 keys["right"] = 39;
+                keys["space"] = 32;
+                keys["esc"] = 27;
             }
+
             public int GetKey(String functionnality)
             {
                 return (int)keys[functionnality];

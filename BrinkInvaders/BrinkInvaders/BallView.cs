@@ -15,10 +15,11 @@ namespace BrickInvaders
         public class BallView : ElementView
         {
 
-            public BallView(Form f):base(f)
+            public BallView(Form f)
+                : base(f)
             {
                 this.Image = global::BrickInvaders.Properties.Resources.windows_logo;
-                
+
                 this.SizeMode = PictureBoxSizeMode.Zoom;
             }
 
@@ -26,7 +27,7 @@ namespace BrickInvaders
             {
                 base.Refresh(o);
                 this.BackColor = Color.Transparent;
-                
+
             }
         }
     }

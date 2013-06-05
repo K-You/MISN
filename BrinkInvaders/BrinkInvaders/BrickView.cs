@@ -14,7 +14,8 @@ namespace BrickInvaders
         public class BrickView : ElementView
         {
 
-            public BrickView(Form f) : base(f)
+            public BrickView(Form f)
+                : base(f)
             {
                 this.BackColor = Color.Transparent;
             }

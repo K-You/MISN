@@ -16,14 +16,14 @@ namespace BrickInvaders
             private GameMode gameMode;
             private KeyBinding keys;
 
-            private Vector2D _dimensions = new Vector2D(7,11);
+            private Vector2D _dimensions = new Vector2D(7, 11);
             private int _levelheight = 100;
 
             public int LevelHeight
             {
                 get { return _levelheight; }
                 set { _levelheight = value; }
-            }            
+            }
 
             public int Width
             {
@@ -41,7 +41,7 @@ namespace BrickInvaders
             {
                 this.keys = keys;
                 this.gameMode = gameMode;
-            } 
+            }
 
             public GameMode GameMode
             {
