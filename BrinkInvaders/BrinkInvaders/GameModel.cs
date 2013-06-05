@@ -44,7 +44,7 @@ namespace BrickInvaders
 
             public override void AddShip(ShipArguments s)
             {
-                this._map.Ship = new Ship(s.Label,s.Position,s.Speed,s.Dimension,s.Mass,s.Health);
+                this._map.Ship = new Ship(s.Label,s.Position,s.Speed,s.Dimension,s.Mass,s.Health,s.Color);
                 this.NotifyObservers();
             }
 

@@ -47,8 +47,6 @@ namespace BrickInvaders
                 if (model.IsStopped())
                 {
                     //GAMEOVER DESIGN
-                    this.Controls.Clear();
-                    InitializeComponent();
                 }
 
                 this._grid = model.GetMapDimensions();

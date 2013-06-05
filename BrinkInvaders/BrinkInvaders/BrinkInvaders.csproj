@@ -70,12 +70,6 @@
     <Compile Include="ElementView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Pause.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pause.Designer.cs">
-      <DependentUpon>Pause.cs</DependentUpon>
-    </Compile>
     <Compile Include="GameMapView.cs" />
     <Compile Include="GameOver.cs">
       <SubType>Form</SubType>
@@ -136,9 +130,6 @@
     <Compile Include="XMLScoreParser.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pause.resx">
-      <DependentUpon>Pause.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GameOver.resx">
       <DependentUpon>GameOver.cs</DependentUpon>
     </EmbeddedResource>
