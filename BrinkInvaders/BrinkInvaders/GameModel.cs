@@ -151,15 +151,18 @@ namespace BrickInvaders
 
             public override void SetBrickHealth(int index, int health)
             {
-                this._map.Bricks[index].Health = health;
-
-                if (health <= 0)
+                if (index >= 0 && index < this._map.Bricks.Count)
                 {
-                    this._brokenBriks++;
-                    this._map.Bricks.RemoveAt(index);
-                }
+                    this._map.Bricks[index].Health = health;
 
-                this.NotifyObservers(); 
+                    if (health <= 0)
+                    {
+                        this._brokenBriks++;
+                        this._map.Bricks.RemoveAt(index);
+                    }
+
+                    this.NotifyObservers();
+                }
             }
 
             public override Vector2D GetBrickPosition(int index)
@@ -259,15 +262,18 @@ namespace BrickInvaders
 
             public override void SetBrickPosition(int index, Vector2D position)
             {
-                this._map.Bricks[index].Position = position;
-
-                if (position.Y < -1)
+                if (index >= 0 && index < this._map.Bricks.Count)
                 {
-                    this._brokenBriks++;
-                    this._map.Bricks.RemoveAt(index);
-                }
+                    this._map.Bricks[index].Position = position;
 
-                this.NotifyObservers();
+                    if (position.Y < -1)
+                    {
+                        this._brokenBriks++;
+                        this._map.Bricks.RemoveAt(index);
+                    }
+
+                    this.NotifyObservers();
+                }
             }
 
             public override Rectangle GetShipBoundingBox()
@@ -314,6 +320,7 @@ namespace BrickInvaders
 
             public override void SetBrickSpeed(int index, Vector2D speed)
             {
+                if (index >= 0 && index < this._map.Bricks.Count)
                 this._map.Bricks[index].Speed = speed;
             }
         }

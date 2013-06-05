@@ -67,7 +67,7 @@ namespace BrickInvaders
             {
                 this._model.SetStopped(true);
                 this._model.AddScore(this._model.GetPlayer(), this._model.GetDestroyedBricks(), this._configuration.GameMode);
-                this._timer.Stop();
+                //this._timer.Stop();
             }
 
             public void Run()
@@ -92,7 +92,6 @@ namespace BrickInvaders
 
                 if (length2 <= 0)
                 {
-                    //NOUVEAU NIVEAU
                     m.SetLevel(m.GetLevel() + 1);
                     Engine.GetInstance().Restart();
                 }
