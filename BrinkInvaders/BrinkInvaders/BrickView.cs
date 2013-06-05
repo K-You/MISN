@@ -17,7 +17,9 @@ namespace BrickInvaders
             public BrickView(Form f)
                 : base(f)
             {
+                this.Image = global::BrickInvaders.Properties.Resources.spaceinvader;
                 this.BackColor = Color.Transparent;
+                this.SizeMode = PictureBoxSizeMode.Zoom;
             }
 
             public override void Refresh(Observable m)
@@ -31,8 +33,8 @@ namespace BrickInvaders
                     this.Dispose();
                 }
 
-                this.BackColor = brick.Color;
-                this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+                //this.BackColor = Color.CadetBlue;
+               // this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             }
         }
 

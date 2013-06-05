@@ -14,6 +14,8 @@ namespace BrickInvaders
 
         public class ElementView : PictureBox, Observer
         {
+            private static Vector2D dim, padding;
+            private bool _dimensioned = false; // were dimension set?
             public Form form { get; set; }
 
             public ElementView()
@@ -26,24 +28,30 @@ namespace BrickInvaders
                 if (f != null)
                 {
                     this.form = f;
+                    dim = ((MainFrame)form).GridDimensions;
+                 padding = new Vector2D(form.ClientSize.Width / dim.X, form.ClientSize.Height / dim.Y);
+
                     f.Controls.Add(this);
                 }
             }
 
             public virtual void Refresh(Observable o)
             {
-                Vector2D dim = ((MainFrame)form).GridDimensions;
-                Vector2D padding = new Vector2D(form.ClientSize.Width / dim.X, form.ClientSize.Height / dim.Y);
+                
 
                 Element e = (Element)o;
-                this.Width = (int)(e.Width * padding.X);
-                this.Height = (int)(e.Height * padding.Y);
+                if (!_dimensioned)
+                {
+                    this.Width = (int)(e.Width * padding.X);
+                    this.Height = (int)(e.Height * padding.Y);
+                    _dimensioned = true;
+                }
 
                 if (e.Position.Y <= dim.Y)
                 {
                     this.Location = new System.Drawing.Point((int)(e.Position.X * padding.X), (int)((dim.Y - e.Position.Y - 1) * padding.Y));
                 }
-                this.BackColor = e.Color;
+              //  this.BackColor = e.Color;
             }
         }
     }
