@@ -37,7 +37,7 @@
                 // 
                 // button1
                 // 
-                this.button1.Location = new System.Drawing.Point(112, 113);
+                this.button1.Location = new System.Drawing.Point(153, 233);
                 this.button1.Name = "button1";
                 this.button1.Size = new System.Drawing.Size(75, 23);
                 this.button1.TabIndex = 0;
@@ -50,8 +50,11 @@
                 this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
                 this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-                this.ClientSize = new System.Drawing.Size(284, 262);
+                this.ClientSize = new System.Drawing.Size(384, 462);
                 this.Controls.Add(this.button1);
+                this.MaximizeBox = false;
+                this.MaximumSize = new System.Drawing.Size(400, 500);
+                this.MinimumSize = new System.Drawing.Size(400, 500);
                 this.Name = "MainFrame";
                 this.Text = "MainFrame";
                 this.Load += new System.EventHandler(this.MainFrame_Load);
