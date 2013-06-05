@@ -90,7 +90,7 @@ namespace BrickInvaders
                 int j, health;
                 bool chocked;
 
-                if (length2 < 0)
+                if (length2 <= 0)
                 {
                     //NOUVEAU NIVEAU
                     m.SetLevel(m.GetLevel() + 1);
