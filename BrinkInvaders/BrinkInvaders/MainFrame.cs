@@ -58,7 +58,7 @@ namespace BrickInvaders
 
             private void MainFrame_Load(object sender, EventArgs e)
             {
-                this.button1.Dispose();
+                
                 if (this._e != null)
                 {
                     this._e.start();

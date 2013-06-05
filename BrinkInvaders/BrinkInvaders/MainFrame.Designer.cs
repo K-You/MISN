@@ -31,18 +31,7 @@
             /// </summary>
             private void InitializeComponent()
             {
-                this.button1 = new System.Windows.Forms.Button();
                 this.SuspendLayout();
-                // 
-                // button1
-                // 
-                this.button1.Location = new System.Drawing.Point(167, 144);
-                this.button1.Name = "button1";
-                this.button1.Size = new System.Drawing.Size(75, 23);
-                this.button1.TabIndex = 0;
-                this.button1.Text = "Play";
-                this.button1.UseVisualStyleBackColor = true;
-                this.button1.Click += new System.EventHandler(this.button1_Click);
                 // 
                 // MainFrame
                 // 
@@ -50,7 +39,6 @@
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
                 this.BackColor = System.Drawing.SystemColors.InfoText;
                 this.ClientSize = new System.Drawing.Size(383, 461);
-                this.Controls.Add(this.button1);
                 this.MaximizeBox = false;
                 this.MaximumSize = new System.Drawing.Size(399, 499);
                 this.MinimumSize = new System.Drawing.Size(399, 499);
@@ -64,7 +52,6 @@
 
             #endregion
 
-            private System.Windows.Forms.Button button1;
         }
     }
 }
