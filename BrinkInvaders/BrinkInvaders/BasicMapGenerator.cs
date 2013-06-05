@@ -108,13 +108,6 @@ namespace BrickInvaders
 
                 return list;
             }
-
-            public Ship generateShip(int width, int height)
-            {
-                Ship s = new Ship("");
-                s.Position = new Vector2D((width - s.Width) / 2, 0);
-                return s;
-            }
         }
     }
 }

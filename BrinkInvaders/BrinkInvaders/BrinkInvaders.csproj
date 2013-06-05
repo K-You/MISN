@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="Rectangle.cs" />
     <Compile Include="ScoresModel.cs" />
+    <Compile Include="ShipArguments.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="Vector2D.cs" />
     <Compile Include="ComplexBrick.cs" />

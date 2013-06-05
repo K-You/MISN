@@ -42,7 +42,16 @@ namespace BrickInvaders
 
             public void Refresh(Observable m)
             {
-                this._grid = ((ModelInterface)m).GetMapDimensions();
+                ModelInterface model = (ModelInterface)m;
+
+                if (model.IsStopped())
+                {
+                    //GAMEOVER DESIGN
+                    this.Controls.Clear();
+                    InitializeComponent();
+                }
+
+                this._grid = model.GetMapDimensions();
             }
 
             public Vector2D GridDimensions
@@ -57,7 +66,6 @@ namespace BrickInvaders
 
             private void MainFrame_Load(object sender, EventArgs e)
             {
-
             }
         }
     }

@@ -19,6 +19,7 @@ namespace BrickInvaders
             private Map _map;
             private Player _player;
             private int _level = 1;
+            private bool _stopped = false;
 
             public GameModel()
             {
@@ -31,9 +32,9 @@ namespace BrickInvaders
                 this.NotifyObservers();
             }
 
-            public override void SetShip(Ship s)
+            public override void AddShip(ShipArguments s)
             {
-                this._map.Ship = s;
+                this._map.Ship = new Ship(s.Label,s.Position,s.Speed,s.Dimension,s.Mass,s.Health);
                 this.NotifyObservers();
             }
 
@@ -268,6 +269,17 @@ namespace BrickInvaders
             {
                 if (this._map.Ship != null)
                     this._map.Balls.Add(new Ball(this._map.Ship.Position + new Vector2D(0, 1), Vector2D.Random() / 4, new Vector2D(1, 1), 1, 1));
+            }
+
+            public override void stop()
+            {
+                this._stopped = true;
+                this.NotifyObservers();
+            }
+
+            public override bool IsStopped()
+            {
+                return this._stopped;
             }
         }
     }

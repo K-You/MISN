@@ -25,9 +25,9 @@ namespace BrickInvaders
             private enum modeEnum { AllIn, HighSpeed };
             private GameMode[] modeArray = new GameMode[] { new AllInMode(), new HighSpeedMode() };
             private enum shipEnum { Longboard, Starship, Firefly };
-            private Ship[] shipArray = new Ship[] { new Ship("Longboard", new Vector2D(), new Vector2D(0.25,0), new Vector2D(1,10), int.MaxValue, 4, Color.Blue), 
-                                                    new Ship("Starship", new Vector2D(), new Vector2D(0.5,0), new Vector2D(1,2), int.MaxValue, 3, Color.Green), 
-                                                    new Ship("Firefly", new Vector2D(), new Vector2D(1,0), new Vector2D(1,1), int.MaxValue, 2, Color.Red) };
+            private ShipArguments[] shipArray = new ShipArguments[] { new ShipArguments("Longboard", Ship.DEFAULT_POSITION, new Vector2D(0.25,0), new Vector2D(3,1), int.MaxValue, 4, Color.Blue), 
+                                                    new ShipArguments("Starship", Ship.DEFAULT_POSITION, new Vector2D(0.5,0), new Vector2D(2,1), int.MaxValue, 3, Color.Green), 
+                                                    new ShipArguments("Firefly", Ship.DEFAULT_POSITION, new Vector2D(1,0), new Vector2D(1,1), int.MaxValue, 2, Color.Red) };
             private Configuration configuration = null;
 
             private void button1_Click(object sender, EventArgs e)
@@ -36,8 +36,8 @@ namespace BrickInvaders
                 {
                     this.pseudo = pseudoBox.Text;
                     GameMode mode = modeArray[(int)Enum.Parse(typeof(modeEnum), this.modeBox.Text)];
-                    Ship ship = shipArray[(int)Enum.Parse(typeof(shipEnum), this.shipBox.Text)]; //TODO use ship
-                    this.configuration = new Configuration(mode, new KeyBinding()); //TODO apply keybinding
+                    ShipArguments ship = shipArray[(int)Enum.Parse(typeof(shipEnum), this.shipBox.Text)];
+                    this.configuration = new Configuration(mode, ship, new KeyBinding());
                     this.Close();
                 }
             }

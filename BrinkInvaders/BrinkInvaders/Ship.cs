@@ -17,12 +17,12 @@ namespace BrickInvaders
             private string label;
             private int health;
 
-            private static Vector2D DEFAULT_POSITION = new Vector2D();
-            private static Vector2D DEFAULT_SPEED = new Vector2D(0.25,0);
-            private static Vector2D DEFAULT_DIMENSIONS = new Vector2D(1,1);
-            private static int DEFAULT_MASS = int.MaxValue;
-            private static Color DEFAULT_COLOR = Color.Black;
-            private static int DEFAULT_HEALTH = 1;
+            public static readonly Vector2D DEFAULT_POSITION = new Vector2D(-1,-1);
+            public static readonly Vector2D DEFAULT_SPEED = new Vector2D(0.25, 0);
+            public static readonly Vector2D DEFAULT_DIMENSIONS = new Vector2D(1, 1);
+            public static readonly int DEFAULT_MASS = int.MaxValue;
+            public static readonly Color DEFAULT_COLOR = Color.Black;
+            public static readonly int DEFAULT_HEALTH = 1;
 
             public Ship(string label)
                 : this(label, DEFAULT_POSITION)

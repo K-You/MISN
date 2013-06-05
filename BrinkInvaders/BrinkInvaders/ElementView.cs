@@ -29,17 +29,16 @@ namespace BrickInvaders
                 {
                     this.form = f;
                     dim = ((MainFrame)form).GridDimensions;
-                 padding = new Vector2D(form.ClientSize.Width / dim.X, form.ClientSize.Height / dim.Y);
-
+                    padding = new Vector2D(form.ClientSize.Width / dim.X, form.ClientSize.Height / dim.Y);
+                    this.Location = new System.Drawing.Point(int.MinValue, int.MinValue);
                     f.Controls.Add(this);
                 }
             }
 
             public virtual void Refresh(Observable o)
             {
-                
-
                 Element e = (Element)o;
+
                 if (!_dimensioned)
                 {
                     this.Width = (int)(e.Width * padding.X);
@@ -47,7 +46,7 @@ namespace BrickInvaders
                     _dimensioned = true;
                 }
 
-                if (e.Position.Y <= dim.Y)
+                if (e.Position.Y < dim.Y)
                 {
                     this.Location = new System.Drawing.Point((int)(e.Position.X * padding.X), (int)((dim.Y - e.Position.Y - 1) * padding.Y));
                 }

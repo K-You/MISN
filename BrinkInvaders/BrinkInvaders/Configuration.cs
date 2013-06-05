@@ -15,6 +15,7 @@ namespace BrickInvaders
         {
             private GameMode gameMode;
             private KeyBinding keys;
+            private ShipArguments ship;
 
             private Vector2D _dimensions = new Vector2D(7, 11);
             private int _levelheight = 20;
@@ -37,9 +38,10 @@ namespace BrickInvaders
                 set { _dimensions.Y = value; }
             }
 
-            public Configuration(GameMode gameMode, KeyBinding keys)
+            public Configuration(GameMode gameMode, ShipArguments ship, KeyBinding keys)
             {
                 this.keys = keys;
+                this.ship = ship;
                 this.gameMode = gameMode;
             }
 
@@ -58,8 +60,12 @@ namespace BrickInvaders
             public void InitialiseModel(ModelInterface m)
             {
                 MapGenerator g = this.GameMode.Generator;
+
                 m.SetMapDimensions(new Vector2D(this.Width, this.Height));
-                m.SetShip(g.generateShip(this.Width, this.Height));
+
+                this.ship.Position = new Vector2D((this.Width - this.ship.Dimension.X) / 2, 0);
+                m.AddShip(this.ship);
+
                 m.SetBricks(g.generateMap(m.GetLevel(), this.Width, this.LevelHeight, this.GameMode.Speed));
             }
         }

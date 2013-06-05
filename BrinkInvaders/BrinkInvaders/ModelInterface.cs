@@ -18,7 +18,7 @@ namespace BrickInvaders
             public abstract void SetMapDimensions(Vector2D dimensions);
 
             public abstract void SetBricks(List<BasicBrick> l);
-            public abstract void SetShip(Ship s);
+            public abstract void AddShip(ShipArguments s);
             public abstract void AddBall();
 
             public abstract int GetBallCount();
@@ -66,6 +66,9 @@ namespace BrickInvaders
             public abstract Player GetPlayer();
 
             public abstract int GetLevel();
+
+            public abstract bool IsStopped();
+            public abstract void stop();
 
         }
     }

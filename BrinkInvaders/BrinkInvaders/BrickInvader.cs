@@ -19,6 +19,8 @@ namespace BrickInvaders
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            BrickInvaders.frame = new MainFrame();
+
             Launcher launcher = new Launcher();
             Application.Run(launcher);
 
@@ -29,7 +31,6 @@ namespace BrickInvaders
                 Player p = new Player(launcher.Pseudo);
                 ModelInterface m = new GameModel();
 
-                BrickInvaders.frame = new MainFrame();
                 m.AddObserver(BrickInvaders.frame);
 
                 Engine e = new Engine(p, c, m, BrickInvaders.frame);

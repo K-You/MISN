@@ -7,7 +7,6 @@ using BrickInvaders.Model;
 using System.Timers;
 using BrickInvaders.View;
 using System.Windows.Forms;
-using System.Media;
 
 namespace BrickInvaders
 {
@@ -21,7 +20,7 @@ namespace BrickInvaders
             private static Configuration _configuration;
             private static ModelInterface _model;
             private static Player _player;
-            private System.Timers.Timer _timer;
+            private static System.Timers.Timer _timer;
 
             public Engine(Player p, Configuration c, ModelInterface m, MainFrame form)
             {
@@ -31,8 +30,8 @@ namespace BrickInvaders
 
                 form.Engine = this;
 
-                this._timer = new System.Timers.Timer(DEFAULT_INTERVAL);
-                this._timer.SynchronizingObject = form;
+                Engine._timer = new System.Timers.Timer(DEFAULT_INTERVAL);
+                Engine._timer.SynchronizingObject = form;
             }
 
             public void start()
@@ -44,8 +43,8 @@ namespace BrickInvaders
 
             public void run()
             {
-                this._timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-                this._timer.Enabled = true;
+                Engine._timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+                Engine._timer.Start();
             }
 
             private static void OnTimedEvent(object source, ElapsedEventArgs e)
@@ -70,7 +69,6 @@ namespace BrickInvaders
                     {
                         if (Tools.Utils.Intersects(m.GetBallBoundingBox(i), m.GetBrickBoundingBox(j)))
                         {
-                            Console.Write("contact");
                             bbspeed = m.GetBrickSpeed(j);
 
                             health = m.GetBrickHealth(j) - m.GetBallDamage(i);
@@ -140,7 +138,7 @@ namespace BrickInvaders
 
                         if (m.GetShipHealth() <= 0)
                         {
-                            //DEAD
+                            Engine.stop();
                         }
 
                         m.SetBrickHealth(j, 0);
@@ -163,7 +161,8 @@ namespace BrickInvaders
                 {
                     Vector2D newPos = m.GetShipPosition() + m.GetShipSpeed();
                     int maxX = (int)m.GetMapDimensions().X;
-                    m.SetShipPosition((newPos.X < maxX - 1) ? newPos : new Vector2D(maxX - 1, newPos.Y));
+                    int width = (int)m.GetShipDimensions().X;
+                    m.SetShipPosition((newPos.X < maxX - width) ? newPos : new Vector2D(maxX - width, newPos.Y));
                 }
                 else if (key == Engine._configuration.Keys.GetKey("space"))
                 {
@@ -176,6 +175,12 @@ namespace BrickInvaders
                 {
                     //PAUSE/CONTROLS
                 }
+            }
+
+            internal static void stop()
+            {
+                Engine._model.stop();
+                Engine._timer.Stop();
             }
         }
     }

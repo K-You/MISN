@@ -18,7 +18,8 @@ namespace BrickInvaders
             { }
             public ShipView(Form f)
                 : base(f)
-            { 
+            {
+                this.Width = 0;
             }
 
             public override void Refresh(Observable m)
