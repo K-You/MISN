@@ -45,20 +45,22 @@
                 this.label1.AutoSize = true;
                 this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
                 this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-                this.label1.Location = new System.Drawing.Point(41, 46);
+                this.label1.Location = new System.Drawing.Point(41, 52);
                 this.label1.Name = "label1";
-                this.label1.Size = new System.Drawing.Size(65, 22);
+                this.label1.Size = new System.Drawing.Size(71, 22);
                 this.label1.TabIndex = 0;
                 this.label1.Text = "Pseudo";
                 // 
                 // pseudoBox
                 // 
-                this.pseudoBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.pseudoBox.BackColor = System.Drawing.SystemColors.InfoText;
+                this.pseudoBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.pseudoBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
                 this.pseudoBox.Location = new System.Drawing.Point(267, 48);
                 this.pseudoBox.Name = "pseudoBox";
-                this.pseudoBox.Size = new System.Drawing.Size(139, 20);
+                this.pseudoBox.Size = new System.Drawing.Size(139, 26);
                 this.pseudoBox.TabIndex = 1;
                 // 
                 // label2
@@ -66,23 +68,25 @@
                 this.label2.AutoSize = true;
                 this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
                 this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
                 this.label2.Location = new System.Drawing.Point(41, 107);
                 this.label2.Name = "label2";
-                this.label2.Size = new System.Drawing.Size(98, 22);
+                this.label2.Size = new System.Drawing.Size(109, 22);
                 this.label2.TabIndex = 2;
                 this.label2.Text = "Mode de jeu";
                 // 
                 // modeBox
                 // 
+                this.modeBox.BackColor = System.Drawing.SystemColors.InfoText;
                 this.modeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-                this.modeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.modeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.modeBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
                 this.modeBox.FormattingEnabled = true;
                 this.modeBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
                 this.modeBox.Location = new System.Drawing.Point(267, 107);
                 this.modeBox.Name = "modeBox";
-                this.modeBox.Size = new System.Drawing.Size(139, 21);
+                this.modeBox.Size = new System.Drawing.Size(139, 24);
                 this.modeBox.TabIndex = 3;
                 // 
                 // label3
@@ -90,28 +94,30 @@
                 this.label3.AutoSize = true;
                 this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
                 this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
                 this.label3.Location = new System.Drawing.Point(41, 167);
                 this.label3.Name = "label3";
-                this.label3.Size = new System.Drawing.Size(77, 22);
+                this.label3.Size = new System.Drawing.Size(85, 22);
                 this.label3.TabIndex = 4;
                 this.label3.Text = "Vaisseau";
                 // 
                 // shipBox
                 // 
+                this.shipBox.BackColor = System.Drawing.SystemColors.InfoText;
                 this.shipBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-                this.shipBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.shipBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.shipBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
                 this.shipBox.FormattingEnabled = true;
                 this.shipBox.Location = new System.Drawing.Point(267, 169);
                 this.shipBox.Name = "shipBox";
-                this.shipBox.Size = new System.Drawing.Size(139, 21);
+                this.shipBox.Size = new System.Drawing.Size(139, 24);
                 this.shipBox.TabIndex = 5;
                 // 
                 // button1
                 // 
                 this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-                this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.button1.ForeColor = System.Drawing.Color.SteelBlue;
                 this.button1.Location = new System.Drawing.Point(86, 297);
                 this.button1.Name = "button1";
