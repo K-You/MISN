@@ -11,7 +11,7 @@ namespace BrickInvaders
     namespace Tools
     {
 
-        class Utils
+        public class Utils
         {
 
             public static bool Intersects(Rectangle r1, Rectangle r2)

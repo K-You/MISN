@@ -12,7 +12,7 @@ namespace BrickInvaders
         {
             private XMLScoreParser _parser;
             private List<Score> _scores;
-            private GameMode gameMode;
+            private GameMode _gameMode;
 
             public ScoresModel()
             {
@@ -22,7 +22,7 @@ namespace BrickInvaders
 
             public ScoresModel(GameMode gameMode):this()
             {
-                this.gameMode = gameMode;
+                this._gameMode = gameMode;
             }
             public List<Score> Scores
             {
@@ -70,7 +70,7 @@ namespace BrickInvaders
             }
             public List<Score> GetScores()
             {
-                return this.GetScores(this.gameMode);
+                return this.GetScores(this._gameMode);
             }
             public List<Score> GetScores(GameMode mode)
             {
