@@ -14,8 +14,8 @@ namespace BrickInvaders
 
         public class Ship : DynamicElement
         {
-            private string label;
-            private int health;
+            private string _label;
+            private int _health;
 
             public static readonly Vector2D DEFAULT_POSITION = new Vector2D(-1,-1);
             public static readonly Vector2D DEFAULT_SPEED = new Vector2D(0.25, 0);
@@ -42,22 +42,22 @@ namespace BrickInvaders
             public Ship(string label, Vector2D position, Vector2D speed, Vector2D dimensions,  int mass, int health, Color color)
                 : base(position, speed, dimensions, mass, color)
             {
-                this.label = label;
-                this.health = health;
+                this._label = label;
+                this._health = health;
                 this.AddObserver(new ShipView(BrickInvaders.frame));
                 this.NotifyObservers();
             }
 
             public int Health
             {
-                get { return health; }
-                set { health = value; this.NotifyObservers(); }
+                get { return _health; }
+                set { _health = value; this.NotifyObservers(); }
             }
 
             public string Label
             {
-                get { return label; }
-                set { label = value; this.NotifyObservers(); }
+                get { return _label; }
+                set { _label = value; this.NotifyObservers(); }
             }
 
             public override void NotifyObservers()
