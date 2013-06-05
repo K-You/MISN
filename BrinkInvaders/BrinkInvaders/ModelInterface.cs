@@ -66,6 +66,7 @@ namespace BrickInvaders
             public abstract Player GetPlayer();
 
             public abstract int GetLevel();
+
         }
     }
 }

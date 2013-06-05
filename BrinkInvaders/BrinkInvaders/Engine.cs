@@ -116,6 +116,10 @@ namespace BrickInvaders
                     m.SetBallPosition(i, newPosition);
                     m.SetBallSpeed(i, newSpeed);
 
+                    if (newPosition.Y < 0)
+                    {
+
+                    }
                     //SI LA BALLE SORT PAR LE BAS C'EST PERDU!
                 }
 
