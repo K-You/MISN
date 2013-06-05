@@ -14,7 +14,7 @@ namespace BrickInvaders
         class AllInMode : GameMode
         {
             public AllInMode()
-                : base(new BasicMapGenerator(), "AllIn mode", new Vector2D(0, -0.005))
+                : base(new BasicMapGenerator(), "AllIn mode", new Vector2D(0, -0.005), new Vector2D(0, -0.005))
             {
 
             }

@@ -66,7 +66,7 @@ namespace BrickInvaders
                 this.ship.Position = new Vector2D((this.Width - this.ship.Dimension.X) / 2, 0);
                 m.AddShip(this.ship);
 
-                m.SetBricks(g.generateMap(m.GetLevel(), this.Width, this.LevelHeight, this.GameMode.Speed));
+                m.SetBricks(g.generateMap(m.GetLevel(), this.Width, this.LevelHeight, this.GameMode.MinSpeed));
             }
         }
     }
