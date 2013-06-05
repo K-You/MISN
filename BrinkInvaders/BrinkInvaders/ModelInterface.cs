@@ -5,6 +5,7 @@ using System.Text;
 
 using BrickInvaders.Model;
 using System.Drawing;
+using BrickInvaders.Controller;
 
 namespace BrickInvaders
 {
@@ -69,7 +70,10 @@ namespace BrickInvaders
 
             public abstract bool IsStopped();
             public abstract void stop();
+            public abstract void SetScoresModel(ScoresModel scm);
 
+            public abstract void AddScore(Player player, int value, GameMode mode);
+            public abstract List<Score> GetScores(GameMode mode);
         }
     }
 }

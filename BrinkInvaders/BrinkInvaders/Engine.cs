@@ -180,6 +180,7 @@ namespace BrickInvaders
             internal static void stop()
             {
                 Engine._model.stop();
+                Engine._model.AddScore(Engine._model.GetPlayer(), Engine._model.GetDestroyedBricks(), Engine._configuration.GameMode);
                 Engine._timer.Stop();
             }
         }

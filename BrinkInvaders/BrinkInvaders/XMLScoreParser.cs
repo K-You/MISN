@@ -10,7 +10,7 @@ namespace BrickInvaders
 {
     namespace Model
     {
-        class XMLScoreParser
+        public class XMLScoreParser
         {
             public const string FILENAME = "data.xml";
             private XDocument xdoc;

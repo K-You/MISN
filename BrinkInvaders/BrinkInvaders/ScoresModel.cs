@@ -8,7 +8,7 @@ namespace BrickInvaders
 {
     namespace Model
     {
-        class ScoresModel
+        public class ScoresModel
         {
             private XMLScoreParser _parser;
             private List<Score> _scores;
@@ -24,7 +24,7 @@ namespace BrickInvaders
                 set { _scores = value; }
             }
 
-            public void addScore(Player player, int value, GameMode mode)
+            public void AddScore(Player player, int value, GameMode mode)
             {
                 List<Score> thisList = new List<Score>();
                 Boolean added = false;
@@ -63,7 +63,7 @@ namespace BrickInvaders
                 _parser.StoreScores(this._scores);
             }
 
-            public List<Score> getScores(GameMode mode)
+            public List<Score> GetScores(GameMode mode)
             {
                 List<Score> returnedList = new List<Score>();
                 foreach (Score score in this._scores)

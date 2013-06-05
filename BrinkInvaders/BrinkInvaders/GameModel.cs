@@ -12,8 +12,9 @@ namespace BrickInvaders
     namespace Model
     {
 
-        class GameModel : ModelInterface
+        class GameModel : ModelInterface 
         {
+            private ScoresModel _scores;
             private long _time;
             private int _brokenBriks;
             private Map _map;
@@ -24,6 +25,15 @@ namespace BrickInvaders
             public GameModel()
             {
                 this._map = new Map();
+            }
+
+            public override void SetScoresModel(ScoresModel scModel)
+            {
+                this._scores = scModel;
+            }
+            public override void AddScore(Player player, int value, GameMode mode)
+            {
+                this._scores.AddScore(player, value, mode);
             }
 
             public override void SetBricks(List<BasicBrick> l)
@@ -280,6 +290,10 @@ namespace BrickInvaders
             public override bool IsStopped()
             {
                 return this._stopped;
+            }
+            public override List<Score> GetScores(GameMode mode)
+            {
+                return this._scores.GetScores(mode);
             }
         }
     }
