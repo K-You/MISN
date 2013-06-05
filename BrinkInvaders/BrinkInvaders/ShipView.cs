@@ -19,7 +19,9 @@ namespace BrickInvaders
             public ShipView(Form f)
                 : base(f)
             {
+                this.BackColor = Color.YellowGreen;
                 this.Width = 0;
+                
             }
 
             public override void Refresh(Observable m)
@@ -27,7 +29,10 @@ namespace BrickInvaders
                 base.Refresh(m);
                 Ship ship = (Ship)m;
 
-                this.BackColor = Color.White; ;
+                this.BackColor = ship.Color; 
+                this.form.Controls.Add(new Label(){Text=ship.Color.ToString(),BackColor = Color.Yellow,Location = new Point(100,100)});
+
+                    
                 this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             }
         }
