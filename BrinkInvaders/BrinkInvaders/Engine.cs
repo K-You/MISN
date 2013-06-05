@@ -166,7 +166,9 @@ namespace BrickInvaders
                         j--;
                         length2--;
                     }
+                }
 
+                for (j = 0; j < length2; j++) {
                     if (Tools.Utils.Intersects(m.GetShipBoundingBox(), m.GetBrickBoundingBox(j)))
                     {
                         m.SetShipHealth(m.GetShipHealth() - m.GetBrickHealth(j));
