@@ -12,11 +12,17 @@ namespace BrickInvaders
         {
             private XMLScoreParser _parser;
             private List<Score> _scores;
+            private GameMode gameMode;
 
             public ScoresModel()
             {
                 this._parser = new XMLScoreParser();
                 this._scores = this._parser.GetScores();
+            }
+
+            public ScoresModel(GameMode gameMode)
+            {
+                this.gameMode = gameMode;
             }
             public List<Score> Scores
             {
@@ -43,12 +49,12 @@ namespace BrickInvaders
                         min = score.Value;
                     }
                 }
-                if (value > min||thisList.Count<5)
+                if (value > min || thisList.Count < 5)
                 {
                     this._scores.Add(new Score(player, value, mode));
                     added = true;
                 }
-                if (added&&thisList.Count >= 5)
+                if (added && thisList.Count >= 5)
                 {
                     Score last = thisList[0];
                     foreach (Score score in thisList)
@@ -62,7 +68,10 @@ namespace BrickInvaders
                 }
                 _parser.StoreScores(this._scores);
             }
-
+            public List<Score> GetScores()
+            {
+                return this.GetScores(this.gameMode);
+            }
             public List<Score> GetScores(GameMode mode)
             {
                 List<Score> returnedList = new List<Score>();
@@ -73,7 +82,7 @@ namespace BrickInvaders
                         returnedList.Add(score);
                     }
                 }
-                returnedList.Sort((x, y) => y.CompareTo(x)) ;
+                returnedList.Sort((x, y) => y.CompareTo(x));
                 return returnedList;
             }
         }
