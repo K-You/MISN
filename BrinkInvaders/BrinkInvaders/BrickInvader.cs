@@ -33,7 +33,7 @@ namespace BrickInvaders
                 m.SetScoresModel(new ScoresModel(c.GameMode));
                 m.AddObserver(BrickInvaders.frame);
 
-                Engine e = new Engine(p, c, m, BrickInvaders.frame);
+                Engine.Initialise(p, c, m, BrickInvaders.frame);
 
                 Application.Run(BrickInvaders.frame);
             }

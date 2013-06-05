@@ -16,51 +16,86 @@ namespace BrickInvaders
 
         public class Engine
         {
-            private static int DEFAULT_INTERVAL = 1000 / 24;
-            private static Configuration _configuration;
-            private static ModelInterface _model;
-            private static Player _player;
-            private static System.Timers.Timer _timer;
+            private static Engine INSTANCE = null;
 
-            public Engine(Player p, Configuration c, ModelInterface m, MainFrame form)
+            private int DEFAULT_INTERVAL = 1000 / 24;
+            private Configuration _configuration;
+            private ModelInterface _model;
+            private Player _player;
+            private System.Timers.Timer _timer;
+
+            public static void Initialise(Player p, Configuration c, ModelInterface m, MainFrame form)
             {
-                Engine._player = p;
-                Engine._configuration = c;
-                Engine._model = m;
+                if (INSTANCE == null)
+                {
+                    INSTANCE = new Engine(p, c, m, form);
+                }
+            }
+
+            public static Engine GetInstance()
+            {
+                return INSTANCE;
+            }
+
+            private Engine(Player p, Configuration c, ModelInterface m, MainFrame form)
+            {
+                this._player = p;
+                this._configuration = c;
+                this._model = m;
 
                 form.Engine = this;
 
-                Engine._timer = new System.Timers.Timer(DEFAULT_INTERVAL);
-                Engine._timer.SynchronizingObject = form;
+                this._timer = new System.Timers.Timer(DEFAULT_INTERVAL);
+                this._timer.SynchronizingObject = form;
             }
 
-            public void start()
+            public void Restart()
             {
-                Engine._configuration.InitialiseModel(Engine._model);
-                Engine._model.SetPlayer(Engine._player);
-                this.run();
+                this.Stop();
+                this.Start();
             }
 
-            public void run()
+            public void Start()
             {
-                Engine._timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-                Engine._timer.Start();
+                Console.WriteLine("start");
+                this._configuration.InitialiseModel(this._model);
+                this._model.SetPlayer(this._player);
+                this.Run();
             }
 
+            public void Stop()
+            {
+                this._model.SetStopped(true);
+                this._model.AddScore(this._model.GetPlayer(), this._model.GetDestroyedBricks(), this._configuration.GameMode);
+                this._timer.Stop();
+            }
 
+            public void Run()
+            {
+                this._timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+                this._timer.Start();
+            }
 
             private static void OnTimedEvent(object source, ElapsedEventArgs e)
             {
-                ModelInterface m = Engine._model;
+                ModelInterface m = Engine.GetInstance()._model;
                 int length = m.GetBallCount();
                 int length2 = m.GetBrickCount();
 
                 Vector2D msize = m.GetMapDimensions();
                 Vector2D shipPosition = m.GetShipPosition();
+                Vector2D fallSpeed = (length2 > 0) ? m.GetBrickSpeed(0) : null;
 
-                Vector2D bposition, newPosition, newSpeed, bspeed, bbspeed;
+                Vector2D bposition, newPosition, newSpeed, bspeed;
                 int j, health;
                 bool chocked;
+
+                if (length2 < 0)
+                {
+                    //NOUVEAU NIVEAU
+                    m.SetLevel(m.GetLevel() + 1);
+                    Engine.GetInstance().Restart();
+                }
 
                 for (int i = 0; i < length; i++)
                 {
@@ -71,8 +106,6 @@ namespace BrickInvaders
                     {
                         if (Tools.Utils.Intersects(m.GetBallBoundingBox(i), m.GetBrickBoundingBox(j)))
                         {
-                            bbspeed = m.GetBrickSpeed(j);
-
                             health = m.GetBrickHealth(j) - m.GetBallDamage(i);
                             m.SetBrickHealth(j, health);
                             if (health <= 0)
@@ -107,25 +140,26 @@ namespace BrickInvaders
                     }
                     else if (Tools.Utils.Intersects(m.GetBallBoundingBox(i), m.GetShipBoundingBox()))
                     {
-                        //PRENDRE EN COMPTE LES ANGLES POUR LE REBOND
-
-                        newPosition.Y = 2 * shipPosition.Y - newPosition.Y;
-                        newSpeed.invert();
+                        newPosition.Y = 2 * (shipPosition.Y + m.GetShipDimensions().Y) - newPosition.Y;
+                        newSpeed.invertY();
                     }
 
                     m.SetBallPosition(i, newPosition);
                     m.SetBallSpeed(i, newSpeed);
 
+                    Console.WriteLine(newPosition.Y);
                     if (newPosition.Y < 0)
                     {
-                       Engine.Stop();
+                        Engine.GetInstance().Stop();
                     }
                 }
 
                 for (j = 0; j < length2; j++)
                 {
+                    newSpeed = fallSpeed + Engine.GetInstance()._configuration.GameMode.StepSpeed;
                     newPosition = m.GetBrickPosition(j) + m.GetBrickSpeed(j);
                     m.SetBrickPosition(j, newPosition);
+                    m.SetBrickSpeed(j, newSpeed);
 
                     if (newPosition.Y < -1)
                     {
@@ -139,7 +173,7 @@ namespace BrickInvaders
 
                         if (m.GetShipHealth() <= 0)
                         {
-                            Engine.Stop();
+                            Engine.GetInstance().Stop();
                         }
 
                         m.SetBrickHealth(j, 0);
@@ -151,31 +185,24 @@ namespace BrickInvaders
 
             internal void CaptureKey(object sender, KeyEventArgs e)
             {
-                ModelInterface m = Engine._model;
+                ModelInterface m = Engine.GetInstance()._model;
                 int key = e.KeyValue;
-                if (key == Engine._configuration.Keys.GetKey("left"))
+                if (key == Engine.GetInstance()._configuration.Keys.GetKey("left"))
                 {
                     Vector2D newPos = m.GetShipPosition() - m.GetShipSpeed();
                     m.SetShipPosition((newPos.X > 0) ? newPos : new Vector2D(0, newPos.Y));
                 }
-                else if (key == Engine._configuration.Keys.GetKey("right"))
+                else if (key == Engine.GetInstance()._configuration.Keys.GetKey("right"))
                 {
                     Vector2D newPos = m.GetShipPosition() + m.GetShipSpeed();
                     int maxX = (int)m.GetMapDimensions().X;
                     int width = (int)m.GetShipDimensions().X;
                     m.SetShipPosition((newPos.X < maxX - width) ? newPos : new Vector2D(maxX - width, newPos.Y));
                 }
-                else if (key == Engine._configuration.Keys.GetKey("esc"))
+                else if (key == Engine.GetInstance()._configuration.Keys.GetKey("esc"))
                 {
-                    m.Exit();
+                    m.SetExited(true);
                 }
-            }
-
-            internal static void Stop()
-            {
-                Engine._model.Stop();
-                Engine._model.AddScore(Engine._model.GetPlayer(), Engine._model.GetDestroyedBricks(), Engine._configuration.GameMode);
-                Engine._timer.Stop();
             }
         }
     }

@@ -30,10 +30,6 @@ namespace BrickInvaders
                 set { this._e = value; }
             }
 
-            private void button1_Click(object sender, EventArgs e)
-            {
-            }
-
             public void Refresh(Observable m)
             {
                 ModelInterface model = (ModelInterface)m;
@@ -41,7 +37,6 @@ namespace BrickInvaders
                 if (model.IsStopped())
                 {
                     this.Controls.Clear();
-
 
                     List<Score> scores = model.GetScores();
                     int i = 0;
@@ -62,42 +57,39 @@ namespace BrickInvaders
                     title.Text = "High scores";
                     this.Controls.Add(title);
 
-                    foreach(Score sc in scores)
+                    foreach (Score sc in scores)
                     {
                         Control label = new Label();
-                            label.Text = i + 1 + " :";
-                            label.BackColor = Color.Black;
-                            label.ForeColor = Color.White;
-                            label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                            label.Size = new System.Drawing.Size(30, 30);
-                            label.Location = new System.Drawing.Point(60, i*60 + 120);
-                            this.Controls.Add(label);
+                        label.Text = i + 1 + " :";
+                        label.BackColor = Color.Black;
+                        label.ForeColor = Color.White;
+                        label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        label.Size = new System.Drawing.Size(30, 30);
+                        label.Location = new System.Drawing.Point(60, i * 60 + 120);
+                        this.Controls.Add(label);
 
-                            Control name = new Label();
-                            name.BackColor = Color.Black;
-                            name.ForeColor = Color.White;
-                            name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                            name.Size = new System.Drawing.Size(80, 30);
-                            name.Location = new System.Drawing.Point(120, i * 60 + 120);
-                            this.Controls.Add(name);
+                        Control name = new Label();
+                        name.BackColor = Color.Black;
+                        name.ForeColor = Color.White;
+                        name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        name.Size = new System.Drawing.Size(80, 30);
+                        name.Location = new System.Drawing.Point(120, i * 60 + 120);
+                        this.Controls.Add(name);
                         name.Text = sc.Player.Pseudo;
-                            
-                            
 
-                            Control score = new Label();
-                            score.Text = sc.Value.ToString();
-                            score.BackColor = Color.Black;
-                            score.ForeColor = Color.White;
-                            score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                            score.Size = new System.Drawing.Size(50, 30);
-                            score.Location = new System.Drawing.Point(210, i * 60 + 120);
-                            this.Controls.Add(score);
-                       
+
+
+                        Control score = new Label();
+                        score.Text = sc.Value.ToString();
+                        score.BackColor = Color.Black;
+                        score.ForeColor = Color.White;
+                        score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        score.Size = new System.Drawing.Size(50, 30);
+                        score.Location = new System.Drawing.Point(210, i * 60 + 120);
+                        this.Controls.Add(score);
+
                         i++;
                     }
-
-
-
                 }
                 else if (model.IsEnded())
                 {
@@ -119,14 +111,12 @@ namespace BrickInvaders
 
             private void MainFrame_Load(object sender, EventArgs e)
             {
-                
                 if (this._e != null)
                 {
-                    this._e.start();
+                    this._e.Start();
                 }
                 this.Focus();
             }
-
         }
     }
 }

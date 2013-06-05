@@ -79,6 +79,11 @@ namespace BrickInvaders
                 return this._level;
             }
 
+            public override void SetLevel(int level)
+            {
+                this._level = level;
+            }
+
             public override void NotifyObservers()
             {
                 foreach (Observer obs in this._observers)
@@ -273,12 +278,12 @@ namespace BrickInvaders
             public override void AddBall()
             {
                 if (this._map.Ship != null)
-                    this._map.Balls.Add(new Ball(this._map.Ship.Position + new Vector2D(0, 1), Vector2D.Random() / 4, new Vector2D(1, 1), 1, 1));
+                    this._map.Balls.Add(new Ball(this._map.Ship.Position + new Vector2D(0, 1), new Vector2D(0.25,1) / 4, new Vector2D(1, 1), 1, 1));
             }
 
-            public override void Stop()
+            public override void SetStopped(bool stop)
             {
-                this._stopped = true;
+                this._stopped = stop;
                 this.NotifyObservers();
             }
 
@@ -296,15 +301,20 @@ namespace BrickInvaders
                 return this._ended;
             }
 
-            public override void Exit()
+            public override void SetExited(bool exit)
             {
-                this._ended = true;
+                this._ended = exit;
                 this.NotifyObservers();
             }
 
             public override List<Score> GetScores()
             {
                 return this._scores.GetScores();
+            }
+
+            public override void SetBrickSpeed(int index, Vector2D speed)
+            {
+                this._map.Bricks[index].Speed = speed;
             }
         }
     }

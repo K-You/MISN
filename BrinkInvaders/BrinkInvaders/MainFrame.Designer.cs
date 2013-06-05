@@ -33,12 +33,15 @@
             {
                 this.SuspendLayout();
                 // 
+
                 // MainFrame
                 // 
                 this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
                 this.BackColor = System.Drawing.SystemColors.InfoText;
                 this.ClientSize = new System.Drawing.Size(383, 461);
+
                 this.MaximizeBox = false;
                 this.MaximumSize = new System.Drawing.Size(399, 499);
                 this.MinimumSize = new System.Drawing.Size(399, 499);
@@ -51,7 +54,6 @@
             }
 
             #endregion
-
 
         }
     }

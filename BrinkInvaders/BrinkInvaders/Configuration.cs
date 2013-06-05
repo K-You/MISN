@@ -61,6 +61,8 @@ namespace BrickInvaders
             {
                 MapGenerator g = this.GameMode.Generator;
 
+                m.SetStopped(false);
+
                 m.SetMapDimensions(new Vector2D(this.Width, this.Height));
 
                 this.ship.Position = new Vector2D((this.Width - this.ship.Dimension.X) / 2, 0);

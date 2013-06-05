@@ -46,6 +46,7 @@ namespace BrickInvaders
 
             public abstract void SetBrickHealth(int index, int health);
             public abstract void SetBrickPosition(int index, Vector2D position);
+            public abstract void SetBrickSpeed(int index, Vector2D speed);
 
             public abstract Rectangle GetShipBoundingBox();
             public abstract Vector2D GetShipPosition();
@@ -66,11 +67,12 @@ namespace BrickInvaders
             public abstract Player GetPlayer();
 
             public abstract int GetLevel();
+            public abstract void SetLevel(int level);
 
             public abstract bool IsStopped();
             public abstract bool IsEnded();
-            public abstract void Stop();
-            public abstract void Exit();
+            public abstract void SetStopped(bool stop);
+            public abstract void SetExited(bool exit);
             public abstract void SetScoresModel(ScoresModel scm);
 
             public abstract void AddScore(Player player, int value, GameMode mode);
