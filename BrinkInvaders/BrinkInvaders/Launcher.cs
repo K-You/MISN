@@ -24,7 +24,7 @@ namespace BrickInvaders
             private string pseudo;
             private enum modeEnum { AllIn, HighSpeed };
             private GameMode[] modeArray = new GameMode[] { new AllInMode(), new HighSpeedMode() };
-            private enum shipEnum { Ship1, Ship2, Ship3 };
+            private enum shipEnum { Longboard, Starship, Firefly };
             private Ship[] shipArray = new Ship[] { new Ship("Longboard", new Vector2D(), new Vector2D(0.25,0), new Vector2D(3,1), int.MaxValue, 4, Color.Blue), 
                                                     new Ship("Starship", new Vector2D(), new Vector2D(0.5,0), new Vector2D(2,1), int.MaxValue, 3, Color.Green), 
                                                     new Ship("Firefly", new Vector2D(), new Vector2D(1,0), new Vector2D(1,1), int.MaxValue, 2, Color.Red) };
@@ -71,10 +71,7 @@ namespace BrickInvaders
                 this.shipBox.SelectedIndex = 0;
             }
 
-            private void shipBox_SelectedIndexChanged(object sender, EventArgs e)
-            {
-
-            }
+   
         }
     }
 }

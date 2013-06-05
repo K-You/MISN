@@ -53,7 +53,7 @@
                 // pseudoBox
                 // 
                 this.pseudoBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.pseudoBox.Location = new System.Drawing.Point(192, 43);
+                this.pseudoBox.Location = new System.Drawing.Point(324, 46);
                 this.pseudoBox.Name = "pseudoBox";
                 this.pseudoBox.Size = new System.Drawing.Size(139, 20);
                 this.pseudoBox.TabIndex = 1;
@@ -74,7 +74,7 @@
                 this.modeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.modeBox.FormattingEnabled = true;
                 this.modeBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-                this.modeBox.Location = new System.Drawing.Point(192, 99);
+                this.modeBox.Location = new System.Drawing.Point(324, 99);
                 this.modeBox.Name = "modeBox";
                 this.modeBox.Size = new System.Drawing.Size(139, 21);
                 this.modeBox.TabIndex = 3;
@@ -94,16 +94,15 @@
                 this.shipBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
                 this.shipBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 this.shipBox.FormattingEnabled = true;
-                this.shipBox.Location = new System.Drawing.Point(192, 159);
+                this.shipBox.Location = new System.Drawing.Point(324, 167);
                 this.shipBox.Name = "shipBox";
                 this.shipBox.Size = new System.Drawing.Size(139, 21);
                 this.shipBox.TabIndex = 5;
-                this.shipBox.SelectedIndexChanged += new System.EventHandler(this.shipBox_SelectedIndexChanged);
                 // 
                 // button1
                 // 
                 this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                this.button1.Location = new System.Drawing.Point(44, 271);
+                this.button1.Location = new System.Drawing.Point(116, 300);
                 this.button1.Name = "button1";
                 this.button1.Size = new System.Drawing.Size(277, 23);
                 this.button1.TabIndex = 6;
@@ -116,7 +115,7 @@
                 this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
                 this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
                 this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-                this.ClientSize = new System.Drawing.Size(372, 311);
+                this.ClientSize = new System.Drawing.Size(513, 374);
                 this.Controls.Add(this.button1);
                 this.Controls.Add(this.shipBox);
                 this.Controls.Add(this.label3);
