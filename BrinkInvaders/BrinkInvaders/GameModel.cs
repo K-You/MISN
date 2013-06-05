@@ -295,6 +295,10 @@ namespace BrickInvaders
             {
                 return this._scores.GetScores(mode);
             }
+            public override List<Score> GetScores()
+            {
+                return this._scores.GetScores();
+            }
         }
     }
 }

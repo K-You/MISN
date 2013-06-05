@@ -47,6 +47,8 @@ namespace BrickInvaders
                 Engine._timer.Start();
             }
 
+
+
             private static void OnTimedEvent(object source, ElapsedEventArgs e)
             {
                 ModelInterface m = Engine._model;
@@ -116,7 +118,7 @@ namespace BrickInvaders
 
                     if (newPosition.Y < 0)
                     {
-
+                       Engine.stop();
                     }
                     //SI LA BALLE SORT PAR LE BAS C'EST PERDU!
                 }

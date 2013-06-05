@@ -74,6 +74,7 @@ namespace BrickInvaders
 
             public abstract void AddScore(Player player, int value, GameMode mode);
             public abstract List<Score> GetScores(GameMode mode);
+            public abstract List<Score> GetScores();
         }
     }
 }

@@ -20,7 +20,7 @@ namespace BrickInvaders
                 this._scores = this._parser.GetScores();
             }
 
-            public ScoresModel(GameMode gameMode)
+            public ScoresModel(GameMode gameMode):this()
             {
                 this.gameMode = gameMode;
             }

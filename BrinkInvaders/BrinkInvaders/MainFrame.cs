@@ -40,7 +40,39 @@ namespace BrickInvaders
 
                 if (model.IsStopped())
                 {
-                    //GAMEOVER DESIGN
+                    this.Controls.Clear();
+
+
+                    List<Score> scores = model.GetScores();
+                    int i = 0;
+                    foreach(Score sc in scores)
+                    {
+                        Control label = new Label() ;
+                            label.Text = i + 1 + " :";
+                            label.BackColor = Color.Black;
+                            label.ForeColor = Color.White;
+                            label.Location = new System.Drawing.Point(30, i*10 + 20);
+                            this.Controls.Add(label);
+
+                            Control name = new Label() { Width = 40 , Height=20 };
+                            name.Text = sc.Player.Pseudo;
+                            name.BackColor = Color.Yellow;
+                            name.ForeColor = Color.White;
+                            name.Location = new System.Drawing.Point(70, i * 10 + 20);
+                            this.Controls.Add(name);
+
+                            Control score = new Label();
+                            score.Text = sc.Value.ToString();
+                            score.BackColor = Color.Black;
+                            score.ForeColor = Color.White;
+                            score.Location = new System.Drawing.Point(110, i * 10 + 20);
+                            this.Controls.Add(score);
+                       
+                        i++;
+                    }
+
+
+
                 }
 
                 this._grid = model.GetMapDimensions();
@@ -64,6 +96,10 @@ namespace BrickInvaders
                     this._e.start();
                 }
                 this.Focus();
+            }
+
+            private void button2_Click(object sender, EventArgs e)
+            {
             }
         }
     }
