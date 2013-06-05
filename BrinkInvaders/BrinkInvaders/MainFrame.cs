@@ -45,27 +45,52 @@ namespace BrickInvaders
 
                     List<Score> scores = model.GetScores();
                     int i = 0;
+
+                    Label title = new System.Windows.Forms.Label();
+                    this.SuspendLayout();
+                    // 
+                    // title
+                    // 
+                    title.AutoSize = true;
+                    title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                    title.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    title.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+                    title.Location = new System.Drawing.Point(90, 38);
+                    title.Name = "title";
+                    title.Size = new System.Drawing.Size(200, 41);
+                    title.TabIndex = 0;
+                    title.Text = "High scores";
+                    this.Controls.Add(title);
+
                     foreach(Score sc in scores)
                     {
-                        Control label = new Label() ;
+                        Control label = new Label();
                             label.Text = i + 1 + " :";
                             label.BackColor = Color.Black;
                             label.ForeColor = Color.White;
-                            label.Location = new System.Drawing.Point(30, i*10 + 20);
+                            label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            label.Size = new System.Drawing.Size(30, 30);
+                            label.Location = new System.Drawing.Point(60, i*60 + 120);
                             this.Controls.Add(label);
 
-                            Control name = new Label() { Width = 40 , Height=20 };
-                            name.Text = sc.Player.Pseudo;
-                            name.BackColor = Color.Yellow;
+                            Control name = new Label();
+                            name.BackColor = Color.Black;
                             name.ForeColor = Color.White;
-                            name.Location = new System.Drawing.Point(70, i * 10 + 20);
+                            name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            name.Size = new System.Drawing.Size(80, 30);
+                            name.Location = new System.Drawing.Point(120, i * 60 + 120);
                             this.Controls.Add(name);
+                        name.Text = sc.Player.Pseudo;
+                            
+                            
 
                             Control score = new Label();
                             score.Text = sc.Value.ToString();
                             score.BackColor = Color.Black;
                             score.ForeColor = Color.White;
-                            score.Location = new System.Drawing.Point(110, i * 10 + 20);
+                            score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            score.Size = new System.Drawing.Size(50, 30);
+                            score.Location = new System.Drawing.Point(210, i * 60 + 120);
                             this.Controls.Add(score);
                        
                         i++;
@@ -102,9 +127,6 @@ namespace BrickInvaders
                 this.Focus();
             }
 
-            private void button2_Click(object sender, EventArgs e)
-            {
-            }
         }
     }
 }
