@@ -46,6 +46,7 @@ namespace BrickInvaders
                 form.Engine = this;
 
                 this._timer = new System.Timers.Timer(DEFAULT_INTERVAL);
+                this._timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
                 this._timer.SynchronizingObject = form;
             }
 
@@ -57,7 +58,6 @@ namespace BrickInvaders
 
             public void Start()
             {
-                Console.WriteLine("start");
                 this._configuration.InitialiseModel(this._model);
                 this._model.SetPlayer(this._player);
                 this.Run();
@@ -67,17 +67,18 @@ namespace BrickInvaders
             {
                 this._model.SetStopped(true);
                 this._model.AddScore(this._model.GetPlayer(), this._model.GetDestroyedBricks(), this._configuration.GameMode);
-                //this._timer.Stop();
+                this._timer.Stop();
             }
 
             public void Run()
             {
-                this._timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
                 this._timer.Start();
             }
 
             private static void OnTimedEvent(object source, ElapsedEventArgs e)
             {
+                Console.WriteLine("tick");
+
                 ModelInterface m = Engine.GetInstance()._model;
                 int length = m.GetBallCount();
                 int length2 = m.GetBrickCount();
@@ -146,9 +147,9 @@ namespace BrickInvaders
                     m.SetBallPosition(i, newPosition);
                     m.SetBallSpeed(i, newSpeed);
 
-                    Console.WriteLine(newPosition.Y);
                     if (newPosition.Y < 0)
                     {
+                        m.SetLost(true);
                         Engine.GetInstance().Stop();
                     }
                 }
@@ -167,13 +168,15 @@ namespace BrickInvaders
                     }
                 }
 
-                for (j = 0; j < length2; j++) {
+                for (j = 0; j < length2; j++)
+                {
                     if (Tools.Utils.Intersects(m.GetShipBoundingBox(), m.GetBrickBoundingBox(j)))
                     {
                         m.SetShipHealth(m.GetShipHealth() - m.GetBrickHealth(j));
 
                         if (m.GetShipHealth() <= 0)
                         {
+                            m.SetLost(true);
                             Engine.GetInstance().Stop();
                         }
 

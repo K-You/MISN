@@ -18,7 +18,7 @@ namespace BrickInvaders
             private ShipArguments _ship;
 
             private Vector2D _dimensions = new Vector2D(7, 11);
-            private int _levelheight = 20;
+            private int _levelheight = 11;
 
             public int LevelHeight
             {
@@ -62,6 +62,7 @@ namespace BrickInvaders
                 MapGenerator g = this.GameMode.Generator;
 
                 m.SetStopped(false);
+                m.SetLost(false);
 
                 m.SetMapDimensions(new Vector2D(this.Width, this.Height));
 
@@ -69,6 +70,7 @@ namespace BrickInvaders
                 m.AddShip(this._ship);
 
                 m.SetBricks(g.generateMap(m.GetLevel(), this.Width, this.LevelHeight, this.GameMode.MinSpeed));
+                m.RemoveBalls();
 
                 m.AddBall();
             }

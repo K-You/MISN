@@ -34,6 +34,8 @@ namespace BrickInvaders
             public abstract void SetBallPosition(int index, Vector2D position);
             public abstract void SetBallSpeed(int index, Vector2D speed);
 
+            public abstract void RemoveBalls();
+
             public abstract int GetBrickCount();
 
             public abstract Vector2D GetBrickSpeed(int index);
@@ -73,6 +75,8 @@ namespace BrickInvaders
             public abstract bool IsEnded();
             public abstract void SetStopped(bool stop);
             public abstract void SetExited(bool exit);
+            public abstract void SetLost(bool lost);
+            public abstract bool IsLost();
             public abstract void SetScoresModel(ScoresModel scm);
 
             public abstract void AddScore(Player player, int value, GameMode mode);

@@ -20,7 +20,7 @@ namespace BrickInvaders
                 this.Image = global::BrickInvaders.Properties.Resources.spaceinvader;
                 this.BackColor = Color.Black;
                 this.SizeMode = PictureBoxSizeMode.Zoom;
-               
+                this.Location = new Point(int.MinValue, int.MinValue);
             }
 
             public override void Refresh(Observable m)
@@ -33,12 +33,7 @@ namespace BrickInvaders
                 {
                     this.Dispose();
                 }
-
-                //this.BackColor = Color.CadetBlue;
-               // this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             }
         }
-
     }
-
 }

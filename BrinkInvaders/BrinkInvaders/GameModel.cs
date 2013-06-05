@@ -12,13 +12,14 @@ namespace BrickInvaders
     namespace Model
     {
 
-        public class GameModel : ModelInterface 
+        public class GameModel : ModelInterface
         {
             private ScoresModel _scores;
             private int _brokenBriks;
             private Map _map;
             private Player _player;
             private int _level = 1;
+            private bool _lost = false;
             private bool _stopped = false;
             private bool _ended = false;
 
@@ -44,7 +45,7 @@ namespace BrickInvaders
 
             public override void AddShip(ShipArguments s)
             {
-                this._map.Ship = new Ship(s.Label,s.Position,s.Speed,s.Dimension,s.Mass,s.Health,s.Color);
+                this._map.Ship = new Ship(s.Label, s.Position, s.Speed, s.Dimension, s.Mass, s.Health, s.Color);
                 this.NotifyObservers();
             }
 
@@ -284,7 +285,12 @@ namespace BrickInvaders
             public override void AddBall()
             {
                 if (this._map.Ship != null)
-                    this._map.Balls.Add(new Ball(this._map.Ship.Position + new Vector2D(0, 1), new Vector2D(0.25,1) / 4, new Vector2D(1, 1), 1, 1));
+                    this._map.Balls.Add(new Ball(this._map.Ship.Position + new Vector2D(0, 1), new Vector2D(0.25, 1) / 4, new Vector2D(1, 1), 1, 1));
+            }
+
+            public override void RemoveBalls()
+            {
+                this._map.Balls.Clear();
             }
 
             public override void SetStopped(bool stop)
@@ -297,6 +303,7 @@ namespace BrickInvaders
             {
                 return this._stopped;
             }
+
             public override List<Score> GetScores(GameMode mode)
             {
                 return this._scores.GetScores(mode);
@@ -321,7 +328,18 @@ namespace BrickInvaders
             public override void SetBrickSpeed(int index, Vector2D speed)
             {
                 if (index >= 0 && index < this._map.Bricks.Count)
-                this._map.Bricks[index].Speed = speed;
+                    this._map.Bricks[index].Speed = speed;
+            }
+
+            public override void SetLost(bool lost)
+            {
+                this._lost = lost;
+                this.NotifyObservers();
+            }
+
+            public override bool IsLost()
+            {
+                return this._lost;
             }
         }
     }

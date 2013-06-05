@@ -34,7 +34,7 @@ namespace BrickInvaders
             {
                 ModelInterface model = (ModelInterface)m;
 
-                if (model.IsStopped())
+                if (model.IsStopped() && model.IsLost())
                 {
                     this.Controls.Clear();
 
@@ -77,8 +77,6 @@ namespace BrickInvaders
                         this.Controls.Add(name);
                         name.Text = sc.Player.Pseudo;
 
-
-
                         Control score = new Label();
                         score.Text = sc.Value.ToString();
                         score.BackColor = Color.Black;
@@ -90,6 +88,10 @@ namespace BrickInvaders
 
                         i++;
                     }
+                }
+                else if (model.IsStopped())
+                {
+                    this.Controls.Clear();
                 }
                 else if (model.IsEnded())
                 {
