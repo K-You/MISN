@@ -30,7 +30,7 @@ namespace BrickInvaders
             {
                 Player p = new Player(launcher.Pseudo);
                 ModelInterface m = new GameModel();
-
+                m.SetScoresModel(new ScoresModel());
                 m.AddObserver(BrickInvaders.frame);
 
                 Engine e = new Engine(p, c, m, BrickInvaders.frame);
