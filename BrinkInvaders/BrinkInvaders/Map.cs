@@ -8,7 +8,7 @@ namespace BrickInvaders
 {
     namespace Model
     {
-        class Map
+        public class Map
         {
             public List<BasicBrick> Bricks { get; set; }
             public Ship Ship { get; set; }

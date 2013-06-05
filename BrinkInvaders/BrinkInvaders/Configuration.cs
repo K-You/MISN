@@ -13,9 +13,9 @@ namespace BrickInvaders
 
         public class Configuration : ConfigurationInterface
         {
-            private GameMode gameMode;
-            private KeyBinding keys;
-            private ShipArguments ship;
+            private GameMode _gameMode;
+            private KeyBinding _keys;
+            private ShipArguments _ship;
 
             private Vector2D _dimensions = new Vector2D(7, 11);
             private int _levelheight = 20;
@@ -40,21 +40,21 @@ namespace BrickInvaders
 
             public Configuration(GameMode gameMode, ShipArguments ship, KeyBinding keys)
             {
-                this.keys = keys;
-                this.ship = ship;
-                this.gameMode = gameMode;
+                this._keys = keys;
+                this._ship = ship;
+                this._gameMode = gameMode;
             }
 
             public GameMode GameMode
             {
-                get { return gameMode; }
-                set { gameMode = value; }
+                get { return _gameMode; }
+                set { _gameMode = value; }
             }
 
             public KeyBinding Keys
             {
-                get { return keys; }
-                set { keys = value; }
+                get { return _keys; }
+                set { _keys = value; }
             }
 
             public void InitialiseModel(ModelInterface m)
@@ -65,8 +65,8 @@ namespace BrickInvaders
 
                 m.SetMapDimensions(new Vector2D(this.Width, this.Height));
 
-                this.ship.Position = new Vector2D((this.Width - this.ship.Dimension.X) / 2, 0);
-                m.AddShip(this.ship);
+                this._ship.Position = new Vector2D((this.Width - this._ship.Dimension.X) / 2, 0);
+                m.AddShip(this._ship);
 
                 m.SetBricks(g.generateMap(m.GetLevel(), this.Width, this.LevelHeight, this.GameMode.MinSpeed));
 

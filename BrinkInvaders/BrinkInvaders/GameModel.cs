@@ -12,7 +12,7 @@ namespace BrickInvaders
     namespace Model
     {
 
-        class GameModel : ModelInterface 
+        public class GameModel : ModelInterface 
         {
             private ScoresModel _scores;
             private int _brokenBriks;

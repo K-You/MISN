@@ -128,7 +128,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Resources\%24this.BackgroundImage.jpg" />
   </ItemGroup>
   <ItemGroup>

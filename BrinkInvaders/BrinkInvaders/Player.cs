@@ -11,17 +11,17 @@ namespace BrickInvaders
 
         public class Player
         {
-            private string pseudo;
+            private string _pseudo;
 
             public Player(string pseudo)
             {
-                this.pseudo = pseudo;
+                this._pseudo = pseudo;
             }
 
             public string Pseudo
             {
-                get { return pseudo; }
-                set { pseudo = value; }
+                get { return _pseudo; }
+                set { _pseudo = value; }
             }
 
         }

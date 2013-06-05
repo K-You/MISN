@@ -9,7 +9,7 @@ namespace BrickInvaders
     namespace Controller
     {
 
-        class HighSpeedMode : GameMode
+        public class HighSpeedMode : GameMode
         {
             public HighSpeedMode()
                 : base(new BasicMapGenerator(false), "HighSpeed mode", new Vector2D(0, -0.005), new Vector2D(0, -0.001))
