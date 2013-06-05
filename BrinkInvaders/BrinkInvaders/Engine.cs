@@ -7,6 +7,7 @@ using BrickInvaders.Model;
 using System.Timers;
 using BrickInvaders.View;
 using System.Windows.Forms;
+using System.Media;
 
 namespace BrickInvaders
 {
@@ -32,6 +33,8 @@ namespace BrickInvaders
 
                 this._timer = new System.Timers.Timer(DEFAULT_INTERVAL);
                 this._timer.SynchronizingObject = form;
+                SoundPlayer song = new SoundPlayer(Properties.Resources.Soundtrack);
+                song.PlayLooping();
             }
 
             public void start()
